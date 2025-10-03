@@ -35,6 +35,12 @@
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
+						"cause": "fall",
+						"on_damage": {
+							"event": "kobrium:fall"
+						}
+					},
+					{
 						"cause": "all",
 						"deals_damage": false
 					}
@@ -42,11 +48,9 @@
 			}
 		},
 		"events": {
-			"eu:start_explosion": {
-				"add": {
-					"component_groups": [
-						"eu:explosion"
-					]
+			"kobrium:fall": {
+				"queue_command": {
+					"command": "say holaaa"
 				}
 			}
 		}
