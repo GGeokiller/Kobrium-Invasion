@@ -1,5 +1,5 @@
 import {world, system, Entity} from "@minecraft/server"
-import {Random} from "../ultis/random"
+import {Random} from "../utils/random"
 const METORITE_ID = "kobrium:meteorite"
 
 world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
