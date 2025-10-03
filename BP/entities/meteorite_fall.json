@@ -5,6 +5,14 @@
 			"identifier": "eu:meteorite_fall",
 			"is_spawnable": true,
 			"is_summonable": true,
+			"animations": {
+				"falling_meteorite": "controller.animation.falling_meteorite"
+			},
+			"scripts": {
+				"animate": [
+					"falling_meteorite"
+				]
+			},
 			"is_experimental": false
 		},
 		"component_groups": {
@@ -42,7 +50,7 @@
 			}
 		},
 		"events": {
-			"eu:start_explosion": {
+			"eu:on_ground": {
 				"add": {
 					"component_groups": [
 						"eu:explosion"
