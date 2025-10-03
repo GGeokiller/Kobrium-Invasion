@@ -40,11 +40,7 @@
 			}
 		},
 		"events": {
-			"kobrium:fall": {
-				"queue_command": {
-					"command": []
-				}
-			}
+			"kobrium:fall": {}
 		}
 	}
 }
