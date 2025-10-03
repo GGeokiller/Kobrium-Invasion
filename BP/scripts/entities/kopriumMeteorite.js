@@ -1,54 +1,46 @@
-import {world, system, Entity} from "@minecraft/server"
-import {Random} from "../ultis/random"
-const METORITE_ID = "koprium:meteorite"
+import { world, system } from "@minecraft/server"
+
+import { Random } from "../utils/random.js"
+
+const METORITE_ID = "kobrium:meteorite"
+
+world.afterEvents.entitySpawn.subscribe(ev => {
+    const { entity } = ev
+
+    if (entity.typeId == METORITE_ID) {
+        world.sendMessage("Hola Meteorito")
+
+        const randomDirection = {
+            x: (Math.random() - 0.5) * 2,
+            y: 0,
+            z: (Math.random() - 0.5) * 2
+        }
+
+        const magnitude = 0.2
+        const length = Math.sqrt(randomDirection.x ** 2 + randomDirection.y ** 2 + randomDirection.z ** 2)
+        const impulse = {
+            x: (randomDirection.x / length) * magnitude,
+            y: (randomDirection.y / length) * magnitude,
+            z: (randomDirection.z / length) * magnitude
+        }
+
+        const systemId = system.runInterval(() => {
+            if (entity.isValid) {
+                entity.applyImpulse(impulse)
+            } else {
+                system.clearRun(systemId)
+            }
+        })
+    }
+})
 
 world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     const { entity, eventId } = ev
 
-    world.sendMessage(`${entity.typeId}`)
     if (entity.typeId == METORITE_ID) {
-        /// meteorite fall logic
-        world.sendMessage("asdkhjasd")
-        meteoriteExplode(entity)
+        world.sendMessage("explosion")
         entity.remove()
-    }
-})
+        /// meteorite fall logic
 
-/**
- * 
- * @param {Entity} entity 
- */
-
-function meteoriteExplode(entity) {
-    entity.dimension.createExplosion(entity.location, 5)
-}
-
-world.beforeEvents.explosion.subscribe(ev => {
-    const { source } = ev
-    //world.sendMessage(source.typeId)
-    if (source.typeId == 'eu:sculk_tnt') {
-        const radius = 4;
-        const { dimension, location } = source
-        system.run(() => {
-            for (let x = -radius; x < radius; x++) {
-                for (let z = -radius; z < radius; z++) {
-                    if (x * x + z * z <= radius * radius) {
-                        let block = dimension.getBlockBelow({ x: location.x + x, y: location.y, z: location.z + z }, { maxDistance: 10 });
-                        if (!block) { return }
-
-                        if (Random.int(1, 10) > 1) {
-                            block.setPermutation(BlockPermutation.resolve('minecraft:sculk'));
-
-                        } else {
-                            block.setPermutation(BlockPermutation.resolve('minecraft:sculk_catalyst'));
-                        }
-                        if (Random.int(1, 20) == 1) {
-                            block.above().setPermutation(BlockPermutation.resolve('minecraft:sculk_sensor'));
-                        }
-
-                    }
-                }
-            }
-        });
     }
 })
