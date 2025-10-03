@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Geokiller, Euforia"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.50"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "Kobrium Invasion",
+		"description": "description",
+		"min_engine_version": [
+			1,
+			21,
+			90
+		],
+		"uuid": "38303337-3680-408a-9530-daba10cea49b",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "6d677d7c-dffa-4f61-8ffb-38a0f077b5cb",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "77f87206-91db-4756-ab5f-269d284dffd4",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}
