@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "eu:meteorite_fall",
+			"identifier": "kobrium:meteorite",
 			"materials": {
 				"default": "entity_alphatest"
 			},
@@ -10,7 +10,7 @@
 				"default": "textures/entity/meteorite"
 			},
 			"geometry": {
-				"default": "geometry.meteorite_fall"
+				"default": "geometry.meteorite"
 			},
 			"render_controllers": [
 				"controller.render.default"
