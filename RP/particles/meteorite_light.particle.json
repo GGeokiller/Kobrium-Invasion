@@ -1,0 +1,41 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "kobrium:meteorite_light",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/meteorite_light"
+			}
+		},
+		"components": {
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 3
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 10
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [2, 2],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"uv": [0, 0],
+					"uv_size": [16, 16]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [0.25, 1, 0.25, "2 + math.cos(variable.particle_age*360*2)"]
+			}
+		}
+	}
+}
