@@ -5,7 +5,6 @@ const METORITE_ID = "kobrium:meteorite"
 world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     const { entity, eventId } = ev
 
-    world.sendMessage(`${entity.typeId}`)
     if (entity.typeId == METORITE_ID) {
         /// meteorite fall logic
         world.sendMessage("asdkhjasd")
@@ -23,7 +22,7 @@ function meteoriteExplode(entity) {
     entity.dimension.createExplosion(entity.location, 5)
 }
 
-world.beforeEvents.explosion.subscribe(ev => {
+/* world.beforeEvents.explosion.subscribe(ev => {
     const { source } = ev
     //world.sendMessage(source.typeId)
     if (source.typeId == 'eu:sculk_tnt') {
@@ -51,4 +50,4 @@ world.beforeEvents.explosion.subscribe(ev => {
             }
         });
     }
-})
+}) */
