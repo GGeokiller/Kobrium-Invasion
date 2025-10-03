@@ -15,17 +15,7 @@
 			},
 			"is_experimental": false
 		},
-		"component_groups": {
-			"eu:explosion": {
-				"minecraft:explode": {
-					"fuse_length": -1,
-					"fuse_lit": true,
-					"breaks_blocks": true,
-					"causes_fire": true,
-					"power": 8
-				}
-			}
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:type_family": {
 				"family": [
@@ -50,11 +40,9 @@
 			}
 		},
 		"events": {
-			"eu:on_ground": {
-				"add": {
-					"component_groups": [
-						"eu:explosion"
-					]
+			"kobrium:fall": {
+				"queue_command": {
+					"command": []
 				}
 			}
 		}
