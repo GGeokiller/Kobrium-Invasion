@@ -35,7 +35,8 @@
         "controller.render.cow"
       ],
       "spawn_egg": {
-        "texture": "spawn_egg_cow"
+        "base_color": "#1f2338",
+        "overlay_color": "#c2ae61"
       }
     }
   }

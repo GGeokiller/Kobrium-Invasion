@@ -70,8 +70,8 @@
           "require_tame": false,
           "breed_items": "wheat",
           "breeds_with": {
-            "mate_type": "minecraft:cow",
-            "baby_type": "minecraft:cow",
+            "mate_type": "koprium:moon_cow",
+            "baby_type": "koprium:moon_cow",
             "breed_event": {
               "event": "minecraft:entity_born",
               "target": "baby"
