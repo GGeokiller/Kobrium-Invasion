@@ -15,5 +15,8 @@
 	"kobrium:meteorite_magma_stone": {
 		"sound": "deepslate",
 		"textures": "kobrium_meteorite_magma_stone"
+	},
+	"kobrium:meteorite_ash": {
+		"sound": "pale_hanging_moss"
 	}
 }

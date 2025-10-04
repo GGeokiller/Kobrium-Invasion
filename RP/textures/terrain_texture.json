@@ -12,6 +12,9 @@
 		},
 		"kobrium_meteorite_magma_stone": {
 			"textures": "textures/blocks/meteorite_magma_stone"
+		},
+		"kobrium_meteorite_ash": {
+			"textures": "textures/blocks/meteorite_ash"
 		}
 	}
 }
