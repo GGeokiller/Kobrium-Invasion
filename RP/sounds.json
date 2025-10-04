@@ -1,1 +1,37 @@
-{}
+{
+    "entity_sounds": {
+        "entities": {
+            "koprium:alien_cat": {
+                "events": {
+                    "ambient": "mob.cat.straymeow",
+                    "ambient.tame": "mob.cat.meow",
+                    "death": {
+                        "pitch": 0.90,
+                        "sound": "mob.cat.hit",
+                        "volume": 0.50
+                    },
+                    "eat": "mob.cat.eat",
+                    "hurt": {
+                        "sound": "mob.cat.hit",
+                        "volume": 0.450
+                    },
+                    "purr": "mob.cat.purr",
+                    "purreow": "mob.cat.purreow",
+                    "tempt": {
+                        "pitch": 1.0,
+                        "sound": "mob.cat.beg_for_food",
+                        "volume": 0.70
+                    }
+                },
+                "pitch": [
+                    0.80,
+                    1.20
+                ],
+                "variants": {
+                    "key": null
+                },
+                "volume": 1.0
+            }
+        }
+    }
+}
