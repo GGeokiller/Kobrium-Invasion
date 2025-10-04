@@ -1,0 +1,45 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "koprium:alien_cat",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "alien_cat": "textures/entity/alien_cat",
+        "nyan_cat": "textures/entity/nyan_cat"
+      },
+      "geometry": {
+        "default": "geometry.alien_cat"
+      },
+      "animations": {
+        "sneak": "animation.cat.sneak",
+        "walk": "animation.alien_cat.walk",
+        "sprint": "animation.cat.sprint",
+        "sit": "animation.cat.sit",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.cat.baby_transform",
+        "lie_down": "animation.cat.lie_down"
+      },
+      "animation_controllers": [
+        {
+          "look_at_target": "controller.animation.cat.look_at_target"
+        },
+        {
+          "move": "controller.animation.cat.move"
+        },
+        {
+          "baby": "controller.animation.cat.baby"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.alien_cat"
+      ],
+      "spawn_egg": {
+        "base_color": "#FFFFFF",
+        "overlay_color": "#FFFFFF"
+      }
+    }
+  }
+}

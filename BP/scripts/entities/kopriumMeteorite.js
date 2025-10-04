@@ -2,21 +2,21 @@ import { world, system, BlockPermutation, Entity, BlockType, EffectTypes } from 
 
 import { Random } from "../utils/random.js"
 import { distance } from "../utils/vec3.js"
-
+//asd
 const METEORITE_ID = "koprium:meteorite"
 const BLOCK_POLL = [
-        { block: 'koprium:meteorite_stone', probability: 3 },
-        { block: 'koprium:meteorite_magma_stone', probability: 1 },
-        { block: 'koprium:meteorite_gilded_stone', probability: 0.5 },
-        { block: 'koprium:koprium_scrap_block', probability: 0.1 },
+    { block: 'koprium:meteorite_stone', probability: 3 },
+    { block: 'koprium:meteorite_magma_stone', probability: 1 },
+    { block: 'koprium:meteorite_gilded_stone', probability: 0.5 },
+    { block: 'koprium:koprium_scrap_block', probability: 0.1 },
 ]
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
 
     if (entity.typeId !== METEORITE_ID) return;
     console.warn("Hola Meteorito")
-/*     entity.addEffect(EffectTypes.get('invisibility'), 99999, {showParticles: false})
- */
+    /*     entity.addEffect(EffectTypes.get('invisibility'), 99999, {showParticles: false})
+     */
     const randomDirection = {
         x: (Math.random() - 0.5) * 1,
         y: 0,
@@ -50,7 +50,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
             console.warn("explosion")
             const { dimension, location } = entity
 
-            dimension.createExplosion(location, EXPLOSION_RADIUS-3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
+            dimension.createExplosion(location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
 
             /* const radius = 8;
             system.run(() => {
@@ -81,7 +81,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
                 }
             });
  */
-            
+
             handleExplosion(entity)
 
             entity.remove()
@@ -94,7 +94,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
 
 function pickBlock() {
     const totalWeight = BLOCK_POLL.reduce((sum, entry) => sum + entry.probability, 0)
-    const r = Math.random() * totalWeight; 
+    const r = Math.random() * totalWeight;
     let cumulative = 0;
 
     for (const entry of BLOCK_POLL) {
