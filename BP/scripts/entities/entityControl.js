@@ -1,1 +1,1 @@
-import "./kopriumMeteorite"
+import "./kobriumMeteorite"
