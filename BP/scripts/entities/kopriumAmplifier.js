@@ -16,6 +16,7 @@ const KOPRIUM_ENTITIES_COLLISION_BOX = {
 
 system.runInterval(() => {
     geo.getEntitiesFromWorld(KOPRIUM_AMPLIFIER_ID).forEach(entity => {
+        try {
             entity.dimension.getEntities({families: ['koprium'], maxDistance: 10, location: entity.location, excludeTypes: [KOPRIUM_AMPLIFIER_ID]}).forEach(kopriumEntity => {
                 let health = geo.getHealth(kopriumEntity)
                 let currentValue = health.currentValue
@@ -29,5 +30,6 @@ system.runInterval(() => {
                 }
             })
             createAreaParticle(entity, entity.location, 10)
+        } catch{}
     })
 }, 10)
