@@ -13,7 +13,7 @@
 			},
 			"tag:minecraft:is_pickaxe_item_destructible": {},
 			"tag:stone": {},
-			"tag:iron_pick_diggable": {}
+			"tag:minecraft:iron_tier_destructible": {}
 		}
 	}
 }
