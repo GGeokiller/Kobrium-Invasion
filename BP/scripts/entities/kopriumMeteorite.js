@@ -1,4 +1,4 @@
-import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block } from "@minecraft/server"
+import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block, PlaceJigsawError, EffectType, ScriptEventCommandMessageAfterEvent } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
 import { distance } from "../utils/vec3.js"
@@ -50,9 +50,8 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
         if (eventId == "koprium:fall") {
             const { dimension, location } = entity
             world.getDimension("overworld").runCommand(`tickingarea add 
-                ${entity.location.x + 30} 300 ${entity.location.z + 30}
-                ${entity.location.x - 30} 0 ${entity.location.z - 30} cosoid`)
-            world.sendMessage(`${entity.location.x + 30}, ${entity.location.y + 30}, ${entity.location.z + 30}, ${entity.location.x - 30} ${entity.location.y - 30} ${entity.location.z - 30}`)
+                ${entity.location.x + 50} 300 ${entity.location.z + 50}
+                ${entity.location.x - 50} 0 ${entity.location.z - 50} cosoid`)
             system.runTimeout(() => {
                 console.warn("explosion")
                 handleExplosion(entity)
@@ -114,41 +113,238 @@ function handleExplosion(entity) {
     }
 }
 
-world.afterEvents.itemUse.subscribe(data => {
-    willFall({x: 750, y: 200, z: -1800}, 5)
+/// {MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE
+/// MENTAL ILLNESS STARTING HERE}
+
+
+system.runInterval(() => {
+    let timeOfDay = world.getTimeOfDay()
+    if (timeOfDay > 12000) {
+        if (!world.getDynamicProperty("dayset")) {
+            world.setDynamicProperty("dayset", false)
+        }
+        if (world.getDynamicProperty("dayset") == true) return;
+        let randomX = Random.number(-5000, 5000)
+        let randomZ = Random.number(-5000, 5000)
+        willFall({x: Math.floor(randomX), y: 200, z: Math.floor(randomZ)}, 30)
+        world.setDynamicProperty("dayset", true)
+    } else {
+        world.setDynamicProperty("dayset", false)
+    }
 })
 
 function willFall(location, time=60*5) {
-    world.sendMessage({rawtext: [{translate: "meteorite.coordinates"}, {text: `${zxlocationToString(location)}`}, {translate: "meteorite.time"}, {text: timeToHours(time)}]})
+    world.sendMessage({rawtext: [{text: "§c<< ! >>\n"},{translate: "meteorite.coordinates"}, {text: `${zxlocationToString(location)} `}, {translate: "meteorite.time"}, {text: timeToHours(time)}, {text: "\n<< ! >>"}]})
     system.runTimeout(() => {
-        falling(location)
+        falling2(location)
     }, time*20)
 }
 //
 function falling(location) {
     world.getDimension("overworld").runCommand(`tickingarea add 
-    ${location.x + 30} 300 ${location.z + 30}
-    ${location.x - 30} 0 ${location.z - 30} sample`)
+    ${location.x + 50} 300 ${location.z + 50}
+    ${location.x - 50} 0 ${location.z - 50} sample`)
+    let randomPlayer = world.getPlayers()[0]
+    let randomPlayerLocation = randomPlayer.location
+    let randomPlayerDimension = randomPlayer.dimension
+    randomPlayer.teleport({x:location.x, y: 80, z: location.z}, {dimension: DimensionTypes.get('overworld')})
+    randomPlayer.addEffect(EffectTypes.get('resistance'), 20, {amplifier: 5, showParticles: false})
     system.runTimeout(() => {
-        world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-    }, 100)
-    let fallBlock = world.getDimension("overworld").getTopmostBlock({x: location.x, z: location.z})
-    let nearbyPlayers = world.getDimension("overworld").getEntities({type: 'minecraft:player', maxDistance: 64, location: fallBlock.location})
-    let closestPlayer = nearbyPlayers[0]
-    if (nearbyPlayers.length != 0) {
-        closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
-    } else {
-        system.runTimeout(() => {
-            handleExplosion(fallBlock)
-            world.sendMessage("execute")
+        randomPlayer.teleport(randomPlayerLocation, {dimension: randomPlayerDimension})
+    }, 50)
+    system.runTimeout(() => {
             world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-        }, 20)
-    }
-
+        }, 100)
+        system.runTimeout(() => {
+        let fallBlock = world.getDimension("overworld").getTopmostBlock({x: location.x, z: location.z})
+        world.sendMessage(`${JSON.stringify(fallBlock.location)}`)
+        let nearbyPlayers = world.getDimension("overworld").getEntities({type: 'minecraft:player', maxDistance: 64, location: fallBlock.location})
+        let closestPlayer = nearbyPlayers[0]
+        if (nearbyPlayers.length != 0) {
+            closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
+        } else {
+            system.runTimeout(() => {
+                handleExplosion(fallBlock)
+                system.runTimeout(() => {
+                    world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+                }, 50)
+            }, 20)
+        }
+    }, 100)
 }
 
+/**
+ * 
+ * @param {import("@minecraft/server").Vector3} location 
+ */
+
+function falling2(location) {
+    let overworld = world.getDimension("overworld")
+    overworld.runCommand(`tickingarea add 
+    ${location.x + 50} 300 ${location.z + 50}
+    ${location.x - 50} 0 ${location.z - 50} sample`);
+
+    let randomPlayer = world.getPlayers()[0]
+    let tickingDummy = randomPlayer.dimension.spawnEntity("koprium:ticking_dummy", randomPlayer.location)
+    let tickingDummyLocation = tickingDummy.location
+    let tickingDummyDimension = tickingDummy.dimension
+
+    tickingDummy.teleport(location, {dimension: overworld})
+
+    let systemSet = system.runInterval(() => {
+        let topBlock = overworld.getTopmostBlock({x: location.x, z: location.z})
+        if (!topBlock || topBlock.location.y == 319) {
+            console.warn(`[falling2] No block found at X:${location.x}, Z:${location.z}`)
+        } else {
+            system.clearRun(systemSet)
+            system.clearJob(systemSet)
+            console.warn(`[falling2] Block found, returning Ticking Dummy (waiting 10 seconds to load chunks)`)
+            for (let i = 0; i < 10; i++) {system.runTimeout(() => {console.warn(`... ${i} ...`)}, i * 20)}
+            console.warn(`[falling2] Top Block at ${zyxlocationToString(topBlock.location)}`)
+
+            system.runTimeout(() => {
+                console.warn(`[falling2] Chunks loaded successfully`)
+                let nearbyPlayers = world.getDimension("overworld").getEntities({
+                    type: 'minecraft:player',
+                    maxDistance: 64,
+                    location: topBlock.location
+                })
+                let closestPlayer = nearbyPlayers[0]
+
+                /// SI HAY JUGADOR CERCA
+                if (nearbyPlayers.length != 0) {
+                    console.warn(`[falling2] Player detected nearby, spawning meteorite`)
+                    closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
+                /// SI NO LO HAY
+                } else {
+                    console.warn(`[falling2] No player nearby, handling explosion manually`)
+                    handleExplosion(topBlock)
+                    console.warn(`[falling2] Explosion process maybe worked`)
+                    system.runTimeout(() => {
+                        world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+                        console.warn(`[falling2] All ticking areas removed`)
+                    }, 50)
+                }
+                system.runTimeout(() => {
+                    tickingDummy.remove()
+                    console.warn(`[falling2] Ticking Dummy removed`)
+                }, 100)                
+            }, 200)
+        }
+    })
+}
+
+
 function zxlocationToString(location) {
-    return `${location.x.toFixed(1)}, ${location.z.toFixed(1)}`
+    return `[x: ${location.x.toFixed(1)}, z: ${location.z.toFixed(1)}]`
+}
+
+function zyxlocationToString(location) {
+    return `[x: ${location.x.toFixed(1)}, y: ${location.y.toFixed(1)}, z: ${location.z.toFixed(1)}]`
 }
 
 /**
