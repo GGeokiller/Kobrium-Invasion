@@ -1,9 +1,10 @@
-import { world, system, DimensionTypes } from "@minecraft/server";
+import { world, system, DimensionTypes, Entity, EntityHealthComponent, EntityInventoryComponent } from "@minecraft/server";
 
 export const geo = {
     /**
      * 
      * @param {string} entityId 
+     * @returns {[Entity]}
      */
     getEntitiesFromWorld(entityId, tags = [], excludeTags = []) {
         let entities = []
@@ -13,5 +14,24 @@ export const geo = {
                 }
             }
         return entities;
+    },
+
+    /**
+     * 
+     * @param {Entity} entity 
+     * @returns {EntityHealthComponent}
+     */
+
+    getHealth(entity) {
+        return entity.getComponent("health")
+    },
+
+    /**
+     * 
+     * @param {Entity} entity 
+     * @returns {EntityInventoryComponent}
+     */
+    getInventory(entity) {
+        return entity.getComponent("inventory")
     }
 }
