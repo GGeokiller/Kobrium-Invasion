@@ -20,7 +20,7 @@
 		"sound": "pale_hanging_moss"
 	},
 	"kobrium:kobrium_scrap_block": {
-		"sound": "stone",
+		"sound": "basalt",
 		"textures": "kobrium_scrap_block"
 	}
 }

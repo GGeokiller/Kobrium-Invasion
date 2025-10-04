@@ -8,7 +8,7 @@ const BLOCK_POLL = [
         { block: 'kobrium:meteorite_stone', probability: 3 },
         { block: 'kobrium:meteorite_magma_stone', probability: 1 },
         { block: 'kobrium:meteorite_gilded_stone', probability: 0.5 },
-        { block: 'minecraft:diamond_block', probability: 0.1 },
+        { block: 'kobrium:kobrium_scrap_block', probability: 0.1 },
 ]
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
