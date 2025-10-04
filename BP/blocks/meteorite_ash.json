@@ -2,13 +2,13 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "kobrium:meteorite_ash"
+			"identifier": "koprium:meteorite_ash"
 		},
 		"components": {
 			"minecraft:geometry": "geometry.meteorite_ash",
 			"minecraft:material_instances": {
 				"*": {
-					"texture": "kobrium_meteorite_ash",
+					"texture": "koprium_meteorite_ash",
 					"render_method": "alpha_test"
 				}
 			},

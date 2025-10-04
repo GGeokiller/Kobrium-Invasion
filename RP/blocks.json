@@ -4,23 +4,23 @@
 		1,
 		0
 	],
-	"kobrium:meteorite_stone": {
+	"koprium:meteorite_stone": {
 		"sound": "deepslate",
-		"textures": "kobrium_meteorite_stone"
+		"textures": "koprium_meteorite_stone"
 	},
-	"kobrium:meteorite_gilded_stone": {
+	"koprium:meteorite_gilded_stone": {
 		"sound": "nether_gold_ore",
-		"textures": "kobrium_meteorite_gilded_stone"
+		"textures": "koprium_meteorite_gilded_stone"
 	},
-	"kobrium:meteorite_magma_stone": {
+	"koprium:meteorite_magma_stone": {
 		"sound": "deepslate",
-		"textures": "kobrium_meteorite_magma_stone"
+		"textures": "koprium_meteorite_magma_stone"
 	},
-	"kobrium:meteorite_ash": {
+	"koprium:meteorite_ash": {
 		"sound": "pale_hanging_moss"
 	},
-	"kobrium:kobrium_scrap_block": {
+	"koprium:koprium_scrap_block": {
 		"sound": "basalt",
-		"textures": "kobrium_scrap_block"
+		"textures": "koprium_scrap_block"
 	}
 }

@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "kobrium:meteorite",
+			"identifier": "koprium:meteorite",
 			"materials": {
 				"default": "entity_alphatest"
 			},
@@ -28,8 +28,8 @@
 				"should_update_effects_offscreen": true
 			},
 			"particle_effects": {
-				"meteorite_light": "kobrium:meteorite_light",
-				"meteorite_trail": "kobrium:meteorite_trail"
+				"meteorite_light": "koprium:meteorite_light",
+				"meteorite_trail": "koprium:meteorite_trail"
 			},
 			"animations": {
 				"meteorite_light": "animation.meteorite_light",

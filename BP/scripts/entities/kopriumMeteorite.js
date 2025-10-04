@@ -3,12 +3,12 @@ import { world, system, BlockPermutation, Entity, BlockType, EffectTypes } from 
 import { Random } from "../utils/random.js"
 import { distance } from "../utils/vec3.js"
 
-const METEORITE_ID = "kobrium:meteorite"
+const METEORITE_ID = "koprium:meteorite"
 const BLOCK_POLL = [
-        { block: 'kobrium:meteorite_stone', probability: 3 },
-        { block: 'kobrium:meteorite_magma_stone', probability: 1 },
-        { block: 'kobrium:meteorite_gilded_stone', probability: 0.5 },
-        { block: 'kobrium:kobrium_scrap_block', probability: 0.1 },
+        { block: 'koprium:meteorite_stone', probability: 3 },
+        { block: 'koprium:meteorite_magma_stone', probability: 1 },
+        { block: 'koprium:meteorite_gilded_stone', probability: 0.5 },
+        { block: 'koprium:koprium_scrap_block', probability: 0.1 },
 ]
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
@@ -46,7 +46,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     const { entity, eventId } = ev
 
     if (entity.typeId == METEORITE_ID) {
-        if (eventId == "kobrium:fall") {
+        if (eventId == "koprium:fall") {
             console.warn("explosion")
             const { dimension, location } = entity
 

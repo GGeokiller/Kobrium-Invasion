@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "kobrium:kobrium_scrap_block"
+			"identifier": "koprium:koprium_scrap_block"
 		},
 		"components": {
 			"minecraft:destructible_by_mining": {

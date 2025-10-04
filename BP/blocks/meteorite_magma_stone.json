@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "kobrium:meteorite_magma_stone"
+			"identifier": "koprium:meteorite_magma_stone"
 		},
 		"components": {
 			"minecraft:destructible_by_mining": {

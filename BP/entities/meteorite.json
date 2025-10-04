@@ -2,7 +2,7 @@
 	"format_version": "1.20.80",
 	"minecraft:entity": {
 		"description": {
-			"identifier": "kobrium:meteorite",
+			"identifier": "koprium:meteorite",
 			"is_spawnable": true,
 			"is_summonable": true,
 			"animations": {
@@ -40,7 +40,7 @@
 			}
 		},
 		"events": {
-			"kobrium:fall": {}
+			"koprium:fall": {}
 		}
 	}
 }

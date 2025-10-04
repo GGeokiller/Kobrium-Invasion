@@ -1,23 +1,23 @@
 {
 	"num_mip_levels": 4,
 	"padding": 8,
-	"resource_pack_name": "Kobrium Invasion",
+	"resource_pack_name": "koprium Invasion",
 	"texture_name": "atlas.terrain",
 	"texture_data": {
-		"kobrium_meteorite_stone": {
+		"koprium_meteorite_stone": {
 			"textures": "textures/blocks/meteorite_stone"
 		},
-		"kobrium_meteorite_gilded_stone": {
+		"koprium_meteorite_gilded_stone": {
 			"textures": "textures/blocks/meteorite_gilden_stone"
 		},
-		"kobrium_meteorite_magma_stone": {
+		"koprium_meteorite_magma_stone": {
 			"textures": "textures/blocks/meteorite_magma_stone"
 		},
-		"kobrium_meteorite_ash": {
+		"koprium_meteorite_ash": {
 			"textures": "textures/blocks/meteorite_ash"
 		},
-		"kobrium_scrap_block": {
-			"textures": "textures/blocks/kobrium_scrap_block"
+		"koprium_scrap_block": {
+			"textures": "textures/blocks/koprium_scrap_block"
 		}
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"type": "minecraftBedrock",
-	"name": "Kobrium Invasion",
-	"namespace": "kobrium",
+	"name": "koprium Invasion",
+	"namespace": "koprium",
 	"authors": [
 		"Geokiller, Euforia"
 	],
@@ -38,7 +38,7 @@
 			[
 				"simpleRewrite",
 				{
-					"packName": "Kobrium Invasion"
+					"packName": "koprium Invasion"
 				}
 			]
 		]

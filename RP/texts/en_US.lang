@@ -1,6 +1,6 @@
-tile.kobrium:meteorite_stone.name=Meteorite Stone
-tile.kobrium:meteorite_gilded_stone.name=Meteorite Gilded Stone
-tile.kobrium:meteorite_magma_stone.name=Meteorite Magma Stone
-tile.kobrium:meteorite_ash.name=Meteorite_ash
-item.kobrium:kobrium_scrap=Kobrium Scrap
-tile.kobrium:kobrium_scrap_block.name=Kobrium Scrap Block
+tile.koprium:meteorite_stone.name=Meteorite Stone
+tile.koprium:meteorite_gilded_stone.name=Meteorite Gilded Stone
+tile.koprium:meteorite_magma_stone.name=Meteorite Magma Stone
+tile.koprium:meteorite_ash.name=Meteorite_ash
+item.koprium:koprium_scrap=koprium Scrap
+tile.koprium:koprium_scrap_block.name=koprium Scrap Block
