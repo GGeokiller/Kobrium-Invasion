@@ -125,10 +125,9 @@
 			"minecraft:nameable": {},
 			"minecraft:type_family": {
 				"family": [
-					"zombie",
-					"undead",
 					"monster",
-					"mob"
+					"mob",
+					"koprium"
 				]
 			},
 			"minecraft:equip_item": {
