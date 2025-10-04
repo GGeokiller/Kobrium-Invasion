@@ -1,7 +1,8 @@
 import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block, PlaceJigsawError, EffectType, ScriptEventCommandMessageAfterEvent } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
-import { distance } from "../utils/vec3.js"
+import * as Vec3 from "../utils/vec3.js"
+
 //asd
 const METEORITE_ID = "koprium:meteorite"
 const BLOCK_POLL = [
@@ -82,9 +83,10 @@ function pickBlock() {
  */
 
 function handleExplosion(entity) {
+    const { dimension, location } = entity
     try {
-        entity.dimension.createExplosion(entity.location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
-    } catch{}
+        dimension.createExplosion(location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
+    } catch { }
     const RADIUS = EXPLOSION_RADIUS
 
     for (let x = -RADIUS; x <= RADIUS; x++) {
@@ -94,20 +96,20 @@ function handleExplosion(entity) {
                 if (distSq > RADIUS * RADIUS) continue
 
                 const location = {
-                    x: entity.location.x + x,
-                    y: entity.location.y + y,
-                    z: entity.location.z + z
+                    x: location.x + x,
+                    y: location.y + y,
+                    z: location.z + z
                 }
 
-                const block = entity.dimension.getBlock(location)
+                const block = dimension.getBlock(location)
                 if (!block) continue
-                if (block.typeId === 'minecraft:air' ||
-                    block.typeId === 'minecraft:water' ||
-                    block.typeId === 'minecraft:flowing_water') continue
+                if (block.typeId == 'minecraft:air' ||
+                    block.typeId == 'minecraft:water' ||
+                    block.typeId == 'minecraft:flowing_water') continue
 
                 if (Math.random() < 0.2) continue
                 let blockID = pickBlock()
-                entity.dimension.setBlockType(location, blockID)
+                dimension.setBlockType(location, blockID)
             }
         }
     }
@@ -230,18 +232,18 @@ system.runInterval(() => {
         if (world.getDynamicProperty("dayset") == true) return;
         let randomX = Random.number(-5000, 5000)
         let randomZ = Random.number(-5000, 5000)
-        willFall({x: Math.floor(randomX), y: 200, z: Math.floor(randomZ)}, 30)
+        willFall({ x: Math.floor(randomX), y: 200, z: Math.floor(randomZ) }, 30)
         world.setDynamicProperty("dayset", true)
     } else {
         world.setDynamicProperty("dayset", false)
     }
 })
 
-function willFall(location, time=60*5) {
-    world.sendMessage({rawtext: [{text: "§c<< ! >>\n"},{translate: "meteorite.coordinates"}, {text: `${zxlocationToString(location)} `}, {translate: "meteorite.time"}, {text: timeToHours(time)}, {text: "\n<< ! >>"}]})
+function willFall(location, time = 60 * 5) {
+    world.sendMessage({ rawtext: [{ text: "§c<< ! >>\n" }, { translate: "meteorite.coordinates" }, { text: `${zxlocationToString(location)} ` }, { translate: "meteorite.time" }, { text: timeToHours(time) }, { text: "\n<< ! >>" }] })
     system.runTimeout(() => {
         falling2(location)
-    }, time*20)
+    }, time * 20)
 }
 //
 function falling(location) {
@@ -251,21 +253,21 @@ function falling(location) {
     let randomPlayer = world.getPlayers()[0]
     let randomPlayerLocation = randomPlayer.location
     let randomPlayerDimension = randomPlayer.dimension
-    randomPlayer.teleport({x:location.x, y: 80, z: location.z}, {dimension: DimensionTypes.get('overworld')})
-    randomPlayer.addEffect(EffectTypes.get('resistance'), 20, {amplifier: 5, showParticles: false})
+    randomPlayer.teleport({ x: location.x, y: 80, z: location.z }, { dimension: DimensionTypes.get('overworld') })
+    randomPlayer.addEffect(EffectTypes.get('resistance'), 20, { amplifier: 5, showParticles: false })
     system.runTimeout(() => {
-        randomPlayer.teleport(randomPlayerLocation, {dimension: randomPlayerDimension})
+        randomPlayer.teleport(randomPlayerLocation, { dimension: randomPlayerDimension })
     }, 50)
     system.runTimeout(() => {
-            world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-        }, 100)
-        system.runTimeout(() => {
-        let fallBlock = world.getDimension("overworld").getTopmostBlock({x: location.x, z: location.z})
+        world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+    }, 100)
+    system.runTimeout(() => {
+        let fallBlock = world.getDimension("overworld").getTopmostBlock({ x: location.x, z: location.z })
         world.sendMessage(`${JSON.stringify(fallBlock.location)}`)
-        let nearbyPlayers = world.getDimension("overworld").getEntities({type: 'minecraft:player', maxDistance: 64, location: fallBlock.location})
+        let nearbyPlayers = world.getDimension("overworld").getEntities({ type: 'minecraft:player', maxDistance: 64, location: fallBlock.location })
         let closestPlayer = nearbyPlayers[0]
         if (nearbyPlayers.length != 0) {
-            closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
+            closestPlayer.dimension.spawnEntity(METEORITE_ID, { x: location.x, y: 200, z: location.z })
         } else {
             system.runTimeout(() => {
                 handleExplosion(fallBlock)
@@ -293,17 +295,17 @@ function falling2(location) {
     let tickingDummyLocation = tickingDummy.location
     let tickingDummyDimension = tickingDummy.dimension
 
-    tickingDummy.teleport(location, {dimension: overworld})
+    tickingDummy.teleport(location, { dimension: overworld })
 
     let systemSet = system.runInterval(() => {
-        let topBlock = overworld.getTopmostBlock({x: location.x, z: location.z})
+        let topBlock = overworld.getTopmostBlock({ x: location.x, z: location.z })
         if (!topBlock || topBlock.location.y == 319) {
             console.warn(`[falling2] No block found at X:${location.x}, Z:${location.z}`)
         } else {
             system.clearRun(systemSet)
             system.clearJob(systemSet)
             console.warn(`[falling2] Block found, returning Ticking Dummy (waiting 10 seconds to load chunks)`)
-            for (let i = 0; i < 10; i++) {system.runTimeout(() => {console.warn(`... ${i} ...`)}, i * 20)}
+            for (let i = 0; i < 10; i++) { system.runTimeout(() => { console.warn(`... ${i} ...`) }, i * 20) }
             console.warn(`[falling2] Top Block at ${zyxlocationToString(topBlock.location)}`)
 
             system.runTimeout(() => {
@@ -318,8 +320,8 @@ function falling2(location) {
                 /// SI HAY JUGADOR CERCA
                 if (nearbyPlayers.length != 0) {
                     console.warn(`[falling2] Player detected nearby, spawning meteorite`)
-                    closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
-                /// SI NO LO HAY
+                    closestPlayer.dimension.spawnEntity(METEORITE_ID, { x: location.x, y: 200, z: location.z })
+                    /// SI NO LO HAY
                 } else {
                     console.warn(`[falling2] No player nearby, handling explosion manually`)
                     handleExplosion(topBlock)
@@ -332,7 +334,7 @@ function falling2(location) {
                 system.runTimeout(() => {
                     tickingDummy.remove()
                     console.warn(`[falling2] Ticking Dummy removed`)
-                }, 100)                
+                }, 100)
             }, 200)
         }
     })
@@ -358,4 +360,38 @@ function timeToHours(time) {
     const pad = (num) => String(num).padStart(2, "0");
     //${pad(days)}d : 
     return `§r§c[${pad(minutes)}m : ${pad(seconds)}s ]`;
+}
+
+
+function spawnDummyBlock(dimension, location, blockTypeId) {
+    const dummyBlock = dimension.spawnEntity("eu:dummy_block", location)
+
+    dummyBlock.setDynamicProperty("eu:blockTypeId", blockTypeId)
+    dummyBlock.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blockTypeId}`)
+    return dummyBlock;
+}
+
+
+/**
+ * Spawns a number of entities randomly distributed in a radius around a center point.
+ * @param {string} typeId - Entity type ID (e.g. "minecraft:zombie").
+ * @param {dimension} dimension - Dimension where to spawn ("overworld", "nether", "the_end").
+ * @param {Vector3} center - Center position {x, y, z}.
+ * @param {number} radius - Max horizontal radius to scatter entities.
+ * @param {number} count - Number of entities to spawn.
+ */
+function spawnEntitiesInRadius(typeId, dimension, center, minRadius = 1, maxRadius = 5, count = 1) {
+
+    for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+
+        const distance = Math.random() * (maxRadius - minRadius) + minRadius;
+
+        const x = center.x + Math.cos(angle) * distance;
+        const z = center.z + Math.sin(angle) * distance;
+
+        const topBlock = dimension.getTopmostBlock({ x, z }).above();
+
+        dimension.spawnEntity(typeId, topBlock.location);
+    }
 }

@@ -1,1 +1,2 @@
 import "./kopriumMeteorite"
+import "./dummyBlock"

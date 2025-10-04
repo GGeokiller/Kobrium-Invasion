@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.dummy_falling_block": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"delay_time": "query.is_on_ground"
+						}
+					]
+				},
+				"delay_time": {
+					"transitions": [
+						{
+							"on_ground": "query.state_time>=0.1"
+						}
+					]
+				},
+				"on_ground": {
+					"on_entry": [
+						"@s eu:on_ground"
+					]
+				}
+			}
+		}
+	}
+}

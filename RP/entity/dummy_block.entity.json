@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "eu:dummy_block",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/none"
+			},
+			"geometry": {
+				"default": "geometry.dummy_block"
+			},
+			"scripts": {
+				"animate": [
+					"scale"
+				]
+			},
+			"animations": {
+				"scale": "animation.dummy_block.scale"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}
