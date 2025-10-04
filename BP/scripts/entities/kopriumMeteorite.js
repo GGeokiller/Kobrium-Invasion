@@ -107,7 +107,7 @@ function handleExplosion(entity) {
 
                 if (Math.random() < 0.2) continue
                 let blockID = pickBlock()
-                entity.entity.dimension.setBlockType(location, blockID)
+                entity.dimension.setBlockType(location, blockID)
             }
         }
     }
