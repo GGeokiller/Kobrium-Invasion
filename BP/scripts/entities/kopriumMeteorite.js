@@ -9,6 +9,7 @@ world.afterEvents.entitySpawn.subscribe(ev => {
 
     if (entity.typeId == METORITE_ID) {
         console.warn("Hola Meteorito")
+        entity.setOnFire(999)
 
         const randomDirection = {
             x: (Math.random() - 0.5) * 2,
