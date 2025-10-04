@@ -1,0 +1,35 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.digging_robot.destroy_ground": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"on_ground": "query.is_on_ground"
+						},
+						{
+							"in_water": "query.is_in_water"
+						}
+					]
+				},
+				"on_ground": {
+					"on_entry": [
+						"@s koprium:destroy_ground"
+					],
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
+					]
+				},
+				"in_water": {
+					"on_entry": [
+						"@s koprium:start_explosion"
+					]
+				}
+			}
+		}
+	}
+}

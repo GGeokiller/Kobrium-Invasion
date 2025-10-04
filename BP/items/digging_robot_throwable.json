@@ -1,0 +1,22 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "koprium:digging_robot_throwable",
+			"menu_category": {
+				"category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 16,
+			"minecraft:icon": "koprium_digging_robot_throwable",
+			"minecraft:throwable": {
+				"do_swing_animation": true,
+				"launch_power_scale": 2
+			},
+			"minecraft:projectile": {
+				"projectile_entity": "koprium:digging_robot_projectile"
+			}
+		}
+	}
+}
