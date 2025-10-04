@@ -9,3 +9,4 @@ meteorite.coordinates=§cA meteorite will fall in:
 meteorite.time=in: 
 item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
 entity.koprium:ticking_dummy.name=Ticking Dummy
+item.koprium:red_light_saber=Red Light Saber

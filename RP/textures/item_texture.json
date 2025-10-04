@@ -1,9 +1,15 @@
 {
-	"resource_pack_name": "koprium Invasion",
-	"texture_name": "atlas.items",
-	"texture_data": {
-		"koprium_kombrium_scrap": {
-			"textures": "textures/items/koprium_scrap"
-		}
-	}
+  "resource_pack_name": "koprium Invasion",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "koprium_kombrium_scrap": {
+      "textures": "textures/items/koprium_scrap"
+    },
+    "koprium_bucket_cheese": {
+      "textures": "textures/items/bucket_cheese"
+    },
+    "koprium_red_light_saber": {
+      "textures": "textures/items/red_light_saber"
+    }
+  }
 }

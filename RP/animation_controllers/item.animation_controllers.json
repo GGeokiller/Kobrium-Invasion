@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.light_saber_use": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"use": "query.is_using_item"
+						}
+					]
+				},
+				"use": {
+					"animations": [
+						{
+							"first_person_use": "c.is_first_person"
+						},
+						{
+							"third_person_use": "!c.is_first_person"
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_using_item"
+						}
+					]
+				}
+			}
+		}
+	}
+}

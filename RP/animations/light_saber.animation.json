@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tp_light_saber_hold": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"rotation": [0, 0, 180],
+					"position": [1, 24, -6],
+					"scale": 0.5
+				},
+				"light_saber": {
+					"position": [0, 1, 0]
+				},
+				"bone": {
+					"rotation": [90, 0, 0],
+					"position": [0, 18, -7]
+				}
+			}
+		},
+		"animation.fp_light_saber_hold": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"rotation": [-56.2, -3.8, 191],
+					"position": [-3, 19, 5],
+					"scale": 1
+				},
+				"bone": {
+					"rotation": [20, 0, 215],
+					"position": [0, 15, 0]
+				}
+			}
+		},
+		"animation.fp_light_saber_use": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"rotation": [0, 0, 0],
+					"position": ["-2.2*math.min(q.anim_time, 1)", "0.2*math.min(q.anim_time, 1)", "0.2*math.min(q.anim_time, 1)"],
+					"scale": 1
+				},
+				"light_saber": {
+					"position": [0, "math.sin(q.anim_time*1000)*math.min(q.anim_time, 2)*0.1 ", 0]
+				}
+			}
+		},
+		"animation.tp_light_saber_use": {
+			"loop": true
+		}
+	}
+}
