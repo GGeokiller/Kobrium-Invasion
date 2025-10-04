@@ -1,8 +1,7 @@
 import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block, PlaceJigsawError, EffectType, ScriptEventCommandMessageAfterEvent } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
-import * as Vec3 from "../utils/vec3.js"
-
+import { distance } from "../utils/vec3.js"
 //asd
 const METEORITE_ID = "koprium:meteorite"
 const BLOCK_POLL = [
@@ -84,7 +83,7 @@ function pickBlock() {
 
 function handleExplosion(entity) {
     try {
-        entity.dimension.createExplosion(location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
+        entity.dimension.createExplosion(entity.location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
     } catch { }
     const RADIUS = EXPLOSION_RADIUS
 
@@ -102,9 +101,9 @@ function handleExplosion(entity) {
 
                 const block = entity.dimension.getBlock(location)
                 if (!block) continue
-                if (block.typeId == 'minecraft:air' ||
-                    block.typeId == 'minecraft:water' ||
-                    block.typeId == 'minecraft:flowing_water') continue
+                if (block.typeId === 'minecraft:air' ||
+                    block.typeId === 'minecraft:water' ||
+                    block.typeId === 'minecraft:flowing_water') continue
 
                 if (Math.random() < 0.2) continue
                 let blockID = pickBlock()
@@ -359,38 +358,4 @@ function timeToHours(time) {
     const pad = (num) => String(num).padStart(2, "0");
     //${pad(days)}d : 
     return `§r§c[${pad(minutes)}m : ${pad(seconds)}s ]`;
-}
-
-
-function spawnDummyBlock(dimension, location, blockTypeId) {
-    const dummyBlock = dimension.spawnEntity("eu:dummy_block", location)
-
-    dummyBlock.setDynamicProperty("eu:blockTypeId", blockTypeId)
-    dummyBlock.runCommand(`replaceitem entity @s slot.weapon.mainhand 0 ${blockTypeId}`)
-    return dummyBlock;
-}
-
-
-/**
- * Spawns a number of entities randomly distributed in a radius around a center point.
- * @param {string} typeId - Entity type ID (e.g. "minecraft:zombie").
- * @param {dimension} dimension - Dimension where to spawn ("overworld", "nether", "the_end").
- * @param {Vector3} center - Center position {x, y, z}.
- * @param {number} radius - Max horizontal radius to scatter entities.
- * @param {number} count - Number of entities to spawn.
- */
-function spawnEntitiesInRadius(typeId, dimension, center, minRadius = 1, maxRadius = 5, count = 1) {
-
-    for (let i = 0; i < count; i++) {
-        const angle = Math.random() * Math.PI * 2;
-
-        const distance = Math.random() * (maxRadius - minRadius) + minRadius;
-
-        const x = center.x + Math.cos(angle) * distance;
-        const z = center.z + Math.sin(angle) * distance;
-
-        const topBlock = dimension.getTopmostBlock({ x, z }).above();
-
-        dimension.spawnEntity(typeId, topBlock.location);
-    }
 }
