@@ -37,6 +37,10 @@
 						"deals_damage": false
 					}
 				]
+			},
+			"minecraft:tick_world": {
+				"radius": 4,
+				"never_despawn": true
 			}
 		},
 		"events": {

@@ -1,4 +1,4 @@
-import { world, system, BlockPermutation, Entity, BlockType, EffectTypes } from "@minecraft/server"
+import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
 import { distance } from "../utils/vec3.js"
@@ -10,6 +10,7 @@ const BLOCK_POLL = [
     { block: 'koprium:meteorite_gilded_stone', probability: 0.5 },
     { block: 'koprium:koprium_scrap_block', probability: 0.1 },
 ]
+
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
 
@@ -47,47 +48,18 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
 
     if (entity.typeId == METEORITE_ID) {
         if (eventId == "koprium:fall") {
-            console.warn("explosion")
             const { dimension, location } = entity
-
-            dimension.createExplosion(location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
-
-            /* const radius = 8;
-            system.run(() => {
-                for (let x = -radius; x < radius; x++) {
-                    for (let z = -radius; z < radius; z++) {
-                        if (x * x + z * z <= radius * radius) {
-                            let block = dimension.getBlockBelow({ x: location.x + x, y: location.y, z: location.z + z }, { maxDistance: 10 });
-                            if (!block) { return }
-
-                            if (Random.chance(30)) {
-                                block.setPermutation(BlockPermutation.resolve('minecraft:smooth_basalt'));
-
-                            } else if (Random.chance(10)) {
-                                block.setPermutation(BlockPermutation.resolve('minecraft:nether_gold_ore'));
-
-                            } else if (Random.chance(10)) {
-                                block.setPermutation(BlockPermutation.resolve('minecraft:magma'));
-
-                            } else {
-                                block.setPermutation(BlockPermutation.resolve('minecraft:netherrack'));
-                            }
-                            if (Random.chance(5)) {
-                                block.above().setPermutation(BlockPermutation.resolve('minecraft:sculk_sensor'));
-                            }
-
-                        }
-                    }
-                }
-            });
- */
-
-            handleExplosion(entity)
-
-            entity.remove()
+            world.getDimension("overworld").runCommand(`tickingarea add 
+                ${entity.location.x + 30} 300 ${entity.location.z + 30}
+                ${entity.location.x - 30} 0 ${entity.location.z - 30} cosoid`)
+            world.sendMessage(`${entity.location.x + 30}, ${entity.location.y + 30}, ${entity.location.z + 30}, ${entity.location.x - 30} ${entity.location.y - 30} ${entity.location.z - 30}`)
+            system.runTimeout(() => {
+                console.warn("explosion")
+                handleExplosion(entity)
+                world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+                entity.remove()
+            }, 1)
         }
-
-
     }
 })
 
@@ -107,10 +79,13 @@ function pickBlock() {
 
 /**
  * 
- * @param {Entity} entity 
+ * @param {Entity|Block} entity 
  */
 
 function handleExplosion(entity) {
+    try {
+        entity.dimension.createExplosion(entity.location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
+    } catch{}
     const RADIUS = EXPLOSION_RADIUS
 
     for (let x = -RADIUS; x <= RADIUS; x++) {
@@ -139,4 +114,52 @@ function handleExplosion(entity) {
     }
 }
 
+world.afterEvents.itemUse.subscribe(data => {
+    willFall({x: 750, y: 200, z: -1800}, 5)
+})
 
+function willFall(location, time=60*5) {
+    world.sendMessage({rawtext: [{translate: "meteorite.coordinates"}, {text: `${zxlocationToString(location)}`}, {translate: "meteorite.time"}, {text: timeToHours(time)}]})
+    system.runTimeout(() => {
+        falling(location)
+    }, time*20)
+}
+//
+function falling(location) {
+    world.getDimension("overworld").runCommand(`tickingarea add 
+    ${location.x + 30} 300 ${location.z + 30}
+    ${location.x - 30} 0 ${location.z - 30} sample`)
+    system.runTimeout(() => {
+        world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+    }, 100)
+    let fallBlock = world.getDimension("overworld").getTopmostBlock({x: location.x, z: location.z})
+    let nearbyPlayers = world.getDimension("overworld").getEntities({type: 'minecraft:player', maxDistance: 64, location: fallBlock.location})
+    let closestPlayer = nearbyPlayers[0]
+    if (nearbyPlayers.length != 0) {
+        closestPlayer.dimension.spawnEntity(METEORITE_ID, {x: location.x, y: 200, z: location.z})
+    } else {
+        system.runTimeout(() => {
+            handleExplosion(fallBlock)
+            world.sendMessage("execute")
+            world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+        }, 20)
+    }
+
+}
+
+function zxlocationToString(location) {
+    return `${location.x.toFixed(1)}, ${location.z.toFixed(1)}`
+}
+
+/**
+ * @param {Number} time // segundos
+ * @returns {String} "DD:HH:MM:SS"
+ */
+function timeToHours(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+
+    const pad = (num) => String(num).padStart(2, "0");
+    //${pad(days)}d : 
+    return `§r§c[${pad(minutes)}m : ${pad(seconds)}s ]`;
+}
