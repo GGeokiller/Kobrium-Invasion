@@ -282,6 +282,7 @@
       "minecraft:nameable": {},
       "minecraft:type_family": {
         "family": [
+          "koprium_invasion",
           "cat",
           "mob"
         ]
