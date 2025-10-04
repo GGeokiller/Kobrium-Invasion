@@ -18,7 +18,8 @@
 			],
 			"textures": [
 				"Array.skins[query.variant]"
-			]
+			],
+			"ignore_lighting": true
 		}
 	}
 }
