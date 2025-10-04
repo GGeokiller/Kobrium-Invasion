@@ -3,23 +3,23 @@
 	"animations": {
 		"animation.meteorite_light": {
 			"loop": true,
+			"animation_length": 10,
 			"particle_effects": {
 				"0.0": {
 					"effect": "meteorite_light",
 					"locator": "flare"
 				}
-			},
-			"animation_length": 10
+			}
 		},
 		"animation.meteorite_trail": {
 			"loop": true,
+			"animation_length": 0.025,
 			"particle_effects": {
 				"0.0": {
 					"effect": "meteorite_trail",
 					"locator": "flare"
 				}
-			},
-			"animation_length": 0.025
+			}
 		}
 	}
 }
