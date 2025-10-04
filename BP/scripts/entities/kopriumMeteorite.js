@@ -83,10 +83,9 @@ function pickBlock() {
  */
 
 function handleExplosion(entity) {
-    const { dimension, location } = entity
     try {
-        dimension.createExplosion(location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
-    } catch { }
+        entity.dimension.createExplosion(entity.location, EXPLOSION_RADIUS - 3, { breaksBlocks: true, causesFire: false, source: entity, allowUnderwater: true })
+    } catch{}
     const RADIUS = EXPLOSION_RADIUS
 
     for (let x = -RADIUS; x <= RADIUS; x++) {
@@ -96,20 +95,20 @@ function handleExplosion(entity) {
                 if (distSq > RADIUS * RADIUS) continue
 
                 const location = {
-                    x: location.x + x,
-                    y: location.y + y,
-                    z: location.z + z
+                    x: entity.location.x + x,
+                    y: entity.location.y + y,
+                    z: entity.location.z + z
                 }
 
-                const block = dimension.getBlock(location)
+                const block = entity.dimension.getBlock(location)
                 if (!block) continue
-                if (block.typeId == 'minecraft:air' ||
-                    block.typeId == 'minecraft:water' ||
-                    block.typeId == 'minecraft:flowing_water') continue
+                if (block.typeId === 'minecraft:air' ||
+                    block.typeId === 'minecraft:water' ||
+                    block.typeId === 'minecraft:flowing_water') continue
 
                 if (Math.random() < 0.2) continue
                 let blockID = pickBlock()
-                dimension.setBlockType(location, blockID)
+                entity.dimension.setBlockType(location, blockID)
             }
         }
     }
