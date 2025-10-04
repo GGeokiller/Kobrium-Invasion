@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.meteorite_light": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "meteorite_light",
+					"locator": "flare"
+				}
+			},
+			"animation_length": 10
+		},
+		"animation.meteorite_trail": {
+			"loop": true,
+			"particle_effects": {
+				"0.0": {
+					"effect": "meteorite_trail",
+					"locator": "flare"
+				}
+			},
+			"animation_length": 0.025
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import { world, system, BlockPermutation, Entity, BlockType } from "@minecraft/server"
+import { world, system, BlockPermutation, Entity, BlockType, EffectTypes } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
 import { distance } from "../utils/vec3.js"
@@ -13,32 +13,31 @@ const BLOCK_POLL = [
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
 
-    if (entity.typeId == METEORITE_ID) {
-        console.warn("Hola Meteorito")
-        entity.setOnFire(999)
-
-        const randomDirection = {
-            x: (Math.random() - 0.5) * 1,
-            y: 0,
-            z: (Math.random() - 0.5) * 1
-        }
-
-        const magnitude = 0.05
-        const length = Math.sqrt(randomDirection.x ** 2 + randomDirection.y ** 2 + randomDirection.z ** 2)
-        const impulse = {
-            x: (randomDirection.x / length) * magnitude,
-            y: (randomDirection.y / length) * magnitude,
-            z: (randomDirection.z / length) * magnitude
-        }
-
-        const systemId = system.runInterval(() => {
-            if (entity.isValid) {
-                entity.applyImpulse(impulse)
-            } else {
-                system.clearRun(systemId)
-            }
-        })
+    if (entity.typeId !== METEORITE_ID) return;
+    console.warn("Hola Meteorito")
+/*     entity.addEffect(EffectTypes.get('invisibility'), 99999, {showParticles: false})
+ */
+    const randomDirection = {
+        x: (Math.random() - 0.5) * 1,
+        y: 0,
+        z: (Math.random() - 0.5) * 1
     }
+
+    const magnitude = 0.05
+    const length = Math.sqrt(randomDirection.x ** 2 + randomDirection.y ** 2 + randomDirection.z ** 2)
+    const impulse = {
+        x: (randomDirection.x / length) * magnitude,
+        y: (randomDirection.y / length) * magnitude,
+        z: (randomDirection.z / length) * magnitude
+    }
+
+    const systemId = system.runInterval(() => {
+        if (entity.isValid) {
+            entity.applyImpulse(impulse)
+        } else {
+            system.clearRun(systemId)
+        }
+    })
 })
 
 const EXPLOSION_RADIUS = 10

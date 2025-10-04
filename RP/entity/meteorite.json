@@ -7,7 +7,7 @@
 				"default": "entity_alphatest"
 			},
 			"textures": {
-				"default": "textures/entity/meteorite"
+				"default": "textures/blocks/meteorite_magma_stone"
 			},
 			"geometry": {
 				"default": "geometry.meteorite"
@@ -18,6 +18,22 @@
 			"spawn_egg": {
 				"base_color": "#000000",
 				"overlay_color": "#FFFFFF"
+			},
+			"scripts": {
+				"animate": [
+					"meteorite_light",
+					"meteorite_trail"
+				],
+				"should_update_bones_and_effects_offscreen": true,
+				"should_update_effects_offscreen": true
+			},
+			"particle_effects": {
+				"meteorite_light": "kobrium:meteorite_light",
+				"meteorite_trail": "kobrium:meteorite_trail"
+			},
+			"animations": {
+				"meteorite_light": "animation.meteorite_light",
+				"meteorite_trail": "animation.meteorite_trail"
 			}
 		}
 	}
