@@ -47,6 +47,16 @@
 					]
 				}
 			}
+		},
+		"animation.alien_cat.particle": {
+			"loop": true,
+			"animation_length": 0.05,
+			"particle_effects": {
+				"0.0": {
+					"effect": "alien_cat_particle",
+					"locator": "blight"
+				}
+			}
 		}
 	}
 }

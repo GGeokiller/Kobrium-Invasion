@@ -13,7 +13,10 @@
 			"bones": [
 				{
 					"name": "body",
-					"pivot": [0, 7, 1]
+					"pivot": [0, 7, 1],
+					"locators": {
+						"blight": [0, 7, 0]
+					}
 				},
 				{
 					"name": "belly",
