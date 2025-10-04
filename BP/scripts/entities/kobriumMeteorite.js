@@ -92,6 +92,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     }
 })
 
+
 function pickBlock() {
     const totalWeight = BLOCK_POLL.reduce((sum, entry) => sum + entry.probability, 0)
     const r = Math.random() * totalWeight; 
