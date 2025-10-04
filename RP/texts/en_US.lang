@@ -4,3 +4,7 @@ tile.koprium:meteorite_magma_stone.name=Meteorite Magma Stone
 tile.koprium:meteorite_ash.name=Meteorite_ash
 item.koprium:koprium_scrap=koprium Scrap
 tile.koprium:koprium_scrap_block.name=koprium Scrap Block
+meteorite.coordinates=§cA meteorite will fall in: 
+meteorite.time=in: 
+item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
+entity.koprium:ticking_dummy.name=Ticking Dummy
