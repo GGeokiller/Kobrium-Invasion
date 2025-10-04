@@ -111,6 +111,7 @@
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:type_family": {
         "family": [
+          "koprium_invasion",
           "cow",
           "mob"
         ]
