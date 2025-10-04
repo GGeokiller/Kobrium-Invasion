@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.digging_robot.rotate": {
+			"loop": true,
+			"animation_length": 3.30,
+			"bones": {
+				"root": {
+					"rotation": [
+						0,
+						"-query.life_time * 20 * 16",
+						0
+					]
+				}
+			},
+			"sound_effects": {
+				"0.0": {
+					"effect": "saw_cutting"
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,32 @@
 {
 	"format_version": "1.14.0",
-	"sound_definitions": {}
+	"sound_definitions": {
+		"mob.digging_robot.idle": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/digging_robot_idle"
+			]
+		},
+		"mob.digging_robot.death": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/digging_robot_death"
+			]
+		},
+		"mob.digging_robot.saw_cutting": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/digging_robot_saw_cutting"
+			]
+		}
+	}
 }

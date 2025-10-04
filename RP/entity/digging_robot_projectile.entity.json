@@ -1,0 +1,37 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "koprium:digging_robot_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/digging_robot"
+      },
+      "geometry": {
+        "default": "geometry.digging_robot"
+      },
+      "animations": {
+        "rotate": "animation.digging_robot.rotate"
+        //"spell_emitter": "controller.animation.spell_emitter"
+      },
+      /*       
+      "particle_effects": {
+        "spell_effect": "eu:green_spell_particle"
+      }, */
+      "sound_effects": {
+        "saw_cutting": "mob.digging_robot.saw_cutting"
+      },
+      "scripts": {
+        "animate": [
+          "rotate"
+          //"spell_emitter"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.digging_robot"
+      ]
+    }
+  }
+}
