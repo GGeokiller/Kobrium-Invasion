@@ -2,12 +2,12 @@ import { world, system, BlockPermutation } from "@minecraft/server"
 
 import { Random } from "../utils/random.js"
 
-const METORITE_ID = "kobrium:meteorite"
+const METEORITE_ID = "kobrium:meteorite"
 
 world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
 
-    if (entity.typeId == METORITE_ID) {
+    if (entity.typeId == METEORITE_ID) {
         console.warn("Hola Meteorito")
         entity.setOnFire(999)
 
@@ -39,7 +39,7 @@ world.afterEvents.entitySpawn.subscribe(ev => {
 world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     const { entity, eventId } = ev
 
-    if (entity.typeId == METORITE_ID) {
+    if (entity.typeId == METEORITE_ID) {
         if (eventId == "kobrium:fall") {
             console.warn("explosion")
             const { dimension, location } = entity
