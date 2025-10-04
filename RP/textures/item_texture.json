@@ -1,5 +1,9 @@
 {
 	"resource_pack_name": "Kobrium Invasion",
 	"texture_name": "atlas.items",
-	"texture_data": {}
+	"texture_data": {
+		"kobrium_kombrium_scrap": {
+			"textures": "textures/items/kobrium_scrap"
+		}
+	}
 }

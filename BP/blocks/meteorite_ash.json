@@ -25,6 +25,28 @@
 					1,
 					16
 				]
+			},
+			"minecraft:placement_filter": {
+				"conditions": [
+					{
+						"allowed_faces": [
+							"up"
+						],
+						"block_filter": [
+							{
+								"tags": "q.any_tag('grass','stone','wood','dirt','minecraft:is_pickaxe_item_destructible')"
+							}
+						]
+					}
+				]
+			},
+			"minecraft:liquid_detection": {
+				"detection_rules": [
+					{
+						"liquid_type": "water",
+						"on_liquid_touches": "popped"
+					}
+				]
 			}
 		}
 	}

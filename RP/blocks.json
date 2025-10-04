@@ -18,5 +18,9 @@
 	},
 	"kobrium:meteorite_ash": {
 		"sound": "pale_hanging_moss"
+	},
+	"kobrium:kobrium_scrap_block": {
+		"sound": "stone",
+		"textures": "kobrium_scrap_block"
 	}
 }

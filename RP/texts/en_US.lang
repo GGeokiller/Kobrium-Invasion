@@ -2,3 +2,5 @@ tile.kobrium:meteorite_stone.name=Meteorite Stone
 tile.kobrium:meteorite_gilded_stone.name=Meteorite Gilded Stone
 tile.kobrium:meteorite_magma_stone.name=Meteorite Magma Stone
 tile.kobrium:meteorite_ash.name=Meteorite_ash
+item.kobrium:kombrium_scrap=Kobrium Scrap
+tile.kobrium:kobroum_scrap_block.name=Kobrium Scrap Block

@@ -2,11 +2,11 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "kobrium:meteorite_magma_stone"
+			"identifier": "kobrium:kobrium_scrap_block"
 		},
 		"components": {
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 3
+				"seconds_to_destroy": 5
 			},
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 4

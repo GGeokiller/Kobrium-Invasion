@@ -15,6 +15,9 @@
 		},
 		"kobrium_meteorite_ash": {
 			"textures": "textures/blocks/meteorite_ash"
+		},
+		"kobrium_scrap_block": {
+			"textures": "textures/blocks/kobrium_scrap_block"
 		}
 	}
 }

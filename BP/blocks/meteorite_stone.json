@@ -4,6 +4,16 @@
 		"description": {
 			"identifier": "kobrium:meteorite_stone"
 		},
-		"components": {}
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4
+			},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:stone": {},
+			"tag:iron_pick_diggable": {}
+		}
 	}
 }
