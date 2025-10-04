@@ -266,7 +266,7 @@
       },
       "koprium:nyan_cat_variant": {
         "minecraft:variant": {
-          "value": 0
+          "value": 1
         }
       }
     },
