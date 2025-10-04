@@ -4,9 +4,6 @@
 	"texture_data": {
 		"koprium_kombrium_scrap": {
 			"textures": "textures/items/koprium_scrap"
-		},
-		"koprium_bucket_cheese": {
-			"textures": "textures/items/bucket_cheese"
 		}
 	}
 }
