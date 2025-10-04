@@ -5,9 +5,9 @@ import { distance } from "../utils/vec3.js"
 
 const METEORITE_ID = "kobrium:meteorite"
 const BLOCK_POLL = [
-        { block: 'minecraft:obsidian', probability: 0.4 },
-        { block: 'minecraft:magma', probability: 0.5 },
-        { block: 'minecraft:basalt', probability: 1 },
+        { block: 'kobrium:meteorite_stone', probability: 3 },
+        { block: 'kobrium:meteorite_magma_stone', probability: 1 },
+        { block: 'kobrium:meteorite_gilded_stone', probability: 0.5 },
         { block: 'minecraft:diamond_block', probability: 0.1 },
 ]
 world.afterEvents.entitySpawn.subscribe(ev => {
@@ -132,7 +132,7 @@ function handleExplosion(entity) {
                     block.typeId === 'minecraft:water' ||
                     block.typeId === 'minecraft:flowing_water') continue
 
-                if (Math.random() < 0.3) continue
+                if (Math.random() < 0.2) continue
                 let blockID = pickBlock()
                 entity.dimension.setBlockType(location, blockID)
             }

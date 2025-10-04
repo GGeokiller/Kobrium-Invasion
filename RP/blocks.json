@@ -3,5 +3,17 @@
 		1,
 		1,
 		0
-	]
+	],
+	"kobrium:meteorite_stone": {
+		"sound": "deepslate",
+		"textures": "kobrium_meteorite_stone"
+	},
+	"kobrium:meteorite_gilded_stone": {
+		"sound": "nether_gold_ore",
+		"textures": "kobrium_meteorite_gilded_stone"
+	},
+	"kobrium:meteorite_magma_stone": {
+		"sound": "deepslate",
+		"textures": "kobrium_meteorite_magma_stone"
+	}
 }

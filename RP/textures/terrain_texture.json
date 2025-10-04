@@ -3,5 +3,15 @@
 	"padding": 8,
 	"resource_pack_name": "Kobrium Invasion",
 	"texture_name": "atlas.terrain",
-	"texture_data": {}
+	"texture_data": {
+		"kobrium_meteorite_stone": {
+			"textures": "textures/blocks/meteorite_stone"
+		},
+		"kobrium_meteorite_gilded_stone": {
+			"textures": "textures/blocks/meteorite_gilden_stone"
+		},
+		"kobrium_meteorite_magma_stone": {
+			"textures": "textures/blocks/meteorite_magma_stone"
+		}
+	}
 }
