@@ -3,21 +3,13 @@
 	"render_controllers": {
 		"controller.render.alien_cat": {
 			"geometry": "Geometry.default",
-			"arrays": {
-				"textures": {
-					"Array.skins": [
-						"Texture.alien_cat",
-						"texture.nyan_cat"
-					]
-				}
-			},
 			"materials": [
 				{
 					"*": "Material.default"
 				}
 			],
 			"textures": [
-				"Array.skins[query.variant]"
+				"query.is_name_any('Nyan Cat') ? Texture.nyan_cat : Texture.alien_cat"
 			],
 			"ignore_lighting": true
 		}

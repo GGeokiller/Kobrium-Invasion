@@ -13,6 +13,9 @@ const BREAKABLE_BLOCKS = [
     "minecraft:gravel"
 ];
 
+const BLACKLIST_BLOCKS = [
+    "minecraft:obsidian"
+]
 
 /**
  * Devuelve coordenadas de un area circular en el plano XZ
@@ -60,7 +63,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
                 const block = dim.getBlock(pos);
 
                 //block.hasTag()
-                if (block && (block.typeId.includes("ore") || block.hasTag("iron_tier_destructible") || block.hasTag("minecraft:is_axe_item_destructible") || block.hasTag("minecraft:is_hoe_item_destructible") || block.hasTag("minecraft:is_shovel_item_destructible") || block.hasTag("stone"))) {
+                if (block && (block.hasTag("minecraft:is_pickaxe_item_destructible") || block.hasTag("minecraft:is_axe_item_destructible") || block.hasTag("minecraft:is_hoe_item_destructible") || block.hasTag("minecraft:is_shovel_item_destructible") || block.hasTag("stone"))) {
                     destroyBlock(entity, pos);
                 }
             }

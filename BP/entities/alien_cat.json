@@ -51,7 +51,8 @@
             }
           },
           "breed_items": [
-            "koprium:koprium_scrap"
+            "koprium:koprium_scrap",
+            "minecraft:gunpowder"
           ]
         },
         "minecraft:behavior.breed": {
@@ -67,7 +68,8 @@
         "minecraft:tameable": {
           "probability": 0.33,
           "tame_items": [
-            "koprium:koprium_scrap"
+            "koprium:koprium_scrap",
+            "minecraft:gunpowder"
           ],
           "tame_event": {
             "event": "minecraft:on_tame",
@@ -99,6 +101,14 @@
                 "value": "rabbit"
               },
               "max_dist": 8
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "creeper"
+              },
+              "max_dist": 16
             },
             {
               "filters": {
@@ -300,6 +310,10 @@
           {
             "item": "koprium:koprium_scrap",
             "heal_amount": 2
+          },
+          {
+            "item": "minecraft:gunpowder",
+            "heal_amount": 2
           }
         ]
       },
@@ -329,10 +343,20 @@
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:damage_sensor": {
-        "triggers": {
-          "cause": "fall",
-          "deals_damage": "no"
-        }
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": "no"
+          },
+          {
+            "cause": "entity_explosion",
+            "deals_damage": "no"
+          },
+          {
+            "cause": "block_explosion",
+            "deals_damage": "no"
+          }
+        ]
       },
       "minecraft:dweller": {
         "dwelling_type": "village",
