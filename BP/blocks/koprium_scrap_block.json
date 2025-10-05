@@ -8,6 +8,7 @@
 			"minecraft:destructible_by_mining": {
 				"seconds_to_destroy": 5
 			},
+			"minecraft:loot": "loot_tables/blocks/koprium_scrap.json",
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 4
 			},
