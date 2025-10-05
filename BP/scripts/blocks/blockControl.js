@@ -1,1 +1,2 @@
 import "./meteoriteMagmaStone"
+import "./kopriumLandmine"

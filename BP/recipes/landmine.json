@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "koprium:landmine"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			" X ",
+			"XYX"
+		],
+		"key": {
+			"Y": {
+				"item": "minecraft:gunpowder"
+			},
+			"X": {
+				"item": "koprium:koprium_scrap"
+			}
+		},
+		"result": {
+			"item": "koprium:landmine",
+			"count": 3
+		}
+	}
+}

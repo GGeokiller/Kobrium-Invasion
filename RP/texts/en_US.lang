@@ -2,22 +2,33 @@ tile.koprium:meteorite_stone.name=Meteorite Stone
 tile.koprium:meteorite_gilded_stone.name=Meteorite Gilded Stone
 tile.koprium:meteorite_magma_stone.name=Meteorite Magma Stone
 tile.koprium:meteorite_ash.name=Meteorite_ash
-item.koprium:koprium_scrap=koprium Scrap
 tile.koprium:koprium_scrap_block.name=koprium Scrap Block
-item.koprium:bucket_cheese=Bucket Cheese
-meteorite.coordinates=§cA meteorite will fall in: 
-meteorite.time=in: 
-item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
-entity.koprium:ticking_dummy.name=Ticking Dummy
+tile.koprium:landmine.name=Landmine
+
 item.koprium:red_light_saber=Red Light Saber
+item.koprium:koprium_scrap=koprium Scrap
+item.koprium:bucket_cheese=Bucket Cheese
+item.koprium:bucket_cheese=Bucket Cheese
+item.koprium:digging_robot_throwable=Digging Robot Throwable
+
+entity.eu:dummy_block.name=Dummy Block
+entity.koprium:digging_robot_projectile.name=Digging Robot Projectile
+entity.koprium:koprium_amplifier.name=Koprium Amplifier
+entity.koprium:ticking_dummy.name=Ticking Dummy
 entity.koprium:alien_cat.name=Alien Cat
 entity.koprium:meteorite.name=Meteorite
 entity.koprium:moon_cow.name=Moon Cow
+
+item.spawn_egg.entity.eu:dummy_block.name=Spawn Dummy Block
+item.spawn_egg.entity.koprium:digging_robot_projectile.name=Spawn Digging Robot Projectile
+item.spawn_egg.entity.koprium:koprium_amplifier.name=Spawn Koprium Amplifier
 item.spawn_egg.entity.koprium:alien_cat.name=Spawn Alien Cat
 item.spawn_egg.entity.koprium:meteorite.name=Spawn Meteorite
 item.spawn_egg.entity.koprium:moon_cow.name=Spawn Moon Cow
+item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
 
-item.koprium:bucket_cheese=Bucket Cheese
 
 
 action.interact.polish_cow=Interact
+meteorite.coordinates=§cA meteorite will fall in: 
+meteorite.time=in: 
