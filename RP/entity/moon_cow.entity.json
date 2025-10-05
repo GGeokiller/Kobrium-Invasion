@@ -15,17 +15,23 @@
       },
       "animations": {
         "setup": "animation.cow.setup",
+        "polish_cow": "animation.moon_cow.polish_cow",
         "walk": "animation.quadruped.walk",
         "look_at_target": "animation.common.look_at_target",
         "baby_transform": "animation.cow.baby_transform"
       },
       "scripts": {
         "animate": [
+          {
+            "polish_cow": "query.property('koprium:is_polish_cow')"
+          },
           "setup",
           {
             "walk": "query.modified_move_speed"
           },
-          "look_at_target",
+          {
+            "look_at_target": "!query.property('koprium:is_polish_cow')"
+          },
           {
             "baby_transform": "query.is_baby"
           }

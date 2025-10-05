@@ -6,9 +6,33 @@
       "spawn_category": "creature",
       "runtime_identifier": "cow",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+      "properties": {
+        "koprium:is_polish_cow": {
+          "type": "bool",
+          "client_sync": true,
+          "default": false
+        }
+      }
     },
     "component_groups": {
+      "koprium:movement": {
+        "minecraft:movement": {
+          "value": 0.25
+        }
+      },
+      "koprium:polish_cow": {
+        "minecraft:movement": {
+          "value": 0.00
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 10,
+          "time_down_event": {
+            "event": "koprium:end_polish_cow"
+          }
+        }
+      },
       "minecraft:cow_baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -152,7 +176,7 @@
         ]
       },
       "minecraft:movement": {
-        "value": 0.25
+        "value": 0.0
       },
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -210,6 +234,13 @@
       "minecraft:entity_spawned": {
         "sequence": [
           {
+            "add": {
+              "component_groups": [
+                "koprium:movement"
+              ]
+            }
+          },
+          {
             "randomize": [
               {
                 "weight": 95,
@@ -226,6 +257,36 @@
             ]
           }
         ]
+      },
+      "koprium:start_polish_cow": {
+        "add": {
+          "component_groups": [
+            "koprium:polish_cow"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "koprium:movement"
+          ]
+        },
+        "set_property": {
+          "koprium:is_polish_cow": true
+        }
+      },
+      "koprium:end_polish_cow": {
+        "add": {
+          "component_groups": [
+            "koprium:movement"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "koprium:polish_cow"
+          ]
+        },
+        "set_property": {
+          "koprium:is_polish_cow": false
+        }
       },
       "minecraft:entity_born": {
         "add": {
