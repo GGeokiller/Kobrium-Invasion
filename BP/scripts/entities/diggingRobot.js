@@ -1,14 +1,18 @@
 import { world, system } from "@minecraft/server";
 
+
+
+const DIGGING_ROBOT_ID = "koprium:digging_robot_projectile"
+
 const BREAKABLE_BLOCKS = [
     "minecraft:dirt",
     "minecraft:coarse_dirt",
-
     "minecraft:grass_block",
     "minecraft:sand",
     "minecraft:podzol",
     "minecraft:gravel"
 ];
+
 
 /**
  * Devuelve coordenadas de un area circular en el plano XZ
@@ -27,7 +31,6 @@ function getBlocksInCircle(center, radius) {
     return blocks;
 }
 
-
 function destroyBlock(entity, pos) {
     entity.runCommand(`setblock ${pos.x} ${pos.y} ${pos.z} air destroy`);
 }
@@ -35,9 +38,10 @@ function destroyBlock(entity, pos) {
 world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
     const { eventId, entity } = ev;
 
-    if (entity.typeId != "koprium:digging_robot_projectile") { return; }
+    if (entity.typeId != DIGGING_ROBOT_ID) { return; }
 
     if (!entity.isValid) { return; }
+
     if (eventId == "koprium:destroy_ground") {
         //el for extra es para que no se quede atorado al lanzarlo contra una pared xD
         //nunca habia usado un for que decremente en vez de incrementar
@@ -56,7 +60,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
                 const block = dim.getBlock(pos);
 
                 //block.hasTag()
-                if (block && (block.typeId.includes("ore") || block.hasTag("iron_tier_destructible") || block.hasTag("minecraft:is_axe_item_destructible") || block.hasTag("minecraft:is_shovel_item_destructible") || block.hasTag("stone"))) {
+                if (block && (block.typeId.includes("ore") || block.hasTag("iron_tier_destructible") || block.hasTag("minecraft:is_axe_item_destructible") || block.hasTag("minecraft:is_hoe_item_destructible") || block.hasTag("minecraft:is_shovel_item_destructible") || block.hasTag("stone"))) {
                     destroyBlock(entity, pos);
                 }
             }
