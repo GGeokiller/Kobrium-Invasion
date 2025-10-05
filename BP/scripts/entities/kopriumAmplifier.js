@@ -17,7 +17,9 @@ const KOPRIUM_ENTITIES_COLLISION_BOX = {
 system.runInterval(() => {
     geo.getEntitiesFromWorld(KOPRIUM_AMPLIFIER_ID).forEach(entity => {
         try {
-            entity.dimension.getEntities({families: ['koprium'], maxDistance: 10, location: entity.location, excludeTypes: [KOPRIUM_AMPLIFIER_ID]}).forEach(kopriumEntity => {
+            let kopriumEntiies = entity.dimension.getEntities({/* families: ['koprium'], */ maxDistance: 10, location: entity.location, excludeTypes: [KOPRIUM_AMPLIFIER_ID]})
+            if (kopriumEntiies.length == 0) return;
+            kopriumEntiies.forEach(kopriumEntity => {
                 let health = geo.getHealth(kopriumEntity)
                 let currentValue = health.currentValue
                 let effectiveMax = health.effectiveMax
