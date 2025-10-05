@@ -4,7 +4,8 @@
     "description": {
       "identifier": "koprium:red_light_saber",
       "materials": {
-        "default": "entity_emissive_alpha_one_sided",
+        "default": "entity_alphablend",
+        "normal": "entity_alphatest",
         "enchanted": "armor_enchanted"
       },
       "textures": {

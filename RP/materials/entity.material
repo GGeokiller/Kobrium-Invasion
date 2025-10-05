@@ -1,0 +1,49 @@
+{
+    "materials": {
+        "version": "1.0.0",
+        "outline_base:enderman": {
+            "+states": [
+                "EnableStencilTest",
+                "StencilWrite",
+                "InvertCulling"
+            ],
+            "frontFace": {
+                "stencilFunc": "Always",
+                "stencilFailOp": "Replace",
+                "stencilDepthFailOp": "Replace",
+                "stencilPassOp": "Replace"
+            },
+            "backFace": {
+                "stencilFunc": "Always",
+                "stencilFailOp": "Replace",
+                "stencilDepthFailOp": "Replace",
+                "stencilPassOp": "Replace"
+            },
+            "stencilRef": 2
+        },
+        "outline:entity_static": {
+            "+states": [
+                "InvertCulling",
+                "EnableStencilTest",
+                "DisableDepthWrite",
+                "Blending",
+                "StencilWrite"
+            ],
+            "+defines": [
+                "USE_OVERLAY"
+            ],
+            "-defines": [
+                "FANCY"
+            ],
+            "depthFunc": "Always",
+            "frontFace": {
+                "stencilFunc": "NotEqual"
+            },
+            "backFace": {
+                "stencilFunc": "Equal"
+            },
+            "stencilRef": 2,
+            "stencilReadMark": 2
+        }
+    }
+}
