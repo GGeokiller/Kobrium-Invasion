@@ -27,6 +27,21 @@
 			"sounds": [
 				"sounds/koprium/digging_robot_saw_cutting"
 			]
+		},
+		//https://youtu.be/ke9zSReG470?si=Cslk1ari_pWYiRp3
+		"mob.polish_cow.cover_song": {
+			"__use_legacy_max_distance": "true",
+			"category": "record",
+			"max_distance": 64.0,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/koprium/polish_cow_noteblock_cover",
+					"stream": true,
+					"volume": 0.70
+				}
+			]
 		}
 	}
 }

@@ -1,0 +1,51 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:block": {
+		"description": {
+			"identifier": "koprium:landmine",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"koprium:landmine": {
+				"radius": 3
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 0.2
+			},
+			"minecraft:loot": "loot_tables/empty.json",
+			"minecraft:geometry": "geometry.koprium.landmine",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "koprium_landmine",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:collision_box": {
+				"origin": [
+					-6,
+					0,
+					-6
+				],
+				"size": [
+					12,
+					4,
+					12
+				]
+			},
+			"minecraft:selection_box": {
+				"origin": [
+					-3,
+					0,
+					-3
+				],
+				"size": [
+					6,
+					3,
+					6
+				]
+			}
+		}
+	}
+}

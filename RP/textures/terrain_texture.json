@@ -18,6 +18,9 @@
 		},
 		"koprium_scrap_block": {
 			"textures": "textures/blocks/koprium_scrap_block"
+		},
+		"koprium_landmine": {
+			"textures": "textures/blocks/koprium_landmine"
 		}
 	}
 }

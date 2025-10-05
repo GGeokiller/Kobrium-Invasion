@@ -27,7 +27,7 @@
         },
         "minecraft:timer": {
           "looping": true,
-          "time": 10,
+          "time": 40,
           "time_down_event": {
             "event": "koprium:end_polish_cow"
           }
@@ -62,6 +62,33 @@
         "minecraft:behavior.follow_parent": {
           "priority": 6,
           "speed_multiplier": 1.1
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "sugar"
+                    }
+                  ]
+                },
+                "event": "koprium:start_polish_cow"
+              },
+              "use_item": true,
+              "play_sounds": "eat",
+              "interact_text": "action.interact.polish_cow"
+            }
+          ]
         }
       },
       "minecraft:cow_adult": {
@@ -126,6 +153,29 @@
               "transform_to_item": "koprium:bucket_cheese",
               "play_sounds": "milk",
               "interact_text": "action.interact.milk"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "sugar"
+                    }
+                  ]
+                },
+                "event": "koprium:start_polish_cow"
+              },
+              "use_item": true,
+              "play_sounds": "eat",
+              "interact_text": "action.interact.polish_cow"
             }
           ]
         }
