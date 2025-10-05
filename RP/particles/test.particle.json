@@ -29,7 +29,7 @@
 			"minecraft:particle_initial_speed": 0,
 			"minecraft:particle_motion_dynamic": {},
 			"minecraft:particle_appearance_billboard": {
-				"size": [0.2, 0.2],
+				"size": ["0.5 - variable.particle_age/variable.particle_lifetime*0.5", "0.5 - variable.particle_age/variable.particle_lifetime*0.5"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 128,
@@ -42,9 +42,9 @@
 				"color": {
 					"interpolant": "v.particle_age / v.particle_lifetime",
 					"gradient": {
-						"0.0": "#00F29FC5",
-						"0.5": "#FFEF92CE",
-						"1.0": "#00FD7FB3"
+						"0.0": "#00A658DC",
+						"0.5": "#FFAA88F4",
+						"1.0": "#009444DE"
 					}
 				}
 			}

@@ -19,8 +19,8 @@
 				]
 			},
 			"minecraft:collision_box": {
-				"width": 0.6,
-				"height": 1.9
+				"width": 0.8,
+				"height": 0.6
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {

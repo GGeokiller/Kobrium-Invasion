@@ -5,12 +5,12 @@ import { createAreaParticle } from "../utils/particle";
 const KOPRIUM_AMPLIFIER_ID = "koprium:koprium_amplifier"
 const KOPRIUM_ENTITIES_COLLISION_BOX = {
     "koprium:koprium_amplifier": {
-        height: 1.9,
-        width: 0.6
+        width: 0.6,
+		height: 0.9
     },
-    "minecraft:pig" :{
-        width: 0.9,
-        height: 0.9
+    "koprium:koprium_rover":{
+        width: 0.8,
+		height: 0.6
     }
 }
 
