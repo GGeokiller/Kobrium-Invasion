@@ -1,0 +1,47 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.koprium_rover",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "body",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4.5, 0, -5], "size": [9, 7, 12], "uv": [0, 0]},
+						{"origin": [0, 7, -4], "size": [0, 4, 4], "uv": [0, 28]},
+						{"origin": [-1, 11, -2], "size": [2, 2, 2], "uv": [8, 28]}
+					]
+				},
+				{
+					"name": "leftLeg",
+					"parent": "root",
+					"pivot": [6, 1.5, 0],
+					"cubes": [
+						{"origin": [4.5, 0, -3], "size": [2, 3, 6], "uv": [0, 19]}
+					]
+				},
+				{
+					"name": "rightLeg",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-6.5, 0, -3], "size": [2, 3, 6], "uv": [16, 19]}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.koprium_rover.move": {
+			"loop": true,
+			"bones": {
+				"leftLeg": {
+					"position": [0, "math.sin((query.anim_time*360) *2 +0) * 0.5", "math.cos((query.anim_time*360) *2 +0) * 2"]
+				},
+				"rightLeg": {
+					"position": [0, "math.sin((query.anim_time*360) *2 +180) * 0.5", "math.cos((query.anim_time*360) *2 +180) * 2"]
+				},
+				"body": {
+					"position": [0, "math.cos(query.anim_time* 720)/4", 0]
+				}
+			}
+		}
+	}
+}

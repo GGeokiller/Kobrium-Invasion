@@ -7,7 +7,7 @@
 				"idle": {
 					"transitions": [
 						{
-							"move": "query.ground_speed >= 0.1"
+							"move": "query.ground_speed >= 0.2"
 						}
 					],
 					"blend_transition": 0.2
@@ -15,7 +15,7 @@
 				"move": {
 					"transitions": [
 						{
-							"idle": "query.ground_speed <= 0.1"
+							"idle": "query.ground_speed <= 0.2"
 						}
 					],
 					"animations": [
