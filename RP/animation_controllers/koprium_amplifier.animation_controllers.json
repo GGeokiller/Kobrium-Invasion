@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.koprium_amplifier": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"transitions": [
+						{
+							"move": "query.ground_speed >= 0.1"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"move": {
+					"transitions": [
+						{
+							"idle": "query.ground_speed <= 0.1"
+						}
+					],
+					"animations": [
+						"move"
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}
