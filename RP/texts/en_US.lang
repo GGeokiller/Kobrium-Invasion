@@ -7,8 +7,7 @@ tile.koprium:landmine.name=Landmine
 
 item.koprium:red_light_saber=Red Light Saber
 item.koprium:koprium_scrap=koprium Scrap
-item.koprium:bucket_cheese=Bucket Cheese
-item.koprium:bucket_cheese=Bucket Cheese
+item.koprium:bucket_cheese=Cheese Bucket 
 item.koprium:digging_robot_throwable=Digging Robot Throwable
 
 entity.eu:dummy_block.name=Dummy Block
@@ -32,3 +31,5 @@ item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
 action.interact.polish_cow=Interact
 meteorite.coordinates=§cA meteorite will fall in: 
 meteorite.time=in: 
+
+koprium:itemGroup.name.koprium_items=Koprium Invasion

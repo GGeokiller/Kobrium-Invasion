@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "koprium:koprium_scrap",
 			"menu_category": {
-				"category": "nature"
+				"category": "items"
 			}
 		},
 		"components": {
