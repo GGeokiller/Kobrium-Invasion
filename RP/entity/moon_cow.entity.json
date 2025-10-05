@@ -20,6 +20,9 @@
         "look_at_target": "animation.common.look_at_target",
         "baby_transform": "animation.cow.baby_transform"
       },
+      "sound_effects": {
+        "cover_song": "mob.polish_cow.cover_song"
+      },
       "scripts": {
         "animate": [
           {
