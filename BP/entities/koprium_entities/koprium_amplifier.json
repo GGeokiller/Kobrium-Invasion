@@ -137,12 +137,7 @@
 				"value": 64,
 				"max": 64
 			},
-			"minecraft:despawn": {
-				"despawn_from_distance": {
-					"max_distance": 128,
-					"min_distance": 64
-				}
-			}
+			"minecraft:despawn": {}
 		},
 		"events": {
 			"koprium:inside_range": {
