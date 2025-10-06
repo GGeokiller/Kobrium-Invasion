@@ -1,0 +1,18 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:block": {
+		"description": {
+			"identifier": "koprium:koprium_teleport_pad"
+		},
+		"components": {
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 3
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 4
+			},
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:minecraft:iron_tier_destructible": {}
+		}
+	}
+}

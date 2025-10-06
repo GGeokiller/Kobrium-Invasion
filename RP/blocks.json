@@ -22,5 +22,9 @@
 	"koprium:koprium_scrap_block": {
 		"sound": "basalt",
 		"textures": "koprium_scrap_block"
+	},
+	"koprium:koprium_teleport_pad": {
+		"sound": "stone",
+		"textures": "koprium_koprium_teleport_pad"
 	}
 }

@@ -21,6 +21,9 @@
 		},
 		"koprium_landmine": {
 			"textures": "textures/blocks/koprium_landmine"
+		},
+		"koprium_koprium_teleport_pad": {
+			"textures": "textures/blocks/koprium_teleport_pad"
 		}
 	}
 }

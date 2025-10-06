@@ -33,3 +33,4 @@ meteorite.coordinates=§cA meteorite will fall in:
 meteorite.time=in: 
 
 koprium:itemGroup.name.koprium_items=Koprium Invasion
+tile.koprium:koprium_teleport_pad.name=Koprium Teleport Pad
