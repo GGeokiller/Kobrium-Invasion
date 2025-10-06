@@ -89,6 +89,15 @@
 			"sounds": [
 				"sounds/koprium/kopriumDeath"
 			]
+		},
+		"mob.kobrium_pylon.spawn_entity": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kobriumPylonSpawnEntity"
+			]
 		}
 	}
 }

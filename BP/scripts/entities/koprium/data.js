@@ -4,7 +4,7 @@ export const KOPRIUM_ENTITIES_SPAWN_RATE = [
     { entity: "koprium:koprium_amplifier", weight: 0.5 },
     { entity: "koprium:koprium_rover", weight: 3 },
     { entity: "koprium:koprium_gyrator", weight: 2 },
-    { entity: "koprium:koprium_drone", weight: 1 },
+    { entity: "koprium:koprium_drone", weight: 0.5 },
 ];
 
 export const KOPRIUM_ENTITIES_COLLISION_BOX = {

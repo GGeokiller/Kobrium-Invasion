@@ -16,7 +16,8 @@
 					"monster",
 					"mob",
 					"koprium",
-					"amplifier"
+					"amplifier",
+					"pylon"
 				]
 			},
 			"minecraft:health": {

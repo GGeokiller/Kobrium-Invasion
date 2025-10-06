@@ -1,6 +1,7 @@
 import { world, system, Entity, EffectTypes, MolangVariableMap, RawMessageError } from "@minecraft/server";
 import { geoParticles } from "../../utils/particle";
 import { KOPRIUM_ENTITIES_SPAWN_RATE } from "./data";
+import { Random } from "../../utils/random";
 
 const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
 
@@ -37,40 +38,43 @@ function pickEntity() {
  */
 
 function spawnRandomKoprium(entity, minRange, maxRange) {
-    const { x, y, z } = entity.location;
+    try {
+        const { x, y, z } = entity.location;
 
-    let dx, dy, dz, lenSq;
-    do {
-        dx = Math.random() * 2 - 1;
-        dy = Math.random() * 2 - 1;
-        dz = Math.random() * 2 - 1;
-        lenSq = dx * dx + dy * dy + dz * dz;
-    } while (lenSq > 1 || lenSq === 0); 
+        let dx, dy, dz, lenSq;
+        do {
+            dx = Math.random() * 2 - 1;
+            dy = Math.random() * 2 - 1;
+            dz = Math.random() * 2 - 1;
+            lenSq = dx * dx + dy * dy + dz * dz;
+        } while (lenSq > 1 || lenSq === 0); 
 
-    const len = Math.sqrt(lenSq);
-    dx /= len;
-    dy /= len;
-    dz /= len;
+        const len = Math.sqrt(lenSq);
+        dx /= len;
+        dy /= len;
+        dz /= len;
 
-    const radius = minRange + Math.random() * (maxRange - minRange);
+        const radius = minRange + Math.random() * (maxRange - minRange);
 
-    const randomLocation = {
-        x: x + dx * radius,
-        y: y + dy * radius,
-        z: z + dz * radius,
-    };
+        const randomLocation = {
+            x: x + dx * radius,
+            y: y + dy * radius,
+            z: z + dz * radius,
+        };
 
-    const finalLocation = {
-        x : randomLocation.x,
-        y : entity.dimension.getTopmostBlock({x: randomLocation.x, z: randomLocation.z}).y + 1,
-        z : randomLocation.z
-    }
+        const finalLocation = {
+            x : randomLocation.x,
+            y : entity.dimension.getTopmostBlock({x: randomLocation.x, z: randomLocation.z}).y + 1,
+            z : randomLocation.z
+        }
 
-    const entityId = pickEntity();
+        const entityId = pickEntity();
 
-    let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawned'});
-    entity.playAnimation("animation.koprium_pylon.spawn_entities")
-    geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0)
+        let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawned'});
+        entity.playAnimation("animation.koprium_pylon.spawn_entities")
+        entity.dimension.playSound("mob.kobrium_pylon.spawn_entity", fixPylonLocation(entity), {pitch: Random.number(0.8, 1.2), volume: 4})
+        geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0)
+    } catch{}
 }
 
 /**

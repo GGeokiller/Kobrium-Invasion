@@ -81,6 +81,12 @@
 									"subject": "other",
 									"value": "amplifier",
 									"operator": "!="
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "pylon",
+									"operator": "!="
 								}
 							]
 						},

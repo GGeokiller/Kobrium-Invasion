@@ -346,14 +346,23 @@
 					3
 				]
 			},
-			"minecraft:behavior.ranged_attack": {
-				"priority": 0,
-				"charge_shoot_trigger": 1.5,
-				"charge_charged_trigger": 1,
-				"attack_radius": 32
-			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {}
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": [
+					{
+						"filters": [
+							{
+								"subject": "other",
+								"test": "is_family",
+								"operator": "!=",
+								"value": "koprium"
+							}
+						]
+					}
+				]
 			}
 		}
 	}
