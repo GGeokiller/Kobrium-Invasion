@@ -2,14 +2,14 @@
 	"format_version": "1.8.0",
 	"minecraft:spawn_rules": {
 		"description": {
-			"identifier": "koprium:koprium_dummy_spawn",
-			"population_control": "monster"
+			"identifier": "koprium:koprium_drone",
+			"population_control": "animal"
 		},
 		"conditions": [
 			{
 				"minecraft:spawns_on_surface": {},
 				"minecraft:brightness_filter": {
-					"min": 0,
+					"min": 7,
 					"max": 15,
 					"adjust_for_weather": true
 				},
@@ -18,7 +18,7 @@
 					"max": "hard"
 				},
 				"minecraft:weight": {
-					"default": 30
+					"default": 2
 				},
 				"minecraft:herd": {
 					"min_size": 1,

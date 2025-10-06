@@ -15,7 +15,7 @@ world.beforeEvents.playerBreakBlock.subscribe(data => {
             let totalDrop = Random.int(10, 16, 1) * (fortuneLevel + 1)
             let totalXP = Random.int(10, 40, 1)
 
-            for (let i = 0; i < totalDrop; i ++) {
+            for (let i = 0; i < totalXP; i ++) {
                 block.dimension.spawnEntity("minecraft:xp_orb", block.center())
             }
             block.dimension.spawnItem(new ItemStack("minecraft:gold_nugget", totalDrop), block.center())
