@@ -16,12 +16,14 @@
 			"animations": {
 				"idle": "animation.koprium_drone.fly",
 				"look_at_target": "animation.common.look_at_target",
-				"controller_base": "controller.animation.koprium_drone.general"
+				"controller_base": "controller.animation.koprium_drone.general",
+				"hover": "animation.koprium_drone.hover"
 			},
 			"scripts": {
 				"animate": [
 					"look_at_target",
-					"controller_base"
+					"controller_base",
+					"hover"
 				]
 			},
 			"render_controllers": [
@@ -30,6 +32,9 @@
 			"spawn_egg": {
 				"base_color": "#46bec2",
 				"overlay_color": "#dadad0"
+			},
+			"particle_effects": {
+				"hover": "koprium:koprium_drone_hover"
 			}
 		}
 	}

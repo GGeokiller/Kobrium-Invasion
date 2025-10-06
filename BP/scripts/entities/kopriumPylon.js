@@ -22,6 +22,8 @@ const KOPRIUM_ENTITIES_SPAWN_RATE = [
     { entity: "koprium:koprium_amplifier", weight: 0.5 },
     { entity: "koprium:koprium_rover", weight: 5 },
     { entity: "koprium:koprium_gyrator", weight: 2 },
+    { entity: "koprium:koprium_drone", weight: 1 },
+    { entity: "minecraft:zombie", weight: 100 },
 ];
 
 function pickEntity() {
@@ -74,6 +76,7 @@ function spawnRandomKoprium(entity, minRange, maxRange) {
     const entityId = pickEntity();
 
     let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawned'});
+    entity.playAnimation("animation.koprium_pylon.spawn_entities")
     geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0)
 }
 

@@ -17,6 +17,16 @@
 					]
 				}
 			}
+		},
+		"animation.koprium_drone.hover": {
+			"loop": true,
+			"animation_length": 0.1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "hover",
+					"locator": "hover"
+				}
+			}
 		}
 	}
 }
