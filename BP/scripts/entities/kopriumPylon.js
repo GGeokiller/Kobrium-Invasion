@@ -1,6 +1,6 @@
 import { world, system, Entity, EffectTypes, MolangVariableMap, RawMessageError } from "@minecraft/server";
 import { geo } from "../utils/geo";
-import { createAreaParticle } from "../utils/particle";
+import { geoParticles } from "../utils/particle";
 
 const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
 
@@ -10,8 +10,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     if (eventId !== "koprium:detect_player") return;
     if (entity.hasTag("spawningKoprium")) return;
     /* entity.addTag("spawningKoprium") */
-    world.sendMessage(`${entity.location.y+(49/8)}`)
-    entity.dimension.spawnParticle("koprium:detect_player", {x: entity.location.x, y: entity.location.y + (49.5/8), z: entity.location.z})
+    entity.dimension.spawnParticle("koprium:detect_player", fixPylonLocation(entity))
     for (let i = 0; i < 10; i++) {
         system.runTimeout(() => {
             spawnRandomKoprium(entity, 20, 30)
@@ -74,7 +73,15 @@ function spawnRandomKoprium(entity, minRange, maxRange) {
 
     const entityId = pickEntity();
 
-    let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawn'});
-    entity.dimension.runCommand(`summon ${entityId} ${finalLocation.x} ${finalLocation.y} ${finalLocation.z}`)
-    spawnedEntity.applyImpulse({x:0,y:1,z:0})
+    let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawned'});
+    geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0)
+}
+
+/**
+ * 
+ * @param {Entity} entity 
+ */
+
+function fixPylonLocation(entity) {
+    return {x: entity.location.x, y: entity.location.y + + (49.5/8), z: entity.location.z}
 }
