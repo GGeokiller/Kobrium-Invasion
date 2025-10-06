@@ -12,7 +12,7 @@
 			"textures": "textures/items/red_light_saber"
 		},
 		"koprium_digging_robot_throwable": {
-			"textures": "textures/items/snowball"
+			"textures": "textures/items/koprium_digging"
 		}
 	}
 }
