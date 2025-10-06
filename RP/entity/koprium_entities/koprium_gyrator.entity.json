@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_gyrator",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_entities/gyrator"
+			},
+			"geometry": {
+				"default": "geometry.koprium_gyrator"
+			},
+			"spawn_egg": {
+				"texture": "spawn_egg_zombie"
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.koprium_gyrator.move"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.humanoid.look_at_target"
+				},
+				{
+					"move": "controller.animation.koprium_amplifier"
+				}
+			],
+			"render_controllers": [
+				"controller.render.zombie"
+			],
+			"enable_attachables": true
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.koprium_gyrator.move": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation": [
+						"query.anim_time * 360",
+						"math.cos(query.anim_time*360*10) * 3",
+						"math.cos(query.anim_time*360*10) * 3"
+					]
+				}
+			}
+		}
+	}
+}

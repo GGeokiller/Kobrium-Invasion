@@ -21,6 +21,7 @@
 					"animations": [
 						"move"
 					],
+					"blend_via_shortest_path": true,
 					"blend_transition": 0.2
 				}
 			}
