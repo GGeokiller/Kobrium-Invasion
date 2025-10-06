@@ -1,7 +1,7 @@
 import { world, system, BlockPermutation, Entity, BlockType, EffectTypes, DimensionTypes, Block, PlaceJigsawError, EffectType, ScriptEventCommandMessageAfterEvent } from "@minecraft/server"
 
 import { Random } from "../../utils/random.js"
-import { distance } from "../../utils"
+import { distance } from "../../utils/vec3.js"
 //asd
 const METEORITE_ID = "koprium:meteorite"
 const BLOCK_POLL = [
