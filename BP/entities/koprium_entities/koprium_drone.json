@@ -80,8 +80,8 @@
 				"suffocate_time": 0
 			},
 			"minecraft:collision_box": {
-				"width": 1.25,
-				"height": 1.25
+				"width": 0.9,
+				"height": 0.9
 			},
 			"minecraft:nameable": {},
 			"minecraft:health": {
