@@ -4,8 +4,8 @@
 		{
 			"description": {
 				"identifier": "geometry.koprium_gyrator",
-				"texture_width": 128,
-				"texture_height": 128,
+				"texture_width": 64,
+				"texture_height": 64,
 				"visible_bounds_width": 3,
 				"visible_bounds_height": 2.5,
 				"visible_bounds_offset": [0, 0.75, 0]
@@ -15,15 +15,9 @@
 					"name": "root",
 					"pivot": [0, 8, 0],
 					"cubes": [
-						{"origin": [0, 15, -6], "size": [0, 4, 12], "uv": [52, 0]},
-						{"origin": [-1, 17, 6], "size": [2, 2, 2], "uv": [52, 16]},
-						{"origin": [-6.5, 1, -6.5], "size": [13, 13, 13], "uv": [0, 0]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "uv": [0, 26]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "pivot": [0, 7.5, 0], "rotation": [0, -90, 0], "uv": [24, 26]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "pivot": [0, 7.5, 0], "rotation": [0, 90, 0], "uv": [0, 48]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "pivot": [0, 7.5, 0], "rotation": [0, 0, 90], "uv": [24, 48]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "pivot": [0, 7.5, 0], "rotation": [0, 0, -90], "uv": [48, 26]},
-						{"origin": [6.5, 2, -5.5], "size": [1, 11, 11], "pivot": [0, 7.5, 0], "rotation": [0, 0, -180], "uv": [48, 48]}
+						{"origin": [0, 13, -6], "size": [0, 4, 12], "uv": [0, 14]},
+						{"origin": [-1, 16, 6], "size": [2, 2, 2], "uv": [52, 16]},
+						{"origin": [-6.5, 0, -6.5], "size": [13, 13, 13], "uv": [0, 0]}
 					]
 				}
 			]
