@@ -1,28 +1,23 @@
 {
-	"format_version": "1.21.60",
-	"minecraft:crafting_items_catalog": {
-		"categories": [
-			{
-				"category_name": "items",
-				"groups": [
-					{
-						"group_identifier": {
-							"icon": "koprium:koprium_scrap",
-							"name": "koprium:itemGroup.name.koprium_items"
-						},
-						"items": [
-							"koprium:koprium_scrap",
-							"koprium:bucket_cheese",
-							"koprium:koprium_scrap_block",
-							"koprium:meteorite_gilded_stone",
-							"koprium:meteorite_ash",
-							"koprium:koprium_teleport_pad",
-							"koprium:meteorite_magma_stone",
-							"koprium:meteorite_stone"
-						]
-					}
-				]
-			}
-		]
-	}
+    "format_version": "1.21.60",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                // Valid values are construction, equipment, nature, and items
+                "category_name": "items",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "koprium:koprium_scrap",
+                            "name": "koprium:itemGroup.name.koprium_items"
+                        },
+                        "items": [
+                            "koprium:koprium_scrap",
+                            "koprium:bucket_cheese"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 }
