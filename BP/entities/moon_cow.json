@@ -168,6 +168,13 @@
                       "domain": "hand",
                       "subject": "other",
                       "value": "sugar"
+                    },
+                    {
+                      "test": "bool_property",
+                      "domain": "koprium:is_polish_cow",
+                      "operator": "==",
+                      "value": false,
+                      "subject": "self"
                     }
                   ]
                 },
