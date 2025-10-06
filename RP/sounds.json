@@ -1,61 +1,307 @@
-{ //hola vaca
-    "entity_sounds": {
-        "entities": {
-            "koprium:alien_cat": {
-                "events": {
-                    "ambient": "mob.cat.straymeow",
-                    "ambient.tame": "mob.cat.meow",
-                    "death": {
-                        "pitch": 0.90,
-                        "sound": "mob.cat.hit",
-                        "volume": 0.50
-                    },
-                    "eat": "mob.cat.eat",
-                    "hurt": {
-                        "sound": "mob.cat.hit",
-                        "volume": 0.450
-                    },
-                    "purr": "mob.cat.purr",
-                    "purreow": "mob.cat.purreow",
-                    "tempt": {
-                        "pitch": 1.0,
-                        "sound": "mob.cat.beg_for_food",
-                        "volume": 0.70
-                    }
-                },
-                "pitch": [
-                    0.80,
-                    1.20
-                ],
-                "variants": {
-                    "key": null
-                },
-                "volume": 1.0
-            },
-            "koprium:moon_cow": {
-                "events": {
-                    "ambient": "mob.cow.say",
-                    "death": "mob.cow.hurt",
-                    "eat": "",
-                    "hurt": "mob.cow.hurt",
-                    "step": {
-                        "pitch": [
-                            0.90,
-                            1.10
-                        ],
-                        "sound": "mob.cow.step",
-                        "volume": 0.650
-                    }
-                },
-                "pitch": [
-                    0.80,
-                    1.20
-                ],
-                "variants": {
-                    "key": null
-                },
-                "volume": 1.0
-            }
-        }
-    }
+{
+	"entity_sounds": {
+		"entities": {
+			"koprium:alien_cat": {
+				"events": {
+					"ambient": "mob.cat.straymeow",
+					"ambient.tame": "mob.cat.meow",
+					"death": {
+						"pitch": 0.9,
+						"sound": "mob.cat.hit",
+						"volume": 0.5
+					},
+					"eat": "mob.cat.eat",
+					"hurt": {
+						"sound": "mob.cat.hit",
+						"volume": 0.45
+					},
+					"purr": "mob.cat.purr",
+					"purreow": "mob.cat.purreow",
+					"tempt": {
+						"pitch": 1,
+						"sound": "mob.cat.beg_for_food",
+						"volume": 0.7
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"variants": {
+					"key": null
+				},
+				"volume": 1
+			},
+			"koprium:moon_cow": {
+				"events": {
+					"ambient": "mob.cow.say",
+					"death": "mob.cow.hurt",
+					"eat": "",
+					"hurt": "mob.cow.hurt",
+					"step": {
+						"pitch": [
+							0.9,
+							1.1
+						],
+						"sound": "mob.cow.step",
+						"volume": 0.65
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"variants": {
+					"key": null
+				},
+				"volume": 1
+			},
+			"koprium:default": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							1,
+							1
+						],
+						"volume": 1
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"koprium:koprium_rover": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1.2,
+							2
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							1,
+							1
+						],
+						"volume": 1
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"koprium:koprium_pylon": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							0.2,
+							0.5
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							0.5,
+							0.8
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							0.5,
+							0.8
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"volume": 1,
+						"pitch": [
+							0.5,
+							0.8
+						]
+					}
+				},
+				"pitch": [
+					0.8,
+					1
+				],
+				"volume": 1
+			},
+			"koprium:koprium_amplifier": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1,
+							3
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							3
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							3
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							1,
+							3
+						],
+						"volume": 1.5
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
+			},
+			"koprium:koprium_gyrator": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							0.7,
+							1
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							0.7,
+							1
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							0.7,
+							1
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							0.7,
+							1
+						],
+						"volume": 1
+					}
+				},
+				"pitch": [
+					0.3,
+					1
+				],
+				"volume": 1
+			},
+			"koprium:koprium_drone": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1,
+							1.75
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1.75
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1.75
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							1,
+							1.75
+						],
+						"volume": 1
+					}
+				},
+				"pitch": [
+					1,
+					1.5
+				],
+				"volume": 1
+			}
+		}
+	}
 }
