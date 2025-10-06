@@ -99,7 +99,7 @@
 				"inside_range": 10,
 				"outside_range": 8,
 				"on_inside_range": {
-					"event": "koprium:inside_range"
+					"event": "koprium:detect_player"
 				}
 			},
 			"minecraft:knockback_resistance": {
@@ -110,13 +110,7 @@
 			}
 		},
 		"events": {
-			"koprium:inside_range": {
-				"queue_command": {
-					"command": [
-						"say yo cuando yo"
-					]
-				}
-			}
+			"koprium:detect_player": {}
 		}
 	}
 }

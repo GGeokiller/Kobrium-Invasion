@@ -259,7 +259,10 @@
 				]
 			},
 			"minecraft:despawn": {
-				"despawn_from_distance": {}
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				}
 			},
 			"minecraft:behavior.melee_box_attack": {
 				"can_spread_on_fire": true,
