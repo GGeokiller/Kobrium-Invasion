@@ -1,19 +1,64 @@
 import { world, system, Entity, EffectTypes, MolangVariableMap, RawMessageError } from "@minecraft/server";
 
-export const KOPRIUM_ENTITIES_SPAWN_RATE = [
-    { entity: "koprium:koprium_amplifier", weight: 0.5 },
-    { entity: "koprium:koprium_rover", weight: 3 },
-    { entity: "koprium:koprium_gyrator", weight: 2 },
-    { entity: "koprium:koprium_drone", weight: 0.5 },
-];
+export const KOPRIUM_AMPLIFIER_ID = "koprium:koprium_amplifier"
+export const KOPRIUM_ROVER_ID = "koprium:koprium_rover"
+export const KOPRIUM_GYRATOR_ID = "koprium:koprium_gyrator"
+export const KOPRIUM_DRONE_ID = "koprium:koprium_drone"
+export const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
+
+export const KOPRIUM_SCRAP_ID = "koprium:koprium_scrap"
+
+export const KOPRIUM_ENTITIES_IDS = [KOPRIUM_AMPLIFIER_ID, KOPRIUM_ROVER_ID, KOPRIUM_GYRATOR_ID, KOPRIUM_DRONE_ID, KOPRIUM_PYLON_ID]
 
 export const KOPRIUM_ENTITIES_COLLISION_BOX = {
-    "koprium:koprium_amplifier": {
+    [KOPRIUM_AMPLIFIER_ID]: {
         width: 0.6,
         height: 0.9
     },
-    "koprium:koprium_rover":{
+    [KOPRIUM_ROVER_ID]: {
         width: 0.8,
         height: 0.6
-    }
+    },
+    [KOPRIUM_DRONE_ID]: {
+        width: 0.9,
+        height: 0.9    
+    },
+    [KOPRIUM_GYRATOR_ID]: {
+        width: 0.9,
+        height: 0.9    
+    },
+    [KOPRIUM_PYLON_ID]: {
+        width: 1,
+        height: 6   
+    },
+}
+export const KOPRIUM_ENTITIES_SPAWN_RATE = [
+    { entity: KOPRIUM_AMPLIFIER_ID, weight: 0.5 },
+    { entity: KOPRIUM_ROVER_ID, weight: 3 },
+    { entity: KOPRIUM_GYRATOR_ID, weight: 2 },
+    { entity: KOPRIUM_DRONE_ID, weight: 0.5 },
+];
+
+
+export const KOPRIUM_ENTITIES_LOOT = {
+    [KOPRIUM_AMPLIFIER_ID]: {
+        chance: 40, //%
+        amount: [1,3] //int
+    },
+    [KOPRIUM_ROVER_ID]: {
+        chance: 10, //%
+        amount: [1,2] //int
+    },
+    [KOPRIUM_GYRATOR_ID]: {
+        chance: 30, //%
+        amount: [1,3] //int
+    },
+    [KOPRIUM_DRONE_ID]: {
+        chance: 30, //%
+        amount: [1,4] //int
+    },
+    [KOPRIUM_PYLON_ID]: {
+        chance: 70, //%
+        amount: [2,8] //int
+    },
 }
