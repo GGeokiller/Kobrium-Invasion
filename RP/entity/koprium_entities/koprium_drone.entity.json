@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_drone",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_entities/drone"
+			},
+			"geometry": {
+				"default": "geometry.koprium_drone"
+			},
+			"animations": {
+				"idle": "animation.koprium_drone.fly",
+				"look_at_target": "animation.common.look_at_target",
+				"controller_base": "controller.animation.koprium_drone.general"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					"controller_base"
+				]
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#46bec2",
+				"overlay_color": "#dadad0"
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.koprium_drone.attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"attack": "query.facing_target_to_range_attack && query.is_charged"
+						}
+					]
+				},
+				"attack": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.all_animations_finished"
+						}
+					],
+					"animations": [
+						"attack"
+					]
+				}
+			}
+		},
+		"controller.animation.koprium_drone.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"animations": [
+						"idle"
+					]
+				}
+			}
+		}
+	}
+}
