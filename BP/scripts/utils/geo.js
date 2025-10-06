@@ -1,4 +1,4 @@
-import { world, system, DimensionTypes, Entity, EntityHealthComponent, EntityInventoryComponent } from "@minecraft/server";
+import { world, system, DimensionTypes, Entity, EntityHealthComponent, EntityInventoryComponent, ItemStack, EquipmentSlot } from "@minecraft/server";
 
 export const geo = {
     /**
@@ -33,5 +33,26 @@ export const geo = {
      */
     getInventory(entity) {
         return entity.getComponent("inventory")
+    },
+    /**
+     * @param {import('@minecraft/server').Player} player
+     * @returns {boolean}
+     */
+    hasItemInMainHand(player, itemId) {
+        const container = player.getComponent("inventory").container;
+          const hasItem = player.getComponent('equippable').getEquipment(EquipmentSlot.Mainhand)?.typeId == itemId
+          if (hasItem) {
+            return true;
+          } else {
+            return false;
+          }
+    },
+    /**
+     * 
+     * @param {Entity} entity 
+     * @returns {ItemStack}
+     */
+    getMainItem(entity) {
+        return entity.getComponent("equippable").getEquipment(EquipmentSlot.Mainhand)
     }
 }
