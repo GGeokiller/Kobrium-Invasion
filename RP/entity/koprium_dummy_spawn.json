@@ -1,0 +1,24 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_dummy_spawn",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_dummy_spawn"
+			},
+			"geometry": {
+				"default": "geometry.koprium_dummy_spawn"
+			},
+			"render_controllers": [
+				"controller.render.koprium_dummy_spawn"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

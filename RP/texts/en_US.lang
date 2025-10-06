@@ -34,3 +34,5 @@ meteorite.time=in:
 
 koprium:itemGroup.name.koprium_items=Koprium Invasion
 tile.koprium:koprium_teleport_pad.name=Koprium Teleport Pad
+item.spawn_egg.entity.koprium:koprium_dummy_spawn.name=Spawn Koprium Dummy Spawn
+entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn

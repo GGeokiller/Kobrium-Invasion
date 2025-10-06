@@ -1,18 +1,10 @@
 import { world, system, Entity, EffectTypes, MolangVariableMap } from "@minecraft/server";
-import { geo } from "../utils/geo";
-import { createAreaParticle } from "../utils/particle";
+import { geo } from "../../utils/geo";
+import { createAreaParticle } from "../../utils/particle";
+import { KOPRIUM_ENTITIES_COLLISION_BOX } from "./data";
 
 const KOPRIUM_AMPLIFIER_ID = "koprium:koprium_amplifier"
-const KOPRIUM_ENTITIES_COLLISION_BOX = {
-    "koprium:koprium_amplifier": {
-        width: 0.6,
-		height: 0.9
-    },
-    "koprium:koprium_rover":{
-        width: 0.8,
-		height: 0.6
-    }
-}
+
 
 system.runInterval(() => {
     geo.getEntitiesFromWorld(KOPRIUM_AMPLIFIER_ID).forEach(entity => {

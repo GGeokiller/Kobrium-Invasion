@@ -1,30 +1,23 @@
 import { world, system, Entity, EffectTypes, MolangVariableMap, RawMessageError } from "@minecraft/server";
-import { geo } from "../utils/geo";
-import { geoParticles } from "../utils/particle";
+import { geoParticles } from "../../utils/particle";
+import { KOPRIUM_ENTITIES_SPAWN_RATE } from "./data";
 
 const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
-
 
 world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     const { entity, eventId } = data
     if (eventId !== "koprium:detect_player") return;
     if (entity.hasTag("spawningKoprium")) return;
-    /* entity.addTag("spawningKoprium") */
+    entity.addTag("spawningKoprium")
     entity.dimension.spawnParticle("koprium:detect_player", fixPylonLocation(entity))
     for (let i = 0; i < 10; i++) {
         system.runTimeout(() => {
-            spawnRandomKoprium(entity, 20, 30)
+            spawnRandomKoprium(entity, 5, 24)
         }, 20 * i)
     }
 })
 
-const KOPRIUM_ENTITIES_SPAWN_RATE = [
-    { entity: "koprium:koprium_amplifier", weight: 0.5 },
-    { entity: "koprium:koprium_rover", weight: 5 },
-    { entity: "koprium:koprium_gyrator", weight: 2 },
-    { entity: "koprium:koprium_drone", weight: 1 },
-    { entity: "minecraft:zombie", weight: 100 },
-];
+
 
 function pickEntity() {
     const totalWeight = KOPRIUM_ENTITIES_SPAWN_RATE.reduce((sum, e) => sum + e.weight, 0);
