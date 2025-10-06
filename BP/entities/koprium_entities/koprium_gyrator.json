@@ -258,9 +258,6 @@
 					}
 				]
 			},
-			"minecraft:despawn": {
-				"despawn_from_distance": {}
-			},
 			"minecraft:behavior.melee_box_attack": {
 				"can_spread_on_fire": true,
 				"priority": 3

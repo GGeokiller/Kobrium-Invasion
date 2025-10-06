@@ -50,9 +50,6 @@
 					}
 				]
 			},
-			"minecraft:despawn": {
-				"despawn_from_distance": {}
-			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 7,
 				"speed_multiplier": 1
@@ -139,6 +136,12 @@
 			"minecraft:follow_range": {
 				"value": 64,
 				"max": 64
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {
+					"max_distance": 128,
+					"min_distance": 64
+				}
 			}
 		},
 		"events": {
