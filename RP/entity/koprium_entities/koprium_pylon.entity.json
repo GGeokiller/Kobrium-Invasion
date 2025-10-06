@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_pylon",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_entities/pylon"
+			},
+			"geometry": {
+				"default": "geometry.koprium_pylon"
+			},
+			"spawn_egg": {
+				"texture": "spawn_egg_zombie"
+			},
+			"render_controllers": [
+				"controller.render.zombie"
+			],
+			"enable_attachables": true
+		}
+	}
+}
