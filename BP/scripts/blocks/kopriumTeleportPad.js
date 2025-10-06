@@ -19,7 +19,7 @@ function findNextPad(dim, startX, startY, startZ, dy) {
 
 function tpOnTop(player, dim, blockLoc) {
 
-    //player.clearVelocity.();
+    //player.clearVelocity();
     player.teleport(blockLoc, { dimension: dim });
     player.playSound("mob.endermen.portal");
 
