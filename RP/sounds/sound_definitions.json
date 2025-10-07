@@ -125,6 +125,27 @@
 			"sounds": [
 				"sounds/koprium/kopriumDriveReady"
 			]
+		},
+		"entity.koprium_dagger.throw": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumDaggerThrow1",
+				"sounds/koprium/kopriumDaggerThrow2",
+				"sounds/koprium/kopriumDaggerThrow3"
+			]
+		},
+		"entity.koprium_dagger.hit": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumDaggerHit1",
+				"sounds/koprium/kopriumDaggerHit2"
+			]
 		}
 	}
 }
