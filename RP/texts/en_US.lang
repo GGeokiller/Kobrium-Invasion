@@ -53,3 +53,5 @@ entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
     entity.koprium:koprium_pylon.name=Koprium Pylon
     entity.koprium:koprium_rover.name=Koprium Rover
 
+
+item.koprium:energy_core=Energy Core

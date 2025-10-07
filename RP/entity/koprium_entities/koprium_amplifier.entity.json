@@ -13,9 +13,6 @@
 			"geometry": {
 				"default": "geometry.kobrium_amplifier"
 			},
-			"spawn_egg": {
-				"texture": "spawn_egg_zombie"
-			},
 			"animations": {
 				"look_at_target_default": "animation.humanoid.look_at_target.default",
 				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
@@ -33,7 +30,11 @@
 			"render_controllers": [
 				"controller.render.zombie"
 			],
-			"enable_attachables": true
+			"spawn_egg": {
+				"base_color": "#af9a9a",
+				"overlay_color": "#c2ff43"
+			},
+			"enable_attachables": false
 		}
 	}
 }

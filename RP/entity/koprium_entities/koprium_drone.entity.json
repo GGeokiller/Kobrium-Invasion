@@ -30,9 +30,10 @@
 				"controller.render.default"
 			],
 			"spawn_egg": {
-				"base_color": "#46bec2",
-				"overlay_color": "#dadad0"
+				"base_color": "#af9a9a",
+				"overlay_color": "#c2ff43"
 			},
+			"enable_attachables": false,
 			"particle_effects": {
 				"hover": "koprium:koprium_drone_hover"
 			}

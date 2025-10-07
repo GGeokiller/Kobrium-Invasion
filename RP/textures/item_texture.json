@@ -13,6 +13,9 @@
 		},
 		"koprium_digging_robot_throwable": {
 			"textures": "textures/items/koprium_digging"
+		},
+		"koprium_energy_core": {
+			"textures": "textures/items/energy_core"
 		}
 	}
 }
