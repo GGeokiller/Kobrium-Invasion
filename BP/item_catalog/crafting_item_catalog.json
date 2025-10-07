@@ -19,7 +19,8 @@
 							"koprium:koprium_teleport_pad",
 							"koprium:meteorite_magma_stone",
 							"koprium:meteorite_stone",
-							"koprium:energy_core"
+							"koprium:energy_core",
+							"koprium:digging_robot_throwable"
 						]
 					}
 				]
