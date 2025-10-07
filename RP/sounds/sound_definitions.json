@@ -98,6 +98,24 @@
 			"sounds": [
 				"sounds/koprium/kobriumPylonSpawnEntity"
 			]
+		},
+		"item.koprium_drive.activate": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumDriveActivate"
+			]
+		},
+		"item.koprium_drive.break": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumDriveBreak"
+			]
 		}
 	}
 }

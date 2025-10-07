@@ -84,5 +84,23 @@ export const geo = {
         let dy = location1.y + location2.y
         let dz = location1.z + location2.z
         return {x: dx, y: dy, z: dz}
-    }
+    },
+    /**
+     * 
+     * @param {Player} player 
+     * @param {String} itemId 
+     * @returns 
+     */
+    hasArmorPiece(player, itemId) {
+    const eq = player.getComponent("equippable");
+    if (!eq) return false;
+
+    const hasItem =
+        eq.getEquipment(EquipmentSlot.Head)?.typeId === itemId ||
+        eq.getEquipment(EquipmentSlot.Chest)?.typeId === itemId ||
+        eq.getEquipment(EquipmentSlot.Legs)?.typeId === itemId ||
+        eq.getEquipment(EquipmentSlot.Feet)?.typeId === itemId;
+
+    return hasItem;
+}
 }

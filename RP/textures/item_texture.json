@@ -31,6 +31,9 @@
 		},
 		"koprium_koprium_boots": {
 			"textures": "textures/items/koprium_boots"
+		},
+		"koprium_koprium_drive": {
+			"textures": "textures/items/koprium_drive"
 		}
 	}
 }
