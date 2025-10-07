@@ -55,4 +55,4 @@ entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
 
 
 item.koprium:energy_core=Energy Core
-item.koprium:test_gun=Test Gun
+item.koprium:koprium_gravity_gun=Koprium Gravity Gun

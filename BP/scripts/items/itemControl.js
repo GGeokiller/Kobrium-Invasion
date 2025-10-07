@@ -1,2 +1,2 @@
 import "./itemtest"
-import "./gravityGunTest"
+import "./kopriumGravityGun"
