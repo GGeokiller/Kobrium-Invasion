@@ -1,10 +1,26 @@
-import {world, system} from "@minecraft/server"
+import {world, system, PlayerAimAssist, PaletteColor} from "@minecraft/server"
 import { getLocalCoordinates } from "../utils/vec3";
 import { geo } from "../utils/geo";
 import { geoParticles } from "../utils/particle";
 import { Random } from "../utils/random";
 
 let KOPRIUM_GRABVITY_GUN_ID = "koprium:koprium_gravity_gun"
+const BLOCK_BLACK_LIST = [
+  "minecraft:bedrock",
+  "minecraft:barrier",
+  "minecraft:mob_spawner",
+  "minecraft:chest",
+  "minecraft:barrel",
+  "minecraft:reinforced_deepslate",
+  "minecraft:end_portal_frame",
+  "minecraft:torch",
+  "minecraft:soul_torch"
+];
+
+const ENTITIES_BLACK_LIST = [
+    "minecraft:player",
+    "minecraft:warden"
+]
 
 function spawnDummyBlock(dimension, location, blockTypeId) {
     try {
@@ -19,11 +35,21 @@ function spawnDummyBlock(dimension, location, blockTypeId) {
 
 world.afterEvents.itemStartUse.subscribe(data => {
     let {itemStack, useDuration, source: player} = data
-    if (itemStack?.typeId != KOPRIUM_GRABVITY_GUN_ID) return;
-    let hitEntity = player?.getEntitiesFromViewDirection({maxDistance: 7})[0]?.entity ?? spawnDummyBlock(player.dimension, player?.getBlockFromViewDirection({ maxDistance: 7, })?.block?.location, player?.getBlockFromViewDirection({ maxDistance: 7, })?.block?.typeId)
-    hitEntity.dimension.setBlockType(player?.getBlockFromViewDirection({ maxDistance: 7, })?.block?.location, "minecraft:air")
-    if (!hitEntity || hitEntity?.typeId == "minecraft:player") {console.warn("No block or entity"); return;}
-    loopImpulse(hitEntity, player, Random.int(0, 10000))
+    try {
+        if (itemStack?.typeId != KOPRIUM_GRABVITY_GUN_ID) return;
+        let hitEntity;
+        hitEntity = player?.getEntitiesFromViewDirection({maxDistance: 7})[0]?.entity
+        if (!hitEntity) {
+            let block = player.getBlockFromViewDirection({ maxDistance: 7, })?.block
+            if (BLOCK_BLACK_LIST.includes(block?.typeId)) {return}
+            hitEntity = spawnDummyBlock(player.dimension, block.location, block?.typeId)
+            if (hitEntity) {
+                player.dimension.setBlockType(block.location, "minecraft:air")
+            }
+        }
+        if (!hitEntity || hitEntity?.typeId == "minecraft:player") {console.warn("No block or entity"); return;}
+        loopImpulse(hitEntity, player, Random.int(0, 10000))
+     } catch{}
 })
 
 function loopImpulse(hitEntity, player, randomID) {
@@ -42,8 +68,8 @@ function loopImpulse(hitEntity, player, randomID) {
             }
         })
         world.afterEvents.itemReleaseUse.subscribe(data => {
-            let {itemStack: releaseItem} = data
-            if (releaseItem?.typeId != KOPRIUM_GRABVITY_GUN_ID) return;
+            let {itemStack: releaseItem, source: player2} = data
+            if (releaseItem?.typeId != KOPRIUM_GRABVITY_GUN_ID || player2.name != player.name) return;
             try {
                 system.clearRun(randomID)
                 hitEntity?.clearVelocity()
