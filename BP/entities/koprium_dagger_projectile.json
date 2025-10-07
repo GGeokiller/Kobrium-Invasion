@@ -29,13 +29,14 @@
 			},
 			"minecraft:projectile": {
 				"on_hit": {
+					"stick_in_ground": {},
 					"impact_damage": {
 						"damage": [
 							1,
 							8
 						],
 						"knockback": true,
-						"destroy_on_hit": true
+						"destroy_on_hit": false
 					}
 				},
 				"power": 1.6,
@@ -43,6 +44,7 @@
 				"uncertainty_base": 16,
 				"uncertainty_multiplier": 4,
 				"anchor": 1,
+				"destroy_on_hurt": false,
 				"should_bounce": true,
 				"offset": [
 					0,

@@ -7,7 +7,7 @@
 				"default": "arrow"
 			},
 			"textures": {
-				"default": "textures/items/koprium_dagger_projectile"
+				"default": "textures/entity/koprium_dagger_projectile"
 			},
 			"geometry": {
 				"default": "geometry.kobrium_dagger"
