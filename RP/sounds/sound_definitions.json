@@ -116,6 +116,15 @@
 			"sounds": [
 				"sounds/koprium/kopriumDriveBreak"
 			]
+		},
+		"item.koprium_drive.ready": {
+			"__use_legacy_max_distance": "true",
+			"category": "ui",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumDriveReady"
+			]
 		}
 	}
 }
