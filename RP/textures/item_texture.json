@@ -16,6 +16,9 @@
 		},
 		"koprium_energy_core": {
 			"textures": "textures/items/energy_core"
+		},
+		"koprium_koprium_gravity_gun": {
+			"textures": "textures/items/koprium_gravity_gun"
 		}
 	}
 }

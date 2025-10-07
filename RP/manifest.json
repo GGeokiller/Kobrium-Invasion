@@ -6,8 +6,8 @@
 		]
 	},
 	"header": {
-		"name": "koprium Invasion",
-		"description": "description",
+		"name": "§aKoprium Invasion",
+		"description": ">> Adds a variety of new robots - from flying machines to stationary units",
 		"min_engine_version": [
 			1,
 			21,

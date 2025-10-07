@@ -1,0 +1,18 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "koprium:koprium_gravity_gun",
+			"menu_category": {
+				"category": "nature"
+			}
+		},
+		"components": {
+			"minecraft:icon": "koprium_koprium_gravity_gun",
+			"minecraft:use_modifiers": {
+				"movement_modifier": 1,
+				"use_duration": 100
+			}
+		}
+	}
+}
