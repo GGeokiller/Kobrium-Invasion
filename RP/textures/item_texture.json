@@ -19,6 +19,18 @@
 		},
 		"koprium_koprium_gravity_gun": {
 			"textures": "textures/items/koprium_gravity_gun"
+		},
+		"koprium_koprium_helmet": {
+			"textures": "textures/items/koprium_helmet"
+		},
+		"koprium_koprium_chestplate": {
+			"textures": "textures/items/koprium_chestplate"
+		},
+		"koprium_koprium_leggings": {
+			"textures": "textures/items/koprium_leggings"
+		},
+		"koprium_koprium_boots": {
+			"textures": "textures/items/koprium_boots"
 		}
 	}
 }
