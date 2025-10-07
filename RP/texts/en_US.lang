@@ -56,3 +56,7 @@ entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
 
 item.koprium:energy_core=Energy Core
 item.koprium:koprium_gravity_gun=Koprium Gravity Gun
+item.koprium:koprium_helmet=Koprium Helmet
+item.koprium:koprium_chestplate=Koprium Chestplate
+item.koprium:koprium_leggings=Koprium Leggings
+item.koprium:koprium_boots=Koprium Boots
