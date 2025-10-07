@@ -21,11 +21,13 @@ world.afterEvents.itemStartUse.subscribe(data => {
         if (hitEntity.isValid) {
             geoParticles.VectorLine(geo.sumVectors(player.getHeadLocation(), {x: 0, y: -0.4, z: 0}), finalLocation, "koprium:gravity_gun_particle", hitEntity?.dimension?.id, 0.33, 0)
             geo.impulseToLocation(hitEntity, finalLocation, 1, true)
+            
         }
     })
     world.afterEvents.itemReleaseUse.subscribe(data => {
         let {itemStack: releaseItem} = data
         if (releaseItem?.typeId != KOPRIUM_GRABVITY_GUN_ID) return;
         system.clearRun(intervalo)
+        hitEntity.clearVelocity()
     })
 })
