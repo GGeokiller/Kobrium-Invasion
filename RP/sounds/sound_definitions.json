@@ -42,6 +42,20 @@
 				}
 			]
 		},
+		"mob.alien_cat.cover_song": {
+			"__use_legacy_max_distance": "true",
+			"category": "record",
+			"max_distance": 64,
+			"min_distance": null,
+			"sounds": [
+				{
+					"load_on_low_memory": true,
+					"name": "sounds/koprium/nyan_cat_noteblock_cover",
+					"stream": true,
+					"volume": 1.0
+				}
+			]
+		},
 		"mob.kobrium.hurt": {
 			"__use_legacy_max_distance": "true",
 			"category": "neutral",

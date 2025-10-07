@@ -6,9 +6,33 @@
       "spawn_category": "creature",
       "runtime_identifier": "cat",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+      "properties": {
+        "koprium:is_dancing": {
+          "type": "bool",
+          "client_sync": true,
+          "default": false
+        }
+      }
     },
     "component_groups": {
+      "koprium:movement": {
+        "minecraft:movement": {
+          "value": 0.25
+        }
+      },
+      "koprium:dancing": {
+        "minecraft:movement": {
+          "value": 0.00
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 80,
+          "time_down_event": {
+            "event": "koprium:end_dancing"
+          }
+        }
+      },
       "minecraft:cat_baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -277,6 +301,40 @@
       "koprium:nyan_cat_variant": {
         "minecraft:variant": {
           "value": 1
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "sugar"
+                    },
+                    {
+                      "test": "bool_property",
+                      "domain": "koprium:is_dancing",
+                      "operator": "==",
+                      "value": false,
+                      "subject": "self"
+                    }
+                  ]
+                },
+                "event": "koprium:start_dancing"
+              },
+              "use_item": true,
+              "play_sounds": "eat",
+              "interact_text": "action.interact.polish_cow"
+            }
+          ]
         }
       }
     },
@@ -289,7 +347,16 @@
       "minecraft:attack_damage": {
         "value": 4
       },
-      "minecraft:nameable": {},
+      "minecraft:nameable": {
+        "name_actions": [
+          {
+            "name_filter": "Nyan Cat",
+            "on_named": {
+              "event": "koprium:set_nyan_cat_variant"
+            }
+          }
+        ]
+      },
       "minecraft:type_family": {
         "family": [
           "koprium_invasion",
@@ -449,6 +516,31 @@
             }
           }
         ]
+      },
+      "koprium:start_dancing": {
+        "add": {
+          "component_groups": [
+            "koprium:dancing"
+          ]
+        },
+        "set_property": {
+          "koprium:is_dancing": true
+        }
+      },
+      "koprium:end_dancing": {
+        "add": {
+          "component_groups": [
+            "koprium:movement"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "koprium:dancing"
+          ]
+        },
+        "set_property": {
+          "koprium:is_dancing": false
+        }
       },
       "koprium:set_alien_cat_variant": {
         "add": {

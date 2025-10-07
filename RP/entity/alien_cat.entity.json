@@ -17,6 +17,7 @@
 				"sneak": "animation.cat.sneak",
 				"walk": "animation.alien_cat.walk",
 				"sprint": "animation.cat.sprint",
+				"dancing": "animation.alien_cat.dancing",
 				"sit": "animation.cat.sit",
 				"look_at_target": "animation.common.look_at_target",
 				"baby_transform": "animation.cat.baby_transform",
@@ -35,6 +36,9 @@
 				},
 				{
 					"loop": "controller.animation.alien_cat.loop"
+				},
+				{
+					"dancing": "controller.animation.alien_cat.dancing"
 				}
 			],
 			"render_controllers": [

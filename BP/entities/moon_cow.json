@@ -27,7 +27,7 @@
         },
         "minecraft:timer": {
           "looping": true,
-          "time": 40,
+          "time": 80,
           "time_down_event": {
             "event": "koprium:end_polish_cow"
           }
@@ -79,6 +79,13 @@
                       "domain": "hand",
                       "subject": "other",
                       "value": "sugar"
+                    },
+                    {
+                      "test": "bool_property",
+                      "domain": "koprium:is_polish_cow",
+                      "operator": "==",
+                      "value": false,
+                      "subject": "self"
                     }
                   ]
                 },

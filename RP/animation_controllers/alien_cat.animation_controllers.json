@@ -10,6 +10,30 @@
 					]
 				}
 			}
+		},
+		"controller.animation.alien_cat.dancing": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"dancing": "query.property('koprium:is_dancing')"
+						}
+					]
+				},
+				"dancing": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "!query.property('koprium:is_dancing')"
+						}
+					],
+					"animations": [
+						"dancing"
+					]
+				}
+			}
 		}
 	}
 }
