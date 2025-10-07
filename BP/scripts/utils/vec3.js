@@ -17,7 +17,7 @@ export function getLocalCoordinates(entity, { x: offsetX, y: offsetY, z: offsetZ
     const location = entity.location;
 
     const newX = location.x + view.x * offsetX + view.z * offsetZ;
-    const newY = location.y + offsetY;
+    const newY = location.y + view.y * offsetY;
     const newZ = location.z + view.z * offsetX - view.x * offsetZ;
 
     return { x: newX, y: newY, z: newZ };

@@ -14,6 +14,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
 
     if (entity.typeId == "eu:dummy_block") {
         if (eventId == "eu:on_ground") {
+            //world.sendMessage(" toque piso")
             const { dimension, location } = entity
             const blockTypeId = entity.getDynamicProperty("eu:blockTypeId")
             dimension.setBlockType(location, blockTypeId)
