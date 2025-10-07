@@ -32,13 +32,13 @@
 					"move": "controller.animation.cat.move"
 				},
 				{
+					"dancing": "controller.animation.alien_cat.dancing"
+				},
+				{
 					"baby": "controller.animation.cat.baby"
 				},
 				{
 					"loop": "controller.animation.alien_cat.loop"
-				},
-				{
-					"dancing": "controller.animation.alien_cat.dancing"
 				}
 			],
 			"render_controllers": [

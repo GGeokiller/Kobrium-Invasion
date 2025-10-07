@@ -2,11 +2,23 @@
 	"format_version": "1.10.0",
 	"animation_controllers": {
 		"controller.animation.alien_cat.loop": {
-			"initial_state": "default",
+			"initial_state": "alien_cat_particles",
 			"states": {
-				"default": {
+				"alien_cat_particles": {
+					"transitions": [
+						{
+							"nyan_cat_particles": "query.variant==1"
+						}
+					],
 					"animations": [
 						"particle"
+					]
+				},
+				"nyan_cat_particles": {
+					"transitions": [
+						{
+							"alien_cat_particles": "query.variant==0"
+						}
 					]
 				}
 			}
