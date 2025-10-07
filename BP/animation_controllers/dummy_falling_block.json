@@ -21,6 +21,11 @@
 				"on_ground": {
 					"on_entry": [
 						"@s eu:on_ground"
+					],
+					"transitions": [
+						{
+							"default": "(1.0)"
+						}
 					]
 				}
 			}
