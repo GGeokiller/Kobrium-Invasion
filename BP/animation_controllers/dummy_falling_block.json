@@ -2,8 +2,15 @@
 	"format_version": "1.10.0",
 	"animation_controllers": {
 		"controller.animation.dummy_falling_block": {
-			"initial_state": "default",
+			"initial_state": "initial_delay_time",
 			"states": {
+				"initial_delay_time": {
+					"transitions": [
+						{
+							"default": "query.state_time>=3"
+						}
+					]
+				},
 				"default": {
 					"transitions": [
 						{
@@ -21,11 +28,6 @@
 				"on_ground": {
 					"on_entry": [
 						"@s eu:on_ground"
-					],
-					"transitions": [
-						{
-							"default": "(1.0)"
-						}
 					]
 				}
 			}
