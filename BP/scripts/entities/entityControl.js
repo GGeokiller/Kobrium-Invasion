@@ -1,6 +1,8 @@
 import "./diggingRobot"
 import "./dummyBlock"
 import "./polishCow"
+import "./nyanCat"
+
 import "./koprium/Amplifier"
 import "./koprium/Meteorite"
 import "./koprium/Pylon"
