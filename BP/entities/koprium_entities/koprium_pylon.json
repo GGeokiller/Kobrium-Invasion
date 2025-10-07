@@ -10,6 +10,9 @@
 		"component_groups": {},
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/koprium_energy_core.json"
+			},
 			"minecraft:nameable": {},
 			"minecraft:type_family": {
 				"family": [
