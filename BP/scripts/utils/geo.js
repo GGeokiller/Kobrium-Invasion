@@ -126,4 +126,30 @@ export const geo = {
 
     return hasItem;
   },
+  /**
+   * 
+   * @param {Player} player 
+   * @param {Number} amount 
+   * @param {String} itemId 
+   * @returns 
+   */
+  removeItem(player, amount, itemId) {
+    let con = player.getComponent(EntityComponentTypes.Inventory).container
+    let success = false
+    for (let i = 0; i < con.size; i++) {
+      let item = con.getItem(i)
+      if (item?.typeId == undefined || item?.typeId != itemId/*  || item?.amount <= 1 */) continue
+      system.run(() => {
+      if (item.amount > 1) {
+        item.amount = item.amount -= amount
+        con.setItem(i, item)
+      } else {
+        con.setItem(i, undefined)
+      }
+      })
+      success = true
+      return success;
+    }
+    return success;
+  }
 };
