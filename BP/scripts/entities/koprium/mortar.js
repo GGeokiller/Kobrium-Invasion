@@ -11,7 +11,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     let target = entity.target ?? entity.dimension.getEntities({
         type: "minecraft:player",
         location: entity.location,
-        maxDistance: 20
+        maxDistance: 32
     })[0];
     if (!target) return;
     spawnCannonBalls(entity, Random.int(2,4))
@@ -27,8 +27,10 @@ function spawnCannonBalls (entity, amount) {
     for (let i = 0; i < amount; i++) {
         system.runTimeout(() => { 
             let cannonBall = entity.dimension.spawnEntity("koprium:koprium_mortar_cannon_ball", geo.sumVectors(entity.location, { x: 0, y: 2, z: 0 }));
-            cannonBall.applyImpulse({x: Random.random(-1, 1), y: 1, z: Random.random(-1, 1)});
+            cannonBall.applyImpulse({x: Random.number(-1, 1), y: 1, z: Random.number(-1, 1)});
+            entity.dimension.spawnParticle("koprium:koprium_mortar_shoot", geo.sumVectors(entity.location, { x: 0, y: 1, z: 0 }))
             entity.playAnimation("animation.koprium_mortar.shoot")
+            entity.dimension.playSound("entity.koprium_mortar.shoot", entity.location, { volume: 1, pitch: Random.number(0.8, 1.2) });
         }, i * 20);
     }
 }

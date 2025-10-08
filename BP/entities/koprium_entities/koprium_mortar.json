@@ -72,6 +72,14 @@
 							]
 						},
 						"deals_damage": "no"
+					},
+					{
+						"cause": "block_explosion",
+						"deals_damage": "no"
+					},
+					{
+						"cause": "entity_explosion",
+						"deals_damage": "no"
 					}
 				]
 			},
@@ -98,7 +106,8 @@
 			},
 			"minecraft:scale": {
 				"value": 1.5
-			}
+			},
+			"minecraft:fire_immune": {}
 		},
 		"events": {
 			"koprium:mortar_has_target": {}

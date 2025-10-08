@@ -39,20 +39,6 @@
 				"value": 20,
 				"max": 20
 			},
-			"minecraft:hurt_on_condition": {
-				"damage_conditions": [
-					{
-						"filters": {
-							"test": "in_lava",
-							"subject": "self",
-							"operator": "==",
-							"value": true
-						},
-						"cause": "lava",
-						"damage_per_tick": 4
-					}
-				]
-			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 7,
 				"speed_multiplier": 1
@@ -148,7 +134,8 @@
 			},
 			"minecraft:despawn": {
 				"despawn_from_distance": {}
-			}
+			},
+			"minecraft:fire_immune": {}
 		},
 		"events": {
 			"koprium:inside_range": {

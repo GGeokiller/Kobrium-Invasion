@@ -16,6 +16,7 @@ world.afterEvents.entitySpawn.subscribe(data => {
     let { entity } = data;
     if (entity.typeId !== CANNONBALL_ID) return;
     system.runTimeout(() => {
+        if (!entity.isValid) return;
         entity.clearVelocity();
         let closestPlayer = entity.dimension.getEntities({type: "minecraft:player", location: entity.location, maxDistance: 32})[0];
         if (!closestPlayer) return;
@@ -25,5 +26,5 @@ world.afterEvents.entitySpawn.subscribe(data => {
     system.runTimeout(() => {
         if (!entity.isValid) return;
         entity.remove();
-    }, 200)
+    }, 80)
 })

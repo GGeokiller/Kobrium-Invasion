@@ -160,6 +160,15 @@
 				"sounds/koprium/kopriumDaggerHit1",
 				"sounds/koprium/kopriumDaggerHit2"
 			]
+		},
+		"entity.koprium_mortar.shoot": {
+			"__use_legacy_max_distance": "true",
+			"category": "neutral",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/kopriumMortarShoot"
+			]
 		}
 	}
 }
