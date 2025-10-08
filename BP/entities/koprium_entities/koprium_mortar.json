@@ -5,7 +5,15 @@
 			"identifier": "koprium:koprium_mortar",
 			"is_spawnable": true,
 			"is_summonable": true,
-			"is_experimental": false
+			"is_experimental": false,
+			"animations": {
+				"has_target": "controller.animation.koprium_mortar.has_target"
+			},
+			"scripts": {
+				"animate": [
+					"has_target"
+				]
+			}
 		},
 		"component_groups": {},
 		"components": {
@@ -90,6 +98,7 @@
 				"width": 0.9,
 				"height": 1.1
 			},
+			/* 			
 			"minecraft:environment_sensor": {
 				"triggers": [
 					{
@@ -103,7 +112,7 @@
 						"event": "koprium:mortar_has_target"
 					}
 				]
-			},
+			}, */
 			"minecraft:scale": {
 				"value": 1.5
 			},

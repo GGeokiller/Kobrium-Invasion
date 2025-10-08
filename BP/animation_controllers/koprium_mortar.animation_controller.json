@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.koprium_mortar.has_target": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attack": "query.has_target"
+						}
+					]
+				},
+				"attack": {
+					"on_entry": [
+						"@s koprium:mortar_has_target"
+					],
+					"transitions": [
+						{
+							"default": "query.state_time>3.0"
+						}
+					]
+				}
+			}
+		}
+	}
+}
