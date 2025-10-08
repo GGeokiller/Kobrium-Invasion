@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.space_wolf": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"query.is_angry ? texture.angry : (query.is_tamed ? texture.tame : texture.default)"
+			]
+		}
+	}
+}
