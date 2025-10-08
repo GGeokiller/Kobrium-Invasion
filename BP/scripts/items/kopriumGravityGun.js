@@ -54,32 +54,26 @@ world.afterEvents.itemStartUse.subscribe((data) => {
 });
 
 function loopImpulse(hitEntity, player, randomID) {
-  randomID = system.runInterval(() => {
-    let distance = 6;
-    let viewDir = player.getViewDirection();
-    let finalLocation = {
-      x: player.location.x + viewDir.x * distance,
-      y: player.location.y + viewDir.y * distance + 1,
-      z: player.location.z + viewDir.z * distance,
-    };
-    if (hitEntity.isValid) {
-      geoParticles.VectorLine(
-        geo.sumVectors(player.getHeadLocation(), { x: 0, y: -0.4, z: 0 }),
-        finalLocation,
-        "koprium:gravity_gun_particle",
-        hitEntity?.dimension?.id,
-        0.33,
-        0
-      );
-      geo.impulseToLocation(hitEntity, finalLocation, 1, true);
-    }
-  });
-  world.afterEvents.itemReleaseUse.subscribe((data) => {
-    let { itemStack: releaseItem, source: player2 } = data;
-    if (releaseItem?.typeId != KOPRIUM_GRABVITY_GUN_ID || player2.name != player.name) return;
-    try {
-      system.clearRun(randomID);
-      hitEntity?.clearVelocity();
-    } catch {}
-  });
+    randomID = system.runInterval(() => {
+            if (!geo.hasItemInMainHand(player, KOPRIUM_GRABVITY_GUN_ID)) {system.clearRun(randomID); return};
+            let distance = 6
+            let viewDir = player.getViewDirection()
+            let finalLocation = {
+                x: player.location.x + viewDir.x * distance,
+                y: player.location.y + viewDir.y * distance + 1,
+                z: player.location.z + viewDir.z * distance
+            }
+            if (hitEntity.isValid) {
+                geoParticles.VectorLine(geo.sumVectors(player.getHeadLocation(), {x: 0, y: -0.4, z: 0}), finalLocation, "koprium:gravity_gun_particle", hitEntity?.dimension?.id, 0.33, 0)
+                geo.impulseToLocation(hitEntity, finalLocation, 1, true)
+            }
+        })
+        world.afterEvents.itemReleaseUse.subscribe(data => {
+            let {itemStack: releaseItem, source: player2} = data
+            if (releaseItem?.typeId != KOPRIUM_GRABVITY_GUN_ID || player2.name != player.name) return;
+            try {
+                system.clearRun(randomID)
+                hitEntity?.clearVelocity()
+            } catch{}
+    })
 }

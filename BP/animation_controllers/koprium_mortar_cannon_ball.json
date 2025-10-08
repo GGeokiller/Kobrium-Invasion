@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.cannon_ball": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"on_ground": "query.is_on_ground"
+						}
+					]
+				},
+				"on_ground": {
+					"on_entry": [
+						"@s koprium:cannon_ball_fall"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mortar_cannon_ball.particle": {
+			"loop": true,
+			"animation_length": 0.05,
+			"particle_effects": {
+				"0.0": {
+					"effect": "koprium_cannon_ball",
+					"locator": "ballcenter"
+				}
+			}
+		}
+	}
+}

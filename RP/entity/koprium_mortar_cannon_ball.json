@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_mortar_cannon_ball",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_mortar_cannon_ball"
+			},
+			"geometry": {
+				"default": "geometry.koprium_mortar_cannon_ball"
+			},
+			"render_controllers": [
+				"controller.render.koprium_mortar_cannon_ball"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			},
+			"animations": {
+				"cannon_ball_particle": "animation.mortar_cannon_ball.particle"
+			},
+			"scripts": {
+				"animate": [
+					"cannon_ball_particle"
+				]
+			},
+			"particle_effects": {
+				"koprium_cannon_ball": "koprium:koprium_cannon_ball"
+			}
+		}
+	}
+}

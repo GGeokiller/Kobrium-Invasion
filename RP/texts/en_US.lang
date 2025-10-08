@@ -12,7 +12,7 @@ item.spawn_egg.entity.koprium:meteorite.name=Spawn Meteorite
 item.spawn_egg.entity.koprium:moon_cow.name=Spawn Moon Cow
 item.spawn_egg.entity.koprium:ticking_dummy.name=Spawn Ticking Dummy
 item.koprium:red_light_saber=Red Light Saber
-item.koprium:koprium_scrap=koprium Scrap
+item.koprium:koprium_scrap=Koprium Scrap
 item.koprium:bucket_cheese=Cheese Bucket 
 item.koprium:digging_robot_throwable=Digging Robot Throwable
 
@@ -31,7 +31,7 @@ item.spawn_egg.entity.eu:dummy_block.name=Spawn Dummy Block
 tile.koprium:meteorite_stone.name=Meteorite Stone
 tile.koprium:meteorite_gilded_stone.name=Meteorite Gilded Stone
 tile.koprium:meteorite_magma_stone.name=Meteorite Magma Stone
-tile.koprium:meteorite_ash.name=Meteorite_ash
+tile.koprium:meteorite_ash.name=Meteorite Ash
 tile.koprium:koprium_scrap_block.name=koprium Scrap Block
 tile.koprium:landmine.name=Landmine
 tile.koprium:koprium_teleport_pad.name=Koprium Teleport Pad
@@ -61,6 +61,10 @@ item.koprium:koprium_chestplate=Koprium Chestplate
 item.koprium:koprium_leggings=Koprium Leggings
 item.koprium:koprium_boots=Koprium Boots
 item.koprium:koprium_drive=Koprium Drive
+item.spawn_egg.entity.koprium:koprium_mortar.name=Spawn Koprium Mortar
+entity.koprium:koprium_mortar.name=Koprium Mortar
+item.spawn_egg.entity.koprium:koprium_mortar_cannon_ball.name=Spawn Koprium Mortar Cannon Ball
+entity.koprium:koprium_mortar_cannon_ball.name=Koprium Mortar Cannon Ball
 item.koprium:koprium_dagger=Koprium Dagger
 
 

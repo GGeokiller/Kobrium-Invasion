@@ -5,10 +5,18 @@ export const KOPRIUM_ROVER_ID = "koprium:koprium_rover"
 export const KOPRIUM_GYRATOR_ID = "koprium:koprium_gyrator"
 export const KOPRIUM_DRONE_ID = "koprium:koprium_drone"
 export const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
+export const KOPRIUM_MORTAR_ID = "koprium:koprium_mortar"
 
 export const KOPRIUM_SCRAP_ID = "koprium:koprium_scrap"
 
-export const KOPRIUM_ENTITIES_IDS = [KOPRIUM_AMPLIFIER_ID, KOPRIUM_ROVER_ID, KOPRIUM_GYRATOR_ID, KOPRIUM_DRONE_ID, KOPRIUM_PYLON_ID]
+export const KOPRIUM_ENTITIES_IDS = [
+  KOPRIUM_AMPLIFIER_ID,
+  KOPRIUM_ROVER_ID,
+  KOPRIUM_GYRATOR_ID,
+  KOPRIUM_DRONE_ID,
+  KOPRIUM_PYLON_ID,
+  KOPRIUM_MORTAR_ID
+];
 
 export const KOPRIUM_ENTITIES_COLLISION_BOX = {
     [KOPRIUM_AMPLIFIER_ID]: {
@@ -31,12 +39,17 @@ export const KOPRIUM_ENTITIES_COLLISION_BOX = {
         width: 1,
         height: 6   
     },
+    [KOPRIUM_MORTAR_ID]: {
+        width: 0.9,
+        height: 1.1   
+    },
 }
 export const KOPRIUM_ENTITIES_SPAWN_RATE = [
     { entity: KOPRIUM_AMPLIFIER_ID, weight: 0.5 },
     { entity: KOPRIUM_ROVER_ID, weight: 3 },
     { entity: KOPRIUM_GYRATOR_ID, weight: 2 },
     { entity: KOPRIUM_DRONE_ID, weight: 0.5 },
+    { entity: KOPRIUM_MORTAR_ID, weight: 0.75 },
 ];
 
 
@@ -60,5 +73,9 @@ export const KOPRIUM_ENTITIES_LOOT = {
     [KOPRIUM_PYLON_ID]: {
         chance: 70, //%
         amount: [2,8] //int
+    },
+    [KOPRIUM_MORTAR_ID]: {
+        chance: 30, //%
+        amount: [2,3] //int
     },
 }
