@@ -37,6 +37,9 @@
 		},
 		"koprium_koprium_dagger": {
 			"textures": "textures/items/koprium_dagger"
+		},
+		"koprium_comet_stone": {
+			"textures": "textures/items/comet_stone"
 		}
 	}
 }
