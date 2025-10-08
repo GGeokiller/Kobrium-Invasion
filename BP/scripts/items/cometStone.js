@@ -20,7 +20,7 @@ world.afterEvents.itemUse.subscribe((ev) => {
     const zOffset = distance * Math.sin(angle);
 
     const newX = location.x + xOffset;
-    const newY = location.y + 10;
+    const newY = location.y + 100;
     const newZ = location.z + zOffset;
 
     dimension.spawnEntity("koprium:meteorite", {

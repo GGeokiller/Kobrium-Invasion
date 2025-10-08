@@ -10,6 +10,15 @@
 					"locator": "ballcenter"
 				}
 			}
+		},
+		"animation.mortar_cannon_ball.rotate": {
+			"loop": true,
+			"bones": {
+				"bb_main": {
+					"rotation": ["query.life_time * 360", 0, "query.life_time * 360"],
+					"scale": "query.life_time < 0.5 ? query.life_time * 2 : 1"
+				}
+			}
 		}
 	}
 }
