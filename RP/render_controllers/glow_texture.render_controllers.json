@@ -1,0 +1,17 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.glow_texture": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.glow"
+                }
+            ],
+            "textures": [
+                "Texture.glow"
+            ],
+            "ignore_lighting": true
+        }
+    }
+}

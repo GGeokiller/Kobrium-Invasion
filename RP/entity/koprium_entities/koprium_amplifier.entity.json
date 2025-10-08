@@ -5,10 +5,12 @@
 			"identifier": "koprium:koprium_amplifier",
 			"min_engine_version": "1.8.0",
 			"materials": {
-				"default": "zombie"
+				"default": "zombie",
+				"glow": "allay"
 			},
 			"textures": {
-				"default": "textures/entity/koprium_entities/amplifier"
+				"default": "textures/entity/koprium_entities/amplifier",
+				"glow": "textures/entity/koprium_entities/amplifier_glow"
 			},
 			"geometry": {
 				"default": "geometry.kobrium_amplifier"
@@ -28,6 +30,7 @@
 				}
 			],
 			"render_controllers": [
+				"controller.render.glow_texture",
 				"controller.render.zombie"
 			],
 			"spawn_egg": {

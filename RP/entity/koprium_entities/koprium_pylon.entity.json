@@ -5,15 +5,18 @@
 			"identifier": "koprium:koprium_pylon",
 			"min_engine_version": "1.8.0",
 			"materials": {
-				"default": "zombie"
+				"default": "zombie",
+				"glow": "allay"
 			},
 			"textures": {
-				"default": "textures/entity/koprium_entities/pylon"
+				"default": "textures/entity/koprium_entities/pylon",
+				"glow": "textures/entity/koprium_entities/pylon_glow"
 			},
 			"geometry": {
 				"default": "geometry.koprium_pylon"
 			},
 			"render_controllers": [
+				"controller.render.glow_texture",
 				"controller.render.zombie"
 			],
 			"spawn_egg": {
