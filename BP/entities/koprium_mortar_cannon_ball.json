@@ -1,0 +1,72 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "koprium:koprium_mortar_cannon_ball",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"cannon_ball_fall": "controller.animation.cannon_ball"
+			},
+			"scripts": {
+				"animate": [
+					"cannon_ball_fall"
+				]
+			},
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"koprium:to_player": {
+				"minecraft:projectile": {
+					"gravity": 0,
+					"inertia": 1,
+					"on_hit": {
+						"definition_event": {
+							"event_trigger": {
+								"event": "koprium:cannon_ball_fall"
+							}
+						}
+					},
+					"reflect_on_hurt": true
+				}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.7,
+				"height": 0.7
+			},
+			"minecraft:projectile": {
+				"gravity": 0,
+				"inertia": 0.8,
+				"on_hit": {
+					"definition_event": {
+						"event_trigger": {
+							"event": "koprium:cannon_ball_fall"
+						}
+					}
+				},
+				"reflect_on_hurt": true
+			}
+		},
+		"events": {
+			"koprium:cannon_ball_fall": {},
+			"koprium:to_player": {
+				"add": {
+					"component_groups": [
+						"koprium:to_player"
+					]
+				}
+			}
+		}
+	}
+}

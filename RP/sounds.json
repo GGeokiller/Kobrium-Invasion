@@ -301,6 +301,47 @@
 					1.5
 				],
 				"volume": 1
+			},
+			"koprium:koprium_mortar": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1,
+							1
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"pitch": [
+							1,
+							1
+						],
+						"volume": 1
+					}
+				},
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"volume": 1
 			}
 		}
 	}

@@ -54,6 +54,7 @@ world.afterEvents.itemStartUse.subscribe(data => {
 
 function loopImpulse(hitEntity, player, randomID) {
     randomID = system.runInterval(() => {
+            if (!geo.hasItemInMainHand(player, KOPRIUM_GRABVITY_GUN_ID)) {system.clearRun(randomID); return};
             let distance = 6
             let viewDir = player.getViewDirection()
             let finalLocation = {
