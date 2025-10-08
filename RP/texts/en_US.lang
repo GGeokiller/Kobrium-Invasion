@@ -5,7 +5,6 @@ meteorite.coordinates=§cA meteorite will fall in:
 meteorite.time=in: 
 koprium:itemGroup.name.koprium_items=Koprium Invasion
 
-
 ### KOPRIUM ITEMS
 item.spawn_egg.entity.koprium:digging_robot_projectile.name=Spawn Digging Robot Projectile
 item.spawn_egg.entity.koprium:alien_cat.name=Spawn Alien Cat
@@ -16,6 +15,7 @@ item.koprium:red_light_saber=Red Light Saber
 item.koprium:koprium_scrap=koprium Scrap
 item.koprium:bucket_cheese=Cheese Bucket 
 item.koprium:digging_robot_throwable=Digging Robot Throwable
+
 ### KOPRIUM SPAWN EGGS
     item.spawn_egg.entity.koprium:koprium_amplifier.name=Spawn Koprium Amplifier
     item.spawn_egg.entity.koprium:koprium_drone.name=Spawn Koprium Drone
@@ -23,10 +23,8 @@ item.koprium:digging_robot_throwable=Digging Robot Throwable
     item.spawn_egg.entity.koprium:koprium_pylon.name=Spawn Koprium Pylon
     item.spawn_egg.entity.koprium:koprium_rover.name=Spawn Koprium Rover
     item.spawn_egg.entity.koprium:koprium_dummy_spawn.name=Spawn Koprium Dummy Spawn
-
-
-
-
+    item.spawn_egg.entity.koprium:alien_wandering_trader.name=Spawn Alien Wandering Trader
+    item.spawn_egg.entity.koprium:koprium_dagger_projectile.name=Spawn Koprium Dagger Projectile
 
 ### KOPRIUM BLOCKS
 item.spawn_egg.entity.eu:dummy_block.name=Spawn Dummy Block
@@ -46,13 +44,15 @@ entity.koprium:alien_cat.name=Alien Cat
 entity.koprium:meteorite.name=Meteorite
 entity.koprium:moon_cow.name=Moon Cow
 entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
+entity.koprium:alien_wandering_trader.name=Alien Wandering Trader
+entity.koprium:koprium_dagger_projectile.name=Koprium Dagger Projectile
+
 ### KOBRIUM SPECIFICS   
     entity.koprium:koprium_amplifier.name=Koprium Amplifier
     entity.koprium:koprium_drone.name=Koprium Drone
     entity.koprium:koprium_gyrator.name=Koprium Gyrator
     entity.koprium:koprium_pylon.name=Koprium Pylon
     entity.koprium:koprium_rover.name=Koprium Rover
-
 
 item.koprium:energy_core=Energy Core
 item.koprium:koprium_gravity_gun=Koprium Gravity Gun
@@ -61,3 +61,7 @@ item.koprium:koprium_chestplate=Koprium Chestplate
 item.koprium:koprium_leggings=Koprium Leggings
 item.koprium:koprium_boots=Koprium Boots
 item.koprium:koprium_drive=Koprium Drive
+item.koprium:koprium_dagger=Koprium Dagger
+
+
+item.koprium:comet_stone=Comet Stone
