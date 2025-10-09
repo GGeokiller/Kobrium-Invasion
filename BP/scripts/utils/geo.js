@@ -7,7 +7,27 @@ import {
   EntityInventoryComponent,
   ItemStack,
   EquipmentSlot,
+  Player,
+  EffectType,
+  EffectTypes,
 } from "@minecraft/server";
+
+export const PositiveEffects = [
+  "absorption",
+  "conduit_power",
+  "fire_resistance",
+  "health_boost",
+  "instant_health",
+  "jump_boost",
+  "regeneration",
+  "resistance",
+  "saturation",
+  "strength",
+  "water_breathing",
+  "night_vision",
+  "speed",
+  "invisibility",
+]
 
 export const geo = {
   /**
@@ -151,5 +171,29 @@ export const geo = {
       return success;
     }
     return success;
+  },
+  /**
+   * 
+   * @param {Player} player 
+   * @returns {import("@minecraft/server").Vector3}
+   */
+  fixPlayerLocation(player) {
+    return {x: player.location.x, y: player.location.y + 0.9, z: player.location.z}
+  },
+  /**
+   * 
+   * @param {Entity} entity 
+   * @returns {import("@minecraft/server").Vector3}
+   */
+  getEntityCenter(entity) {
+    const head = entity.getHeadLocation();
+    return {x: entity.location.x, y: (entity.location.y + head.y) / 2, z: entity.location.z}
+  },
+  /**
+   * 
+   * @returns {String}
+   */
+  getRandomPositiveEffect() {
+    return PositiveEffects[Math.floor(Math.random() * PositiveEffects.length)]
   }
 };
