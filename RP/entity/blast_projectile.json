@@ -1,0 +1,35 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:blast_projectile",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/blast_projectile"
+			},
+			"geometry": {
+				"default": "geometry.blast_projectile"
+			},
+			"scripts": {
+				"animate": [
+					"blast_trail_emitter"
+				]
+			},
+			"animations": {
+				"blast_trail_emitter": "animation.blast_projectile.trail"
+			},
+			"particle_effects": {
+				"blast_trail": "koprium:blast_trail"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

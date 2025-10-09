@@ -1,18 +1,19 @@
-export const up = { x: 0, y: -1, z: 0 }
-export const down = { x: 0, y: -1, z: 0 }
-export const forward = { x: 0, y: 0, z: -1 }
-export const back = { x: 0, y: 0, z: 1 }
-export const left = { x: -1, y: 0, z: 0 }
-export const right = { x: 1, y: 0, z: 0 }
+export const Vec3 = {
+  up: { x: 0, y: -1, z: 0 },
+  down: { x: 0, y: 1, z: 0 },
+  forward: { x: 0, y: 0, z: -1 },
+  back: { x: 0, y: 0, z: 1 },
+  left: { x: -1, y: 0, z: 0 },
+  right: { x: 1, y: 0, z: 0 },
 
-export function distance(v1, v2) {
+  distance(v1, v2) {
     const dx = v2.x - v1.x;
     const dy = v2.y - v1.y;
     const dz = v2.z - v1.z;
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
-}
+  },
 
-export function getLocalCoordinates(entity, { x: offsetX, y: offsetY, z: offsetZ }) {
+  getLocalCoordinates(entity, { x: offsetX, y: offsetY, z: offsetZ }) {
     const view = entity.getViewDirection();
     const location = entity.location;
 
@@ -21,81 +22,82 @@ export function getLocalCoordinates(entity, { x: offsetX, y: offsetY, z: offsetZ
     const newZ = location.z + view.z * offsetX - view.x * offsetZ;
 
     return { x: newX, y: newY, z: newZ };
-}
-export function add(v1, v2) {
+  },
+  add(v1, v2) {
     return { x: v1.x + v2.x, y: v1.y + v2.y, z: v1.z + v2.z };
-}
-export function subtract(v1, v2) {
+  },
+  subtract(v1, v2) {
     return { x: v1.x - v2.x, y: v1.y - v2.y, z: v1.z - v2.z };
-}
+  },
 
-export function scale(v, scalar) {
+  scale(v, scalar) {
     return { x: v.x * scalar, y: v.y * scalar, z: v.z * scalar };
-}
-export function dot(v1, v2) {
+  },
+  dot(v1, v2) {
     return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
-}
-export function cross(v1, v2) {
+  },
+  cross(v1, v2) {
     return {
-        x: v1.y * v2.z - v1.z * v2.y,
-        y: v1.z * v2.x - v1.x * v2.z,
-        z: v1.x * v2.y - v1.y * v2.x
+      x: v1.y * v2.z - v1.z * v2.y,
+      y: v1.z * v2.x - v1.x * v2.z,
+      z: v1.x * v2.y - v1.y * v2.x,
     };
-}
-export function normalize(v) {
+  },
+  normalize(v) {
     const len = Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
     return { x: v.x / len, y: v.y / len, z: v.z / len };
-}
-export function rotateAroundYAxis(v, angle) {
+  },
+  rotateAroundYAxis(v, angle) {
     const cosA = Math.cos(angle);
     const sinA = Math.sin(angle);
     return {
-        x: v.x * cosA - v.z * sinA,
-        y: v.y,
-        z: v.x * sinA + v.z * cosA
+      x: v.x * cosA - v.z * sinA,
+      y: v.y,
+      z: v.x * sinA + v.z * cosA,
     };
-}
-export function addScalar(v, scalar) {
+  },
+  addScalar(v, scalar) {
     return { x: v.x + scalar, y: v.y + scalar, z: v.z + scalar };
-}
-export function equals(v1, v2) {
+  },
+  equals(v1, v2) {
     return v1.x == v2.x && v1.y == v2.y && v1.z == v2.z;
-}
-export function angleBetween(v1, v2) {
+  },
+  angleBetween(v1, v2) {
     const dotProduct = dot(v1, v2);
     const magnitudeV1 = Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z);
     const magnitudeV2 = Math.sqrt(v2.x * v2.x + v2.y * v2.y + v2.z * v2.z);
     const cosAngle = dotProduct / (magnitudeV1 * magnitudeV2);
     return Math.acos(cosAngle);
-}
-export function reflect(v, normal) {
+  },
+  reflect(v, normal) {
     const dotProd = dot(v, normal);
     return {
-        x: v.x - 2 * dotProd * normal.x,
-        y: v.y - 2 * dotProd * normal.y,
-        z: v.z - 2 * dotProd * normal.z
+      x: v.x - 2 * dotProd * normal.x,
+      y: v.y - 2 * dotProd * normal.y,
+      z: v.z - 2 * dotProd * normal.z,
     };
-}
+  },
 
-function degreesToRadians(degrees) {
+  degreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
-}
+  },
 
-/**
- * Rotates a 3D vector around the Y-axis (horizontal rotation) by a specified angle in degrees.
- *
- * @param {Vector3} v
- * @param {number} angleDegrees
- * @returns {Vector3}
- */
-export function rotateVectorY(v, angleDegrees) {
+  /**
+   * Rotates a 3D vector around the Y-axis (horizontal rotation) by a specified angle in degrees.
+   *
+   * @param {Vector3} v
+   * @param {number} angleDegrees
+   * @returns {Vector3}
+   */
+  rotateVectorY(v, angleDegrees) {
     const angleRadians = degreesToRadians(angleDegrees);
     const cos = Math.cos(angleRadians);
     const sin = Math.sin(angleRadians);
 
     return {
-        x: v.x * cos - v.z * sin,
-        y: v.y,
-        z: v.x * sin + v.z * cos
+      x: v.x * cos - v.z * sin,
+      y: v.y,
+      z: v.x * sin + v.z * cos,
     };
-}
+  },
+};
