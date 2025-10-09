@@ -17,6 +17,17 @@ item.koprium:red_light_saber=Red Light Saber
 item.koprium:koprium_scrap=Koprium Scrap
 item.koprium:bucket_cheese=Cheese Bucket 
 item.koprium:digging_robot_throwable=Digging Robot Throwable
+item.koprium:energy_core=Energy Core
+item.koprium:koprium_gravity_gun=Koprium Gravity Gun
+item.koprium:koprium_helmet=Koprium Helmet
+item.koprium:koprium_chestplate=Koprium Chestplate
+item.koprium:koprium_leggings=Koprium Leggings
+item.koprium:koprium_boots=Koprium Boots
+item.koprium:koprium_drive=Koprium Drive
+item.spawn_egg.entity.koprium:koprium_mortar.name=Spawn Koprium Mortar
+item.koprium:koprium_dagger=Koprium Dagger
+item.spawn_egg.entity.koprium:koprium_mortar_cannon_ball.name=Spawn Koprium Mortar Cannon Ball
+item.koprium:comet_stone=Comet Stone
 
 ### KOPRIUM SPAWN EGGS
     item.spawn_egg.entity.koprium:koprium_amplifier.name=Spawn Koprium Amplifier
@@ -48,6 +59,7 @@ entity.koprium:moon_cow.name=Moon Cow
 entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
 entity.koprium:alien_wandering_trader.name=Alien Wandering Trader
 entity.koprium:koprium_dagger_projectile.name=Koprium Dagger Projectile
+entity.koprium:koprium_mortar_cannon_ball.name=Koprium Mortar Cannon Ball
 
 ### KOBRIUM SPECIFICS   
     entity.koprium:koprium_amplifier.name=Koprium Amplifier
@@ -55,19 +67,7 @@ entity.koprium:koprium_dagger_projectile.name=Koprium Dagger Projectile
     entity.koprium:koprium_gyrator.name=Koprium Gyrator
     entity.koprium:koprium_pylon.name=Koprium Pylon
     entity.koprium:koprium_rover.name=Koprium Rover
-
-item.koprium:energy_core=Energy Core
-item.koprium:koprium_gravity_gun=Koprium Gravity Gun
-item.koprium:koprium_helmet=Koprium Helmet
-item.koprium:koprium_chestplate=Koprium Chestplate
-item.koprium:koprium_leggings=Koprium Leggings
-item.koprium:koprium_boots=Koprium Boots
-item.koprium:koprium_drive=Koprium Drive
-item.spawn_egg.entity.koprium:koprium_mortar.name=Spawn Koprium Mortar
-entity.koprium:koprium_mortar.name=Koprium Mortar
-item.spawn_egg.entity.koprium:koprium_mortar_cannon_ball.name=Spawn Koprium Mortar Cannon Ball
-entity.koprium:koprium_mortar_cannon_ball.name=Koprium Mortar Cannon Ball
-item.koprium:koprium_dagger=Koprium Dagger
+    entity.koprium:koprium_mortar.name=Koprium Mortar
 
 
-item.koprium:comet_stone=Comet Stone
+

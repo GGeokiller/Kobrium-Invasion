@@ -13,6 +13,7 @@ world.afterEvents.projectileHitBlock.subscribe(data => {
     let { projectile } = data
     let blockhit = data.getBlockHit()
     if (projectile?.typeId != KOPRIUM_DAGGER_PROJECTILE_ID) return;
+    projectile.dimension.spawnParticle("koprium:koprium_dagger_impact", projectile.location)
     blockhit.block.dimension.playSound("entity.koprium_dagger.hit", blockhit.block.location, { volume: 3, pitch: 1 })
     //projectile.remove()
 })
@@ -22,4 +23,5 @@ world.afterEvents.projectileHitEntity.subscribe(data => {
     let hitEntity = data.getEntityHit().entity
     if (projectile?.typeId != KOPRIUM_DAGGER_PROJECTILE_ID) return;
     hitEntity.dimension.playSound("entity.koprium_dagger.hit", hitEntity.location, { volume: 3, pitch: 1 })
+    projectile.dimension.spawnParticle("koprium:koprium_dagger_impact", projectile.location)
 })
