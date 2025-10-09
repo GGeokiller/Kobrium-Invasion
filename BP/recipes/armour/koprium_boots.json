@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "koprium:koprium_boots"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"#!#",
+			"# #"
+		],
+		"key": {
+			"#": {
+				"item": "koprium:koprium_scrap"
+			},
+			"!": {
+				"item": "koprium:energy_core"
+			}
+		},
+		"result": {
+			"item": "koprium:koprium_boots"
+		}
+	}
+}

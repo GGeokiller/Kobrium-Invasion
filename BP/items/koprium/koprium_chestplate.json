@@ -15,7 +15,7 @@
 				"slot": "armor_torso"
 			},
 			"minecraft:durability": {
-				"max_durability": 240,
+				"max_durability": 528,
 				"damage_chance": {
 					"min": 60,
 					"max": 100
@@ -24,13 +24,13 @@
 			"minecraft:icon": "koprium_koprium_chestplate",
 			"minecraft:wearable": {
 				"slot": "slot.armor.chest",
-				"protection": 6
+				"protection": 8
 			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{
 						"items": [
-							"minecraft:iron_ingot"
+							"koprium:koprium_scrap"
 						],
 						"repair_amount": "query.max_durability * 0.25"
 					},

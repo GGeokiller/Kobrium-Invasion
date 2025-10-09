@@ -8,7 +8,8 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     if (eventId !== "koprium:cannon_ball_fall") return;
     if (entity.typeId !== CANNONBALL_ID) return;
     if (!entity.isValid) return;
-    entity.dimension.createExplosion(entity.location, 1, {source: entity})
+    let closestCannon = entity.dimension.getEntities({type: CANNONBALL_ID, location: entity.location, maxDistance: 64})[0];
+    entity.dimension.createExplosion(entity.location, 1, {source: closestCannon})
     entity.remove()
 })
 

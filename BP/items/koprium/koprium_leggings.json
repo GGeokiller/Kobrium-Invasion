@@ -15,7 +15,7 @@
 				"slot": "armor_legs"
 			},
 			"minecraft:durability": {
-				"max_durability": 225,
+				"max_durability": 495,
 				"damage_chance": {
 					"min": 60,
 					"max": 100
@@ -24,13 +24,13 @@
 			"minecraft:icon": "koprium_koprium_leggings",
 			"minecraft:wearable": {
 				"slot": "slot.armor.legs",
-				"protection": 5
+				"protection": 6
 			},
 			"minecraft:repairable": {
 				"repair_items": [
 					{
 						"items": [
-							"minecraft:iron_ingot"
+							"koprium:koprium_scrap"
 						],
 						"repair_amount": "query.max_durability * 0.25"
 					},
