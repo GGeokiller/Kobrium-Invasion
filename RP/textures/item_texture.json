@@ -40,6 +40,12 @@
 		},
 		"koprium_comet_stone": {
 			"textures": "textures/items/comet_stone"
+		},
+		"koprium_koprium_sword": {
+			"textures": "textures/items/koprium_sword"
+		},
+		"koprium_koprium_pickaxe": {
+			"textures": "textures/items/koprium_pickaxe"
 		}
 	}
 }
