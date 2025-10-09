@@ -41,6 +41,12 @@
 						"repair_amount": "context.other->query.remaining_durability + 0.12 * context.other->query.max_durability"
 					}
 				]
+			},
+			"minecraft:tags": {
+				"tags": [
+					"minecraft:is_armor",
+					"minecraft:trimmable_armors"
+				]
 			}
 		}
 	}
