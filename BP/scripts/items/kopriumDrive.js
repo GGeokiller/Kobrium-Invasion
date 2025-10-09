@@ -15,7 +15,10 @@ world.afterEvents.itemUse.subscribe(data => {
     let cooldown = itemStack.getComponent("cooldown")
     let remaining = cooldown.getCooldownTicksRemaining(player)
     if (remaining > 0) return;
-    if ( !geo.hasArmorPiece(player, KOPRIUM_HELMET) || !geo.hasArmorPiece(player, KOPRIUM_CHESTPLATE) || !geo.hasArmorPiece(player, KOPRIUM_LEGGINGS) || !geo.hasArmorPiece(player, KOPRIUM_BOOTS)) return;
+    if ( !geo.hasArmorPiece(player, KOPRIUM_HELMET) || !geo.hasArmorPiece(player, KOPRIUM_CHESTPLATE) || !geo.hasArmorPiece(player, KOPRIUM_LEGGINGS) || !geo.hasArmorPiece(player, KOPRIUM_BOOTS)) {
+        player.sendMessage({rawtext: [{translate: "item.koprium.koprium_drive.no_armor"}]})
+        return;
+    }
     system.runTimeout(() => { 
         player.playSound("item.koprium_drive.ready", {volume: 1, pitch: 1})
     }, 600)
