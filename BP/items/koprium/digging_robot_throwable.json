@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "koprium:digging_robot_throwable",
 			"menu_category": {
-				"category": "items"
+				"category": "equipment"
 			}
 		},
 		"components": {

@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "koprium:koprium_dagger",
 			"menu_category": {
-				"category": "items"
+				"category": "equipment"
 			}
 		},
 		"components": {

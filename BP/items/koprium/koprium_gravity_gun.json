@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "koprium:koprium_gravity_gun",
 			"menu_category": {
-				"category": "nature"
+				"category": "equipment"
 			}
 		},
 		"components": {
@@ -12,7 +12,8 @@
 			"minecraft:use_modifiers": {
 				"movement_modifier": 1,
 				"use_duration": 100
-			}
+			},
+			"minecraft:max_stack_size": 1
 		}
 	}
 }

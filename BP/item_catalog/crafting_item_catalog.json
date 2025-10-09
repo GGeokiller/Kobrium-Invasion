@@ -13,14 +13,45 @@
 						"items": [
 							"koprium:koprium_scrap",
 							"koprium:bucket_cheese",
+							"koprium:energy_core"
+						]
+					}
+				]
+			},
+			{
+				"category_name": "equipment",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "koprium:koprium_gravity_gun",
+							"name": "koprium:itemGroup.name.koprium_equipment"
+						},
+						"items": [
+							"koprium:digging_robot_throwable",
+							"koprium:comet_stone",
+							"koprium:koprium_dagger",
+							"koprium:koprium_drive",
+							"koprium:koprium_gravity_gun"
+						]
+					}
+				]
+			},
+			{
+				"category_name": "construction",
+				"groups": [
+					{
+						"group_identifier": {
+							"icon": "koprium:comet_stone",
+							"name": "koprium:itemGroup.name.koprium_construction"
+						},
+						"items": [
 							"koprium:koprium_scrap_block",
-							"koprium:meteorite_gilded_stone",
-							"koprium:meteorite_ash",
 							"koprium:koprium_teleport_pad",
+							"koprium:landmine",
+							"koprium:meteorite_ash",
+							"koprium:meteorite_gilded_stone",
 							"koprium:meteorite_magma_stone",
-							"koprium:meteorite_stone",
-							"koprium:energy_core",
-							"koprium:digging_robot_throwable"
+							"koprium:meteorite_stone"
 						]
 					}
 				]
