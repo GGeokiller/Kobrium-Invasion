@@ -31,7 +31,7 @@
 					"attack_radius": 32.0
 				},
 				"minecraft:shooter": {
-					"def": "minecraft:snowball"
+					"def": "koprium:laser_blast_projectile"
 				},
 				"minecraft:follow_range": {
 					"value": 64
