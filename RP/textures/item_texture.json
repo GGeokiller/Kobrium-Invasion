@@ -46,6 +46,27 @@
 		},
 		"koprium_koprium_pickaxe": {
 			"textures": "textures/items/koprium_pickaxe"
+		},
+		"koprium_amplifier_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_amplifier_spawn_egg"
+		},
+		"koprium_drone_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_drone_spawn_egg"
+		},
+		"koprium_gyrator_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_gyrator_spawn_egg"
+		},
+		"koprium_mortar_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_mortar_spawn_egg"
+		},
+		"koprium_pylon_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_pylon_spawn_egg"
+		},
+		"koprium_rover_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_rover_spawn_egg"
+		},
+		"koprium_spawn_egg_base": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_spawn_egg_base"
 		}
 	}
 }

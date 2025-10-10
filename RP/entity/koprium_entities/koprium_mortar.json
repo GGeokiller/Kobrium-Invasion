@@ -16,8 +16,7 @@
 				"controller.render.koprium_mortar"
 			],
 			"spawn_egg": {
-				"base_color": "#000000",
-				"overlay_color": "#FFFFFF"
+				"texture": "koprium_mortar_spawn_egg"
 			}
 		}
 	}

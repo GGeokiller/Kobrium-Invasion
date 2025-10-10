@@ -3,7 +3,7 @@
 	"minecraft:entity": {
 		"description": {
 			"identifier": "koprium:meteorite",
-			"is_spawnable": true,
+			"is_spawnable": false,
 			"is_summonable": true,
 			"animations": {
 				"falling_meteorite": "controller.animation.falling_meteorite"

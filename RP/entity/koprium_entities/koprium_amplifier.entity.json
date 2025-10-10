@@ -34,8 +34,7 @@
 				"controller.render.zombie"
 			],
 			"spawn_egg": {
-				"base_color": "#af9a9a",
-				"overlay_color": "#c2ff43"
+				"texture": "koprium_amplifier_spawn_egg"
 			},
 			"enable_attachables": false
 		}

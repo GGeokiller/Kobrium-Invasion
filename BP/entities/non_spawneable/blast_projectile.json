@@ -3,7 +3,7 @@
 	"minecraft:entity": {
 		"description": {
 			"identifier": "koprium:blast_projectile",
-			"is_spawnable": true,
+			"is_spawnable": false,
 			"is_summonable": true,
 			"runtime_identifier": "minecraft:arrow",
 			"is_experimental": false
@@ -55,7 +55,7 @@
 				},
 				"hit_sound": "mob.ghast.fireball",
 				"power": 1.6,
-				"gravity": 0.0,
+				"gravity": 0,
 				"uncertainty_base": 16,
 				"uncertainty_multiplier": 4,
 				"anchor": 1,
@@ -76,7 +76,7 @@
 			},
 			"minecraft:conditional_bandwidth_optimization": {
 				"default_values": {
-					"max_optimized_distance": 80.0,
+					"max_optimized_distance": 80,
 					"max_dropped_ticks": 7,
 					"use_motion_prediction_hints": true
 				}

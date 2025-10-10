@@ -33,11 +33,10 @@
 				"controller.render.glow_texture",
 				"controller.render.zombie"
 			],
+			"enable_attachables": false,
 			"spawn_egg": {
-				"base_color": "#af9a9a",
-				"overlay_color": "#c2ff43"
-			},
-			"enable_attachables": false
+				"texture": "koprium_rover_spawn_egg"
+			}
 		}
 	}
 }
