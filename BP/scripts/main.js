@@ -16,6 +16,7 @@ system.run(() => {
 /// hola de geo 10/08/25 1:53 AM
 // hola de euforia 10/08/25 3:14 AM
 // hola de geo 10/09/25 1:45 AM (vamos a ganar esta cosa, estan quedando bien perrones los items)
+// hola de euforia 10/10/ 1:27 AM simon orita lo hago
 
 
 
