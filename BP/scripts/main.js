@@ -7,9 +7,9 @@ import "./utils/particle"
 import "./debug/testing"
 import "./damage/damage"
 
-system.run(() => {
-    world.sendMessage("Hello World")
-})
+// system.run(() => {
+//     world.sendMessage("Hello World")
+// })
 
 /// hola de geo
 // hola de euforia
