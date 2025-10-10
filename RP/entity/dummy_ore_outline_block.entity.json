@@ -1,0 +1,27 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:dummy_ore_outline_block",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"overwrite": "overwrite",
+				"outline": "always_render_emissive"
+			},
+			"textures": {
+				"default": "textures/entity/ore_outline"
+			},
+			"geometry": {
+				"default": "geometry.ore_block_outline"
+			},
+			"render_controllers": [
+				"controller.render.ore_outline_block.outline",
+				"controller.render.ore_outline_block.overwrite"
+			],
+			"spawn_egg": {
+				"base_color": "#000000",
+				"overlay_color": "#FFFFFF"
+			}
+		}
+	}
+}

@@ -1,49 +1,68 @@
 {
     "materials": {
         "version": "1.0.0",
-        "outline_base:enderman": {
+        "always_render_emissive:entity": {
+            "depthFunc": "Always",
             "+states": [
-                "EnableStencilTest",
-                "StencilWrite",
-                "InvertCulling"
-            ],
-            "frontFace": {
-                "stencilFunc": "Always",
-                "stencilFailOp": "Replace",
-                "stencilDepthFailOp": "Replace",
-                "stencilPassOp": "Replace"
-            },
-            "backFace": {
-                "stencilFunc": "Always",
-                "stencilFailOp": "Replace",
-                "stencilDepthFailOp": "Replace",
-                "stencilPassOp": "Replace"
-            },
-            "stencilRef": 2
-        },
-        "outline:entity_static": {
-            "+states": [
-                "InvertCulling",
-                "EnableStencilTest",
-                "DisableDepthWrite",
                 "Blending",
-                "StencilWrite"
+                "DisableDepthWrite",
+                "EnableStencilTest"
             ],
-            "+defines": [
-                "USE_OVERLAY"
+            "-states": [
+                "DisableCulling"
             ],
             "-defines": [
                 "FANCY"
             ],
-            "depthFunc": "Always",
             "frontFace": {
                 "stencilFunc": "NotEqual"
             },
             "backFace": {
-                "stencilFunc": "Equal"
+                "stencilFunc": "NotEqual"
             },
             "stencilRef": 2,
-            "stencilReadMark": 2
+            "stencilReadMask": 2,
+            "stencilWriteMask": 0,
+            "blendSrc": "One",
+            "blendDst": "One"
+        },
+        "overwrite:entity": {
+            "depthFunc": "Always",
+            "+defines": [
+                "USE_SKINNING"
+            ],
+            "+states": [
+                "EnableStencilTest",
+                "StencilWrite",
+                "DisableColorWrite"
+            ],
+            "-states": [
+                "DisableCulling"
+            ],
+            "frontFace": {
+                "stencilFunc": "Always",
+                "stencilPassOp": "Replace"
+            },
+            "backFace": {
+                "stencilFunc": "Always",
+                "stencilPassOp": "Replace"
+            },
+            "vertexFields": [
+                {
+                    "field": "Position"
+                },
+                {
+                    "field": "BoneId0"
+                },
+                {
+                    "field": "Normal"
+                },
+                {
+                    "field": "UV0"
+                }
+            ],
+            "stencilRef": 2,
+            "stencilWriteMask": 2
         }
     }
 }
