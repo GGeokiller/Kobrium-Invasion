@@ -36,17 +36,13 @@
 					}
 				]
 			},
-			"minecraft:damage": 6,
-			"minecraft:enchantable": {
-				"value": 14,
-				"slot": "pickaxe"
-			},
 			"minecraft:digger": {
 				"use_efficiency": true,
 				"destroy_speeds": [
 					{
 						"block": {
-							"tags": "query.any_tag('stone', 'metal', 'iron_pick_diggable')"
+							//,'minecraft:is_pickaxe_item_destructible'
+							"tags": "query.any_tag('stone', 'metal', 'diamond_pick_diggable', 'minecraft:diamond_tier_destructible','minecraft:is_pickaxe_item_destructible')"
 						},
 						"speed": 5
 					},
@@ -63,8 +59,14 @@
 			"minecraft:tags": {
 				"tags": [
 					"minecraft:is_pickaxe",
-					"minecraft:is_tool"
+					"minecraft:is_tool",
+					"minecraft:diamond_tier"
 				]
+			},
+			"minecraft:damage": 6,
+			"minecraft:enchantable": {
+				"value": 14,
+				"slot": "pickaxe"
 			}
 		}
 	}
