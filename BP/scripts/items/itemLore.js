@@ -61,7 +61,7 @@ const ItemArray = [
     new loreItem("koprium:koprium_drive", [`§r§7Rarity: ${epic}`, " ", rightClickOrInteract, `§r§9Activates the ${kopriumArmorAura}.`, ``, `${kopriumArmorAuraInfo}`]),
     new loreItem("koprium:koprium_sword", [`§r§7Rarity: ${rare}`, " ", onAttackEntity, "§r§925% chance to trigger a Koprium Lightning Chain."]),
     new loreItem("koprium:koprium_scrap", [`§r§7Rarity: ${uncommon}`, " ", "§r§9Used for crafting Koprium items."]),
-    new loreItem("koprium:koprium_pickaxe", [`§r§7Rarity: ${rare}`, " ", onMiningBlock, "§r§910% to grant Haste."]),
+    new loreItem("koprium:koprium_pickaxe", [`§r§7Rarity: ${rare}`, " ", onMiningBlock, "§r§910% to grand temporal Xray"]),
     new loreItem("koprium:meteorite_gilded_stone", [`§r§7Rarity: ${rare}`, " ", "§r§9Drops golden nuggets when mined."]),
     new loreItem("koprium:meteorite_ash", [`§r§7Rarity: ${uncommon}`, " ", "§r§9Ash from a fallen meteorite."]),
     new loreItem("koprium:landmine", [`§r§7Rarity: ${rare}`, " ", "§r§9Explodes when stepped on."]),
