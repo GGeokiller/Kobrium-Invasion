@@ -6,9 +6,33 @@
       "runtime_identifier": "wolf",
       "spawn_category": "creature",
       "is_spawnable": true,
-      "is_summonable": true
+      "is_summonable": true,
+      "properties": {
+        "koprium:is_dancing": {
+          "type": "bool",
+          "client_sync": true,
+          "default": false
+        }
+      }
     },
     "component_groups": {
+      "koprium:movement": {
+        "minecraft:movement": {
+          "value": 0.3
+        }
+      },
+      "koprium:dancing": {
+        "minecraft:movement": {
+          "value": 0.00
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 60,
+          "time_down_event": {
+            "event": "koprium:end_dancing"
+          }
+        }
+      },
       "minecraft:wolf_baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -496,6 +520,40 @@
       "minecraft:balloonable": {
         "mass": 0.8
       },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "domain": "hand",
+                    "subject": "other",
+                    "value": "sugar"
+                  },
+                  {
+                    "test": "bool_property",
+                    "domain": "koprium:is_dancing",
+                    "operator": "==",
+                    "value": false,
+                    "subject": "self"
+                  }
+                ]
+              },
+              "event": "koprium:start_dancing"
+            },
+            "use_item": true,
+            "play_sounds": "eat",
+            "interact_text": "action.interact.polish_cow"
+          }
+        ]
+      },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:nameable": {},
       "minecraft:type_family": {
@@ -703,8 +761,40 @@
         "sequence": [
           {
             "trigger": "minecraft:spawn_wild_baby_or_adult"
+          },
+          {
+            "add": {
+              "component_groups": [
+                "koprium:movement"
+              ]
+            }
           }
         ]
+      },
+      "koprium:start_dancing": {
+        "add": {
+          "component_groups": [
+            "koprium:dancing"
+          ]
+        },
+        "set_property": {
+          "koprium:is_dancing": true
+        }
+      },
+      "koprium:end_dancing": {
+        "add": {
+          "component_groups": [
+            "koprium:movement"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "koprium:dancing"
+          ]
+        },
+        "set_property": {
+          "koprium:is_dancing": false
+        }
       },
       "minecraft:entity_born": {
         "trigger": "minecraft:spawn_tame_baby"
