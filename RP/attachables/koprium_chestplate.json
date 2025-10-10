@@ -8,11 +8,11 @@
 				"enchanted": "armor_enchanted"
 			},
 			"textures": {
-				"default": "textures/models/armor/koprium_1",
+				"default": "textures/entity/koprium_armor",
 				"enchanted": "textures/misc/enchanted_item_glint"
 			},
 			"geometry": {
-				"default": "geometry.humanoid.armor.chestplate"
+				"default": "geometry.koprium_chestplate"
 			},
 			"scripts": {
 				"parent_setup": "variable.chest_layer_visible = 0.0;"

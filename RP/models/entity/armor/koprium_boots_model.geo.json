@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"geometry.koprium_boots": {
+		"texturewidth": 64,
+		"textureheight": 64,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 4,
+		"visible_bounds_offset": [0, 2, 0],
+		"bones": [
+			{
+				"name": "root",
+				"pivot": [0, 0, 0]
+			},
+			{
+				"name": "leftLeg",
+				"parent": "root",
+				"pivot": [1.9, 12, 0]
+			},
+			{
+				"name": "leftBoots",
+				"parent": "leftLeg",
+				"pivot": [-6, 2, 0],
+				"cubes": [
+					{"origin": [-0.5, -0.5, -2.5], "size": [5, 5, 5], "uv": [37, 10], "inflate": 0.25, "mirror": true}
+				]
+			},
+			{
+				"name": "rightLeg",
+				"parent": "root",
+				"pivot": [-1.9, 12, 0]
+			},
+			{
+				"name": "rightBoots",
+				"parent": "rightLeg",
+				"pivot": [4, -12, 0],
+				"cubes": [
+					{"origin": [-4.5, -0.5, -2.5], "size": [5, 5, 5], "uv": [37, 10], "inflate": 0.25}
+				]
+			}
+		]
+	}
+}
