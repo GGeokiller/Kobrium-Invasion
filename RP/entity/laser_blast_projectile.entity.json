@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "koprium:laser_blast_projectile",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/ui/bg"
+      },
+      "geometry": {
+        "default": "geometry.blast_projectile"
+      },
+      "animations": {
+        "blast_trail_emitter": "animation.blast_projectile.trail"
+      },
+      "particle_effects": {
+        "blast_trail": "koprium:blast_trail"
+      },
+      "scripts": {
+        "animate": [
+          "blast_trail_emitter"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ]
+    }
+  }
+}
