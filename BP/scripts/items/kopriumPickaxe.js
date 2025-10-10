@@ -18,6 +18,7 @@ world.beforeEvents.playerBreakBlock.subscribe((data) => {
     const currentBlock = dimension.getBlock(coord);
     if (currentBlock.typeId.includes("ore")) {
       system.run(() => {
+        if (currentBlock.dimension.getEntitiesAtBlockLocation(currentBlock.center()).length > 0) return;
         dimension.spawnEntity(
           "koprium:dummy_ore_outline_block",
           Vec3.subtract(currentBlock.center(), { x: 0, y: 1, z: 0 })
@@ -26,3 +27,16 @@ world.beforeEvents.playerBreakBlock.subscribe((data) => {
     }
   }
 });
+
+world.beforeEvents.playerBreakBlock.subscribe((data) => {
+  let { player, block, itemStack, dimension } = data;
+  if (!block?.typeId.includes("ore")) return;
+  block.dimension.getEntitiesAtBlockLocation(block.center()).forEach(e => {
+    if (!e) return;
+    if (e.typeId !== "koprium:dummy_ore_outline_block") return;
+    system.run(() => {
+      e.remove();
+    })
+
+  });
+})

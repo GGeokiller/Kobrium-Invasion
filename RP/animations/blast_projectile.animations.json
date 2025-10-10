@@ -3,7 +3,7 @@
 	"animations": {
 		"animation.blast_projectile.trail": {
 			"loop": true,
-			"animation_length": 0.5,
+			"animation_length": 0.05,
 			"particle_effects": {
 				"0.0": {
 					"effect": "blast_trail",

@@ -53,7 +53,6 @@
 						"destroy_on_hit": false
 					}
 				},
-				"hit_sound": "mob.ghast.fireball",
 				"power": 1.6,
 				"gravity": 0,
 				"uncertainty_base": 16,
