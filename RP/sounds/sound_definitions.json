@@ -52,7 +52,7 @@
 					"load_on_low_memory": true,
 					"name": "sounds/koprium/nyan_cat_noteblock_cover",
 					"stream": true,
-					"volume": 1.0
+					"volume": 1
 				}
 			]
 		},
@@ -66,7 +66,7 @@
 					"load_on_low_memory": true,
 					"name": "sounds/koprium/fly_me_to_the_moon_noteblock_cover",
 					"stream": true,
-					"volume": 1.0
+					"volume": 1
 				}
 			]
 		},
@@ -183,6 +183,19 @@
 			"sounds": [
 				"sounds/koprium/kopriumMortarShoot"
 			]
+		},
+		"item.koprium_sword.shock": {
+			"__use_legacy_max_distance": true,
+			"category": "weather",
+			"sounds": [
+				{
+					"name": "sounds/koprium/kopriumSwordShock",
+					"volume": 16,
+					"load_on_low_memory": true
+				}
+			],
+			"max_distance": 256,
+			"min_distance": 256
 		}
 	}
 }
