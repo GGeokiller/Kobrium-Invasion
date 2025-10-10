@@ -1,4 +1,4 @@
-import { world, system, ItemStack, EntityEquippableComponent, EquipmentSlot } from "@minecraft/server";
+import { world, system, ItemStack, EntityEquippableComponent, EquipmentSlot, Entity, EntityDamageCause } from "@minecraft/server";
 
 world.afterEvents.entitySpawn.subscribe(ev => {
     let damager = ev.entity;
@@ -11,7 +11,7 @@ world.afterEvents.entityHurt.subscribe(data => {
     let {hurtEntity, damage, damageSource: {damagingEntity, cause},} = data
 
     if (damagingEntity?.typeId != 'minecraft:player') return;
-    if (cause == "override") return;
+    if (cause != EntityDamageCause.lightning) return;
 
     let headHeight = hurtEntity.getHeadLocation().y
 

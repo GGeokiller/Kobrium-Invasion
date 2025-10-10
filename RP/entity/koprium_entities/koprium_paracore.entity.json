@@ -1,0 +1,42 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_paracore",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "zombie",
+				"glow": "allay"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_entities/amplifier",
+				"glow": "textures/entity/koprium_entities/amplifier_glow"
+			},
+			"geometry": {
+				"default": "geometry.kobrium_amplifier"
+			},
+			"animations": {
+				"look_at_target_default": "animation.humanoid.look_at_target.default",
+				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+				"move": "animation.kobrium_amplifier.move"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.humanoid.look_at_target"
+				},
+				{
+					"move": "controller.animation.koprium_amplifier"
+				}
+			],
+			"render_controllers": [
+				"controller.render.glow_texture",
+				"controller.render.zombie"
+			],
+			"spawn_egg": {
+				"texture": "koprium_amplifier_spawn_egg"
+			},
+			"enable_attachables": false
+		}
+	}
+}

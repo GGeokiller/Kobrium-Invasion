@@ -88,6 +88,17 @@
 					{
 						"cause": "entity_explosion",
 						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_tag",
+								"subject": "self",
+								"operator": "==",
+								"value": "hasParacore"
+							}
+						},
+						"deals_damage": "no"
 					}
 				]
 			},
@@ -98,21 +109,6 @@
 				"width": 0.9,
 				"height": 1.1
 			},
-			/* 			
-			"minecraft:environment_sensor": {
-				"triggers": [
-					{
-						"filters": [
-							{
-								"test": "has_target",
-								"subject": "self",
-								"value": true
-							}
-						],
-						"event": "koprium:mortar_has_target"
-					}
-				]
-			}, */
 			"minecraft:scale": {
 				"value": 1.5
 			},

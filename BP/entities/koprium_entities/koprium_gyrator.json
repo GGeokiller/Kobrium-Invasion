@@ -102,6 +102,17 @@
 							]
 						},
 						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_tag",
+								"subject": "self",
+								"operator": "==",
+								"value": "hasParacore"
+							}
+						},
+						"deals_damage": "no"
 					}
 				]
 			},
