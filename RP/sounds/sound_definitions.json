@@ -184,17 +184,17 @@
 				"sounds/koprium/kopriumMortarShoot"
 			]
 		},
-		"item.koprium_sword.shock": {
-			"__use_legacy_max_distance": true,
-			"category": "weather",
+		"koprium_sword.shock": {
+			
+			"category": "hostile",
 			"sounds": [
 				{
-					"name": "sounds/koprium/kopriumSwordShock",
-					"volume": 16,
-					"load_on_low_memory": true
+					"volume": 2,
+					"name": "sounds/koprium/kopriumSwordShock"
 				}
 			],
 			"max_distance": 256,
+			"__use_legacy_max_distance": true,
 			"min_distance": 256
 		}
 	}

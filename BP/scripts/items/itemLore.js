@@ -59,7 +59,7 @@ const ItemArray = [
     new loreItem("koprium:red_light_saber", [`§r§7Rarity: ${epic}`, " ", "§r§9"]),
     new loreItem("koprium:koprium_gravity_gun", [`§r§7Rarity: ${legendary}`, " ", rightClickOrInteract, "§r§9Drags entities and blocks around"]),
     new loreItem("koprium:koprium_drive", [`§r§7Rarity: ${epic}`, " ", rightClickOrInteract, `§r§9Activates the ${kopriumArmorAura}.`, ``, `${kopriumArmorAuraInfo}`]),
-    new loreItem("koprium:koprium_sword", [`§r§7Rarity: ${rare}`, " ", onAttackEntity, "§r§925% chance to grant a random positive effect"]),
+    new loreItem("koprium:koprium_sword", [`§r§7Rarity: ${rare}`, " ", onAttackEntity, "§r§925% chance to trigger a Koprium Lightning Chain."]),
     new loreItem("koprium:koprium_scrap", [`§r§7Rarity: ${uncommon}`, " ", "§r§9Used for crafting Koprium items."]),
     new loreItem("koprium:koprium_pickaxe", [`§r§7Rarity: ${rare}`, " ", onMiningBlock, "§r§910% to grant Haste."]),
     new loreItem("koprium:meteorite_gilded_stone", [`§r§7Rarity: ${rare}`, " ", "§r§9Drops golden nuggets when mined."]),
