@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "koprium:korpium_sword_lightning",
+			"basic_render_parameters": {
+				"material": "particles_add",
+				"texture": "textures/particle/koprium_sword_lightning"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.dir_x;variable.dir_y;variable.dir_z;variable.size_x;variable.size_y;variable.r;variable.g;variable.b;variable.a;variable.amount;variable.life_time;"
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "variable.amount"
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "variable.life_time"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.size_X", "variable.size_y"],
+				"facing_camera_mode": "lookat_direction",
+				"direction": {
+					"mode": "custom",
+					"custom_direction": ["variable.dir_x", "variable.dir_y", "variable.dir_z"]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["variable.r", "variable.g", "variable.b", "(1 - (variable.particle_age/variable.particle_lifetime)) * variable.a"]
+			}
+		}
+	}
+}

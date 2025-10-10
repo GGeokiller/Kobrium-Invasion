@@ -4,6 +4,8 @@ import "./items/itemControl"
 import "./blocks/blockControl"
 import "./utils/item_components"
 import "./utils/particle"
+import "./debug/testing"
+import "./damage/damage"
 
 system.run(() => {
     world.sendMessage("Hello World")

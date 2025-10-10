@@ -1,8 +1,9 @@
 ### EXTRA
 
 action.interact.polish_cow=Interact
-meteorite.coordinates=§cA meteorite will fall in: 
+meteorite.coordinates=§cA Meteorite Will Fall in: 
 meteorite.time=in: 
+meteorite.is_falling=§cA Meteorite is Falling in: 
 koprium:itemGroup.name.koprium_items=Koprium Invasion Items
 koprium:itemGroup.name.koprium_equipment=Koprium Invasion Equipment
 koprium:itemGroup.name.koprium_construction=Koprium Invasion Construction

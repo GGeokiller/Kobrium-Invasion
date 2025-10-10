@@ -45,9 +45,86 @@ export const geoParticles = {
                     } catch {}
             }, i * time);
         }
-    }
+    },
+    /**
+     * 
+     * @param {String} particleId particle id
+     * @param {String} dimenionId dimension id
+     * @param {import("@minecraft/server").Vector3} location location
+     * @param {import("@minecraft/server").Vector3} direction direction
+     * @param {Number} sizeX sizeX
+     * @param {Number} sizeY sizeY
+     * @param {Number} r red
+     * @param {Number} g green
+     * @param {Number} b blue
+     * @param {Number} a alpha
+     * @param {Number} amount amount
+     * @param {Number} lifeTime lifeTime
+     */
+    newDirectionalLine(particleId, dimenionId, location, direction, sizeX, sizeY, r, g, b, a, amount, lifeTime) {
+        let molangVariables = new MolangVariableMap();
+        molangVariables.setFloat("variable.dir_x", direction.x);
+        molangVariables.setFloat("variable.dir_y", direction.y);
+        molangVariables.setFloat("variable.dir_z", direction.z);
+        molangVariables.setFloat("variable.size_x", sizeX);
+        molangVariables.setFloat("variable.size_y", sizeY);
+        molangVariables.setFloat("variable.r", r);
+        molangVariables.setFloat("variable.g", g);
+        molangVariables.setFloat("variable.b", b);
+        molangVariables.setFloat("variable.a", a);
+        molangVariables.setFloat("variable.amount", amount);
+        molangVariables.setFloat("variable.life_time", lifeTime);
+        try {
+            world.getDimension(dimenionId).spawnParticle(particleId, location, molangVariables);
+        } catch {}
+    },
+    /**
+     * 
+     * @param {String} particleId particle id
+     * @param {String} dimensionId dimension id
+     * @param {import("@minecraft/server").Vector3} location1 location1
+     * @param {import("@minecraft/server").Vector3} location2 location2
+     * @param {Number} sizeY sizeY
+     * @param {Number} r red
+     * @param {Number} g green
+     * @param {Number} b blue
+     * @param {Number} a alpha
+     * @param {Number} amount amount
+     * @param {Number} lifeTime lifeTime
+     */
+    midDirectionalLineBetween(particleId, dimensionId, location1, location2, sizeY, r, g, b, a, amount, lifeTime) {
+    let direction = {
+        x: location2.x - location1.x,
+        y: location2.y - location1.y,
+        z: location2.z - location1.z
+    };
+
+    let midPoint = {
+        x: (location1.x + location2.x) / 2,
+        y: (location1.y + location2.y) / 2,
+        z: (location1.z + location2.z) / 2
+    };
+
+    let distance = Math.sqrt(
+        Math.pow(direction.x, 2) +
+        Math.pow(direction.y, 2) +
+        Math.pow(direction.z, 2)
+    );
+
+    for (let i = 0; i < amount; i += 1) {
+        this.newDirectionalLine(
+        particleId,
+        dimensionId,
+        midPoint,
+        direction,
+        distance/2,
+        sizeY,
+        r, g, b, a,
+        1,
+        lifeTime
+    );
+        }
+    }   
 }
 
-/* world.afterEvents.itemUse.subscribe(data => {
-    createAreaParticle(data.source, data.source.location, 10)
-}) */
+// variable.dir_x;variable.dir_y;variable.dir_z;variable.size_x;variable.size_y;variable.r;variable.g;variable.b;variable.a;variable.amount;variable.life_time;

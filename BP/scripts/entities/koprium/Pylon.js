@@ -2,6 +2,7 @@ import { world, system, Entity, EffectTypes, MolangVariableMap, RawMessageError 
 import { geoParticles } from "../../utils/particle";
 import { KOPRIUM_ENTITIES_SPAWN_RATE } from "./data";
 import { Random } from "../../utils/random";
+import { geo } from "../../utils/geo";
 
 const KOPRIUM_PYLON_ID = "koprium:koprium_pylon"
 
@@ -73,7 +74,8 @@ function spawnRandomKoprium(entity, minRange, maxRange) {
         let spawnedEntity = entity.dimension.spawnEntity(entityId, finalLocation, {spawnEvent: 'minecraft:entity_spawned'});
         entity.playAnimation("animation.koprium_pylon.spawn_entities")
         entity.dimension.playSound("mob.kobrium_pylon.spawn_entity", fixPylonLocation(entity), {pitch: Random.number(0.8, 1.2), volume: 4})
-        geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0)
+        /* geoParticles.VectorLine(fixPylonLocation(entity), spawnedEntity.location, "koprium:koprium_pylon_point", entity.dimension.id, 0.5, 0) */
+        geoParticles.midDirectionalLineBetween("koprium:koprium_pylon_spawn_line", entity.dimension.id, fixPylonLocation(entity), geo.getEntityCenter(spawnedEntity), Random.number(0.1, 0.3), 0.2, 0.8, 0.2, 1, 10, 3)
     } catch{}
 }
 

@@ -110,6 +110,11 @@ function handleExplosion(entity) {
             }
         }
     }
+    entity.dimension.spawnEntity("koprium:alien_wandering_trader", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
+    entity.dimension.spawnEntity("koprium:alien_cat", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
+    entity.dimension.spawnEntity("koprium:alien_cat", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
+    entity.dimension.spawnEntity("koprium:moon_cow", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
+    entity.dimension.spawnEntity("koprium:moon_cow", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
 }
 
 /// {MENTAL ILLNESS STARTING HERE
@@ -243,38 +248,39 @@ function willFall(location, time = 60 * 5) {
     }, time * 20)
 }
 //
-function falling(location) {
-    world.getDimension("overworld").runCommand(`tickingarea add 
-    ${location.x + 50} 300 ${location.z + 50}
-    ${location.x - 50} 0 ${location.z - 50} sample`)
-    let randomPlayer = world.getPlayers()[0]
-    let randomPlayerLocation = randomPlayer.location
-    let randomPlayerDimension = randomPlayer.dimension
-    randomPlayer.teleport({ x: location.x, y: 80, z: location.z }, { dimension: DimensionTypes.get('overworld') })
-    randomPlayer.addEffect(EffectTypes.get('resistance'), 20, { amplifier: 5, showParticles: false })
-    system.runTimeout(() => {
-        randomPlayer.teleport(randomPlayerLocation, { dimension: randomPlayerDimension })
-    }, 50)
-    system.runTimeout(() => {
-        world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-    }, 100)
-    system.runTimeout(() => {
-        let fallBlock = world.getDimension("overworld").getTopmostBlock({ x: location.x, z: location.z })
-        world.sendMessage(`${JSON.stringify(fallBlock.location)}`)
-        let nearbyPlayers = world.getDimension("overworld").getEntities({ type: 'minecraft:player', maxDistance: 64, location: fallBlock.location })
-        let closestPlayer = nearbyPlayers[0]
-        if (nearbyPlayers.length != 0) {
-            closestPlayer.dimension.spawnEntity(METEORITE_ID, { x: location.x, y: 200, z: location.z })
-        } else {
-            system.runTimeout(() => {
-                handleExplosion(fallBlock)
-                system.runTimeout(() => {
-                    world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-                }, 50)
-            }, 20)
-        }
-    }, 100)
-}
+// function falling(location) {
+//     world.getDimension("overworld").runCommand(`tickingarea add 
+//     ${location.x + 50} 300 ${location.z + 50}
+//     ${location.x - 50} 0 ${location.z - 50} sample`)
+//     let randomPlayer = world.getPlayers()[0]
+//     let randomPlayerLocation = randomPlayer.location
+//     let randomPlayerDimension = randomPlayer.dimension
+//     randomPlayer.teleport({ x: location.x, y: 80, z: location.z }, { dimension: DimensionTypes.get('overworld') })
+//     randomPlayer.addEffect(EffectTypes.get('resistance'), 20, { amplifier: 5, showParticles: false })
+//     system.runTimeout(() => {
+//         randomPlayer.teleport(randomPlayerLocation, { dimension: randomPlayerDimension })
+//     }, 50)
+//     system.runTimeout(() => {
+//         world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+//     }, 100)
+//     system.runTimeout(() => {
+//         let fallBlock = world.getDimension("overworld").getTopmostBlock({ x: location.x, z: location.z })
+//         world.sendMessage(`${JSON.stringify(fallBlock.location)}`)
+//         let nearbyPlayers = world.getDimension("overworld").getEntities({ type: 'minecraft:player', maxDistance: 64, location: fallBlock.location })
+//         let closestPlayer = nearbyPlayers[0]
+//         if (nearbyPlayers.length != 0) {
+//             closestPlayer.dimension.spawnEntity(METEORITE_ID, { x: location.x, y: 200, z: location.z })
+//         } else {
+//             system.runTimeout(() => {
+//                 handleExplosion(fallBlock)
+//                 //fallBlock.dimension.spawnEntity("koprium:alien_wandering_trader", { x: location.x, y: location.y + 1, z: location.z })
+//                 system.runTimeout(() => {
+//                     world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
+//                 }, 50)
+//             }, 20)
+//         }
+//     }, 100)
+// }
 
 /**
  * 
@@ -282,6 +288,7 @@ function falling(location) {
  */
 
 function falling2(location) {
+    world.sendMessage({ rawtext: [{ text: "§c<< ! >>\n" }, { translate: "meteorite.is_falling" }, { text: `${zxlocationToString(location)} ` }, { text: "\n<< ! >>" }] })
     let overworld = world.getDimension("overworld")
     overworld.runCommand(`tickingarea add 
     ${location.x + 50} 300 ${location.z + 50}
