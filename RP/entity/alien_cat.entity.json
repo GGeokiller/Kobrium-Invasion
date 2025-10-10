@@ -45,8 +45,7 @@
 				"controller.render.alien_cat"
 			],
 			"spawn_egg": {
-				"base_color": "#e1ffc3",
-				"overlay_color": "#20ea00"
+				"texture": "alien_cat_spawn_egg"
 			},
 			"particle_effects": {
 				"alien_cat_particle": "koprium:alien_cat_particle"
