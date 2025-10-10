@@ -24,15 +24,15 @@
         "value": 1
       },
       //timer para despawnear la entidad
-      /*       "minecraft:ageable": {
+      "minecraft:ageable": {
         "duration": 10,
         "grow_up": {
           "event": "eu:call_despawn"
         }
-      }, */
+      },
       "minecraft:collision_box": {
-        "width": 0.5,
-        "height": 0.5
+        "width": 0.1,
+        "height": 0.1
       },
       "minecraft:equip_item": {},
       "minecraft:health": {
@@ -52,14 +52,14 @@
       "minecraft:persistent": {},
       "minecraft:physics": {
         "has_collision": true,
-        "has_gravity": true
+        "has_gravity": false
       },
       "minecraft:on_death": {
         "event": "eu:call_despawn"
       },
       "minecraft:pushable": {
         "is_pushable": false,
-        "is_pushable_by_piston": true
+        "is_pushable_by_piston": false
       },
       "minecraft:conditional_bandwidth_optimization": {}
     },
