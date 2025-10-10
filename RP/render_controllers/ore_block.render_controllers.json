@@ -1,0 +1,39 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.ore_outline_block.outline": {
+            "part_visibility": [
+                {
+                    "block": false
+                }
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.outline"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "ignore_lighting": true
+        },
+        "controller.render.ore_outline_block.overwrite": {
+            "part_visibility": [
+                {
+                    "outline": false
+                }
+            ],
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.overwrite"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "ignore_lighting": true
+        }
+    }
+}
