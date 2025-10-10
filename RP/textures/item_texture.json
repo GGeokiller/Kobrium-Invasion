@@ -68,8 +68,11 @@
 		"koprium_spawn_egg_base": {
 			"textures": "textures/items/koprium_spawn_eggs/koprium_spawn_egg_base"
 		},
+		"moon_cow_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/moon_cow_spawn_egg"
+		},
 		"alien_cat_spawn_egg": {
-			"textures": "textures/items/koprium_spawn_eggs/alien_cat"
+			"textures": "textures/items/koprium_spawn_eggs/alien_cat_spawn_egg"
 		}
 	}
 }
