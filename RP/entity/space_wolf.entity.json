@@ -4,15 +4,15 @@
     "description": {
       "identifier": "koprium:space_wolf",
       "materials": {
-        "default": "wolf"
+        "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/wolf/wolf_rusty",
-        "angry": "textures/entity/wolf/wolf_rusty_angry",
-        "tame": "textures/entity/wolf/wolf_rusty_tame"
+        "default": "textures/entity/space_wolf",
+        "angry": "textures/entity/space_wolf_angry",
+        "tame": "textures/entity/space_wolf_tame"
       },
       "geometry": {
-        "default": "geometry.wolf"
+        "default": "geometry.koprium.space_wolf"
       },
       "scripts": {
         "pre_animation": [
