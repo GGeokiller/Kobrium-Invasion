@@ -15,7 +15,7 @@ system.runInterval(() => {
         variableMap.setFloat("height", KOPRIUM_ENTITIES_COLLISION_BOX[immortalEntity.typeId].height)
         variableMap.setFloat("width", KOPRIUM_ENTITIES_COLLISION_BOX[immortalEntity.typeId].width)
         immortalEntity.dimension.spawnParticle("koprium:koprium_paracore_effect", immortalEntity.location, variableMap)
-        geoParticles.midDirectionalLineBetween("koprium:koprium_pylon_spawn_line", entity.dimension.id, geo.getEntityCenter(entity), geo.getEntityCenter(immortalEntity), Random.number(0.1, 0.2), 0, 1, 0, 2, 1, 1);
+        geoParticles.midDirectionalLineBetween("koprium:koprium_pylon_spawn_line", entity.dimension.id, geo.getEntityCenter(entity), geo.getEntityCenter(immortalEntity), Random.number(0.1, 0.2), 1, 0.2, 0.2, 1, 2, 1);
     }
 }, 5)
 

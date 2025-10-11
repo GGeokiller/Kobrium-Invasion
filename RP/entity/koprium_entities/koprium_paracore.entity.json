@@ -9,17 +9,17 @@
 				"glow": "allay"
 			},
 			"textures": {
-				"default": "textures/entity/koprium_entities/amplifier",
+				"default": "textures/entity/koprium_entities/paracore",
 				"glow": "textures/entity/koprium_entities/amplifier_glow"
 			},
 			"geometry": {
-				"default": "geometry.kobrium_amplifier"
+				"default": "geometry.koprium_paracore"
 			},
 			"animations": {
 				"look_at_target_default": "animation.humanoid.look_at_target.default",
 				"look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
 				"look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
-				"move": "animation.kobrium_amplifier.move"
+				"move": "animation.koprium_paracore.move"
 			},
 			"animation_controllers": [
 				{
