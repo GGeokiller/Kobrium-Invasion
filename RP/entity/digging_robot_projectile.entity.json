@@ -4,10 +4,12 @@
     "description": {
       "identifier": "koprium:digging_robot_projectile",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "entity_alphatest",
+        "glow": "allay"
       },
       "textures": {
-        "default": "textures/entity/digging_robot"
+        "default": "textures/entity/koprium_entities/digging_robot",
+        "glow": "textures/entity/koprium_entities/digging_robot_glow"
       },
       "geometry": {
         "default": "geometry.digging_robot"
@@ -30,6 +32,7 @@
         ]
       },
       "render_controllers": [
+        "controller.render.glow_texture",
         "controller.render.digging_robot"
       ]
     }

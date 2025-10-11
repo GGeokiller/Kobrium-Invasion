@@ -20,6 +20,17 @@
           "dummy"
         ]
       },
+      //para remover la sombra
+      "minecraft:renders_when_invisible": {},
+      "minecraft:spell_effects": {
+        "add_effects": [
+          {
+            "visible": false,
+            "effect": "invisibility",
+            "duration": "infinite"
+          }
+        ]
+      },
       "minecraft:scale": {
         "value": 1
       },

@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "koprium:red_light_saber",
 			"menu_category": {
-				"category": "none"
+				"category": "items"
 			}
 		},
 		"components": {

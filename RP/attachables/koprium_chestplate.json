@@ -5,10 +5,12 @@
 			"identifier": "koprium:koprium_chestplate",
 			"materials": {
 				"default": "armor",
+				"glow": "enderman",
 				"enchanted": "armor_enchanted"
 			},
 			"textures": {
 				"default": "textures/entity/koprium_armor",
+				"glow": "textures/entity/koprium_armor_glow",
 				"enchanted": "textures/misc/enchanted_item_glint"
 			},
 			"geometry": {
@@ -18,6 +20,7 @@
 				"parent_setup": "variable.chest_layer_visible = 0.0;"
 			},
 			"render_controllers": [
+				"controller.render.glow_texture",
 				"controller.render.armor"
 			]
 		}

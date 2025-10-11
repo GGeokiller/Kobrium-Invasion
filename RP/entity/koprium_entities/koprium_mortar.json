@@ -4,15 +4,18 @@
 		"description": {
 			"identifier": "koprium:koprium_mortar",
 			"materials": {
-				"default": "entity_alphatest"
+				"default": "entity_alphatest",
+				"glow": "allay"
 			},
 			"textures": {
-				"default": "textures/entity/koprium_mortar"
+				"default": "textures/entity/koprium_entities/koprium_mortar",
+				"glow": "textures/entity/koprium_entities/koprium_mortar_glow"
 			},
 			"geometry": {
 				"default": "geometry.koprium_mortar"
 			},
 			"render_controllers": [
+				"controller.render.glow_texture",
 				"controller.render.koprium_mortar"
 			],
 			"spawn_egg": {
