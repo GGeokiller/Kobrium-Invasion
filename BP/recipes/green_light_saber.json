@@ -1,0 +1,27 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "koprium:green_light_saber"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"Y",
+			"Y",
+			"X"
+		],
+		"key": {
+			"Y": {
+				"item": "koprium:energy_core"
+			},
+			"X": {
+				"item": "koprium:koprium_scrap"
+			}
+		},
+		"result": {
+			"item": "koprium:green_light_saber"
+		}
+	}
+}

@@ -8,8 +8,8 @@
 		"koprium_bucket_cheese": {
 			"textures": "textures/items/bucket_cheese"
 		},
-		"koprium_red_light_saber": {
-			"textures": "textures/items/red_light_saber"
+		"koprium_green_light_saber": {
+			"textures": "textures/items/green_light_saber"
 		},
 		"koprium_digging_robot_throwable": {
 			"textures": "textures/items/koprium_digging"

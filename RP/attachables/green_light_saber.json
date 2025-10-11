@@ -2,14 +2,15 @@
   "format_version": "1.10.0",
   "minecraft:attachable": {
     "description": {
-      "identifier": "koprium:red_light_saber",
+      "identifier": "koprium:green_light_saber",
       "materials": {
-        "default": "entity_alphablend",
-        "normal": "entity_alphatest",
+        "default": "entity_alphatest",
+        "glow": "enderman",
+        "emissive": "entity_alphablend",
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/entity/red_light_saber",
+        "default": "textures/entity/green_light_saber",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
@@ -34,7 +35,7 @@
         ]
       },
       "render_controllers": [
-        "controller.render.item_default"
+        "controller.render.koprium.light_saber"
       ]
     }
   }
