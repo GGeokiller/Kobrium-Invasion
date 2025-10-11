@@ -8,13 +8,13 @@ const SPAWN_CHANCE_PER_ITERATION = 1.0
 world.afterEvents.entitySpawn.subscribe(data => {
     let {entity} = data
     if (entity?.typeId != FALLEN_STAR_ID) return;
-    entity.applyImpulse({x: Random.number(-0.5, 0.5), y: Random.number(-3.5, -1.8), z: Random.number(-0.5, 0.5)})
+    entity.applyImpulse({x: Random.number(-0.5, 0.5), y: Random.number(-4.5, -1.8), z: Random.number(-0.5, 0.5)})
     let intervalowey = system.runInterval(() => {
         if (!entity.isValid) {
             system.clearRun(intervalowey)
             return;
         }
-        entity.applyImpulse({x: Random.number(-0.1, 0.1), y: 0, z: Random.number(-0.1, 0.1)})
+        entity.applyImpulse({x: Random.number(-0.2, 0.2), y: 0, z: Random.number(-0.2, 0.2)})
     }, 2)
 })
 
@@ -28,7 +28,7 @@ system.runInterval(() => {
         if (player.dimension.id != 'minecraft:overworld') continue;
         spawnStar(player)
     }
-}, 4)
+}, 100)
 
 /**
  * 
