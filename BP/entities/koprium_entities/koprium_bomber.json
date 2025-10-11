@@ -38,6 +38,9 @@
 		},
 		"components": {
 			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/koprium_energy_core.json"
+			},
 			"minecraft:behavior.hurt_by_target": {
 				"priority": 1
 			},
