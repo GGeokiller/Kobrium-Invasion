@@ -55,11 +55,11 @@ export const KOPRIUM_ENTITIES_COLLISION_BOX = {
 
 /// pylon
 export const KOPRIUM_ENTITIES_SPAWN_RATE = [
-    { entity: KOPRIUM_AMPLIFIER_ID, weight: 0.5 },
-    { entity: KOPRIUM_ROVER_ID, weight: 3 },
-    { entity: KOPRIUM_GYRATOR_ID, weight: 2 },
-    { entity: KOPRIUM_DRONE_ID, weight: 0.5 },
-    { entity: KOPRIUM_MORTAR_ID, weight: 0.75 },
+    { entity: KOPRIUM_AMPLIFIER_ID, weight: 1 },
+    { entity: KOPRIUM_ROVER_ID, weight: 6 },
+    { entity: KOPRIUM_GYRATOR_ID, weight: 3 },
+    { entity: KOPRIUM_DRONE_ID, weight: 1 },
+    { entity: KOPRIUM_MORTAR_ID, weight: 1 },
     { entity: KOPRIUM_BOMBER_ID, weight: 1 },
 ];
 
@@ -95,6 +95,6 @@ export const KOPRIUM_ENTITIES_LOOT = {
     },
     [KOPRIUM_BOMBER_ID]: {
         chance: 20, //%
-        amount: [0,3] //int
+        amount: [1,3] //int
     },
 }
