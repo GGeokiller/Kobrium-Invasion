@@ -308,7 +308,7 @@
 						"sound": "mob.kobrium.say",
 						"volume": 1,
 						"pitch": [
-							1,
+							0.4,
 							1
 						]
 					},
@@ -316,7 +316,7 @@
 						"sound": "mob.kobrium.death",
 						"volume": 1,
 						"pitch": [
-							1,
+							0.4,
 							1
 						]
 					},
@@ -324,22 +324,63 @@
 						"sound": "mob.kobrium.death",
 						"volume": 1,
 						"pitch": [
-							1,
+							0.4,
 							1
 						]
 					},
 					"step": {
 						"sound": "mob.kobrium.step",
+						"volume": 1,
 						"pitch": [
-							1,
+							0.4,
 							1
-						],
-						"volume": 1
+						]
 					}
 				},
 				"pitch": [
-					0.8,
-					1.2
+					0.4,
+					1
+				],
+				"volume": 1
+			},
+			"koprium:koprium_paracore": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					}
+				},
+				"pitch": [
+					1.5,
+					2.5
 				],
 				"volume": 1
 			}
