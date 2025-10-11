@@ -14,7 +14,7 @@ world.afterEvents.entitySpawn.subscribe(ev => {
     const { entity } = ev
 
     if (entity.typeId !== METEORITE_ID) return;
-    console.warn("Hola Meteorito")
+    console.warn("§aHola Meteorito")
     /*     entity.addEffect(EffectTypes.get('invisibility'), 99999, {showParticles: false})
      */
     const randomDirection = {
@@ -52,7 +52,7 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(ev => {
                 ${entity.location.x + 50} 300 ${entity.location.z + 50}
                 ${entity.location.x - 50} 0 ${entity.location.z - 50} cosoid`)
             system.runTimeout(() => {
-                console.warn("explosion")
+                console.warn("§aExplosion")
                 handleExplosion(entity)
                 world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
                 entity.remove()
@@ -304,16 +304,16 @@ function falling2(location) {
     let systemSet = system.runInterval(() => {
         let topBlock = overworld.getTopmostBlock({ x: location.x, z: location.z })
         if (!topBlock || topBlock.location.y == 319) {
-            console.warn(`[falling2] No block found at X:${location.x}, Z:${location.z}`)
+            console.warn(`§g[falling2] No block found at X:${location.x}, Z:${location.z}`)
         } else {
             system.clearRun(systemSet)
             system.clearJob(systemSet)
-            console.warn(`[falling2] Block found, returning Ticking Dummy (waiting 10 seconds to load chunks)`)
+            console.warn(`§a[falling2] Block found, returning Ticking Dummy (waiting 10 seconds to load chunks)`)
             for (let i = 0; i < 10; i++) { system.runTimeout(() => { console.warn(`... ${i} ...`) }, i * 20) }
-            console.warn(`[falling2] Top Block at ${zyxlocationToString(topBlock.location)}`)
+            console.warn(`§a[falling2] Top Block at ${zyxlocationToString(topBlock.location)}`)
 
             system.runTimeout(() => {
-                console.warn(`[falling2] Chunks loaded successfully`)
+                console.warn(`§a[falling2] Chunks loaded successfully`)
                 let nearbyPlayers = world.getDimension("overworld").getEntities({
                     type: 'minecraft:player',
                     maxDistance: 64,
@@ -323,21 +323,21 @@ function falling2(location) {
 
                 /// SI HAY JUGADOR CERCA
                 if (nearbyPlayers.length != 0) {
-                    console.warn(`[falling2] Player detected nearby, spawning meteorite`)
+                    console.warn(`§a[falling2] Player detected nearby, spawning meteorite`)
                     closestPlayer.dimension.spawnEntity(METEORITE_ID, { x: location.x, y: 200, z: location.z })
                     /// SI NO LO HAY
                 } else {
-                    console.warn(`[falling2] No player nearby, handling explosion manually`)
+                    console.warn(`§a[falling2] No player nearby, handling explosion manually`)
                     handleExplosion(topBlock)
-                    console.warn(`[falling2] Explosion process maybe worked`)
+                    console.warn(`§a[falling2] Explosion process maybe worked`)
                     system.runTimeout(() => {
                         world.getDimension("minecraft:overworld").runCommand("tickingarea remove_all")
-                        console.warn(`[falling2] All ticking areas removed`)
+                        console.warn(`§a[falling2] All ticking areas removed`)
                     }, 50)
                 }
                 system.runTimeout(() => {
                     tickingDummy.remove()
-                    console.warn(`[falling2] Ticking Dummy removed`)
+                    console.warn(`§a[falling2] Ticking Dummy removed`)
                 }, 100)
             }, 200)
         }

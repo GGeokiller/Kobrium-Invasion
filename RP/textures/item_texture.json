@@ -76,6 +76,9 @@
 		},
 		"alien_cat_spawn_egg": {
 			"textures": "textures/items/koprium_spawn_eggs/alien_cat_spawn_egg"
+		},
+		"koprium_paracore_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_paracore_spawn_egg"
 		}
 	}
 }
