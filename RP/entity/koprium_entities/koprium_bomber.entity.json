@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:koprium_bomber",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest",
+				"glow": "allay"
+			},
+			"textures": {
+				"default": "textures/entity/koprium_entities/bomber",
+				"glow": "textures/entity/koprium_entities/bomber_glow"
+			},
+			"geometry": {
+				"default": "geometry.koprium_bomber"
+			},
+			"animations": {
+				"idle": "animation.koprium_drone.fly",
+				"look_at_target": "animation.common.look_at_target",
+				"controller_base": "controller.animation.koprium_bomber.general",
+				"hover": "animation.koprium_drone.hover"
+			},
+			"scripts": {
+				"animate": [
+					"look_at_target",
+					"controller_base",
+					"hover"
+				]
+			},
+			"render_controllers": [
+				"controller.render.glow_texture",
+				"controller.render.digging_robot"
+			],
+			"enable_attachables": false,
+			"particle_effects": {
+				"hover": "koprium:koprium_drone_hover"
+			},
+			"spawn_egg": {
+				"texture": "koprium_bomber_spawn_egg"
+			}
+		}
+	}
+}

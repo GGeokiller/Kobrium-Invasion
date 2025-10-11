@@ -1,0 +1,16 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.koprium_bomber.general": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"animations": [
+						"idle"
+					]
+				}
+			}
+		}
+	}
+}

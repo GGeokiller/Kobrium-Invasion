@@ -65,6 +65,9 @@
 		"koprium_rover_spawn_egg": {
 			"textures": "textures/items/koprium_spawn_eggs/koprium_rover_spawn_egg"
 		},
+		"koprium_bomber_spawn_egg": {
+			"textures": "textures/items/koprium_spawn_eggs/koprium_bomber_spawn_egg"
+		},
 		"koprium_spawn_egg_base": {
 			"textures": "textures/items/koprium_spawn_eggs/koprium_spawn_egg_base"
 		},
