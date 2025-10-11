@@ -393,6 +393,9 @@
 			"minecraft:fire_immune": {},
 			"minecraft:on_death": {
 				"event": "koprium:paracore_death"
+			},
+			"minecraft:scale": {
+				"value": 1.25
 			}
 		},
 		"events": {

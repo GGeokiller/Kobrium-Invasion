@@ -6,11 +6,13 @@
 			"min_engine_version": "1.8.0",
 			"materials": {
 				"default": "zombie",
-				"glow": "allay"
+				"glow": "allay",
+				"blend": "entity_alphablend"
 			},
 			"textures": {
 				"default": "textures/entity/koprium_entities/paracore",
-				"glow": "textures/entity/koprium_entities/amplifier_glow"
+				"glow": "textures/entity/koprium_entities/paracore_glow",
+				"blend": "textures/entity/koprium_entities/paracore_blend"
 			},
 			"geometry": {
 				"default": "geometry.koprium_paracore"
@@ -31,7 +33,8 @@
 			],
 			"render_controllers": [
 				"controller.render.glow_texture",
-				"controller.render.zombie"
+				"controller.render.zombie",
+				"controller.render.blend_texture"
 			],
 			"spawn_egg": {
 				"texture": "koprium_amplifier_spawn_egg"

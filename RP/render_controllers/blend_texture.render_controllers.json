@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.blend_texture": {
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.blend"
+				}
+			],
+			"textures": [
+				"Texture.blend"
+			],
+			"ignore_lighting": true
+		}
+	}
+}
