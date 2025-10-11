@@ -27,8 +27,8 @@ function startSwordLightningChain(target, damagingEntity, excludedEntitiesId = [
         target.applyDamage(damage, {cause: EntityDamageCause.lightning, damagingEntity: damagingEntity});
         target.dimension.playSound("koprium_sword.shock", target.location, {volume: 32, pitch: 1.2 + iteration * 0.1});
         system.runTimeout(() => {
-            startSwordLightningChain(closestTarget, damagingEntity, excludedEntitiesId, iteration + 1, damage * 0.8);
-        }, 2)
+            startSwordLightningChain(closestTarget, damagingEntity, excludedEntitiesId, iteration + 1, /* damage * 0.8 */ 50);
+        }, 0)
     } catch {}
 }
 /**
