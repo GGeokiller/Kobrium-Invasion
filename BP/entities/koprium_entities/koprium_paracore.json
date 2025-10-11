@@ -370,6 +370,10 @@
 							}
 						},
 						"deals_damage": "no"
+					},
+					{
+						"cause": "fall",
+						"deals_damage": "no"
 					}
 				]
 			},

@@ -1,4 +1,4 @@
-import { world, system, MolangVariableMap, Entity } from "@minecraft/server";
+import { world, system, MolangVariableMap, Entity, GameMode, EntityDamageCause } from "@minecraft/server";
 import { KOPRIUM_ENTITIES_IDS, KOPRIUM_PARACORE_ID, KOPRIUM_ENTITIES_COLLISION_BOX } from "./data.js";
 import { geo } from "../../utils/geo.js";
 import { geoParticles } from "../../utils/particle.js";
@@ -9,6 +9,17 @@ let KOPRIUM_ENTITIES_IDS_V2 = KOPRIUM_ENTITIES_IDS.filter(id => id != KOPRIUM_PA
 system.runInterval(() => {
     for (const entity of world.getDimension("overworld").getEntities({ type: KOPRIUM_PARACORE_ID })) {
         try {
+            let players = entity.dimension.getPlayers({location: entity.location, maxDistance: 5, gameMode: GameMode.Survival})
+            let closestPlayer = players[0]
+            if (closestPlayer && Math.random() < 0.1 && entity.isOnGround) {
+                entity.applyImpulse({x: Random.number(-2, 2), y: Random.number(1, 2), z: Random.number(-2,2)})
+                players.forEach(player => {
+                    player.applyDamage(8, {cause: EntityDamageCause.entityAttack, damagingEntity: entity})
+                })
+                entity.playAnimation("animation.koprium_paracore.scape")
+                entity.dimension.spawnParticle("koprium:koprium_paracore_scape", geo.sumVectors(entity.location, {x:0, y: 1, z: 0}))
+            }
+
             let paracoreTag = entity.getTags().find(tag => tag.startsWith("paracore_"))
             if (!paracoreTag) {entity.addTag(`paracore_${Random.int(1, 15)}`)}
             paracoreTag = entity.getTags().find(tag => tag.startsWith("paracore_"))
