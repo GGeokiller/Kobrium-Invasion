@@ -424,6 +424,54 @@
 					2.5
 				],
 				"volume": 1
+			},
+			"koprium:space_wolf": {
+				"events": {
+					"ambient": "mob.wolf.bark",
+					"death": "mob.wolf.death",
+					"eat": "",
+					"growl": "mob.wolf.growl",
+					"hurt": "mob.wolf.hurt",
+					"hurt.reduced": "armor.damage_wolf",
+					"pant": "mob.wolf.panting",
+					"shake": {
+						"pitch": [
+							0.80,
+							1.20
+						],
+						"sound": "mob.wolf.shake"
+					},
+					"step": {
+						"pitch": 1.0,
+						"sound": "mob.wolf.step",
+						"volume": 0.650
+					},
+					"whine": "mob.wolf.whine"
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
+			},
+			"koprium:alien_wandering_trader": {
+				"events": {
+					"ambient": "mob.wanderingtrader.idle",
+					"death": "mob.wanderingtrader.death",
+					"disappeared": "mob.wanderingtrader.disappeared",
+					"drink": "mob.wanderingtrader.drink_potion",
+					"drink.milk": "mob.wanderingtrader.drink_milk",
+					"haggle": "mob.wanderingtrader.haggle",
+					"haggle.no": "mob.wanderingtrader.no",
+					"haggle.yes": "mob.wanderingtrader.yes",
+					"hurt": "mob.wanderingtrader.hurt",
+					"reappeared": "mob.wanderingtrader.reappeared"
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
 			}
 		}
 	}
