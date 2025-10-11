@@ -244,8 +244,8 @@
       },
       "minecraft:wolf_increased_max_health": {
         "minecraft:health": {
-          "value": 40,
-          "max": 40
+          "value": 100,
+          "max": 100
         }
       },
       "minecraft:on_tame_collar_color": {
@@ -319,144 +319,11 @@
           "start_distance": 10,
           "stop_distance": 2
         },
-        "minecraft:sittable": {},
+        "minecraft:sittable": {}
+        /*         
         "minecraft:is_dyeable": {
           "interact_text": "action.interact.dye"
-        }
-      },
-      "minecraft:wolf_armorable": {
-        "minecraft:interact": {
-          "interactions": [
-            {
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_equipment",
-                      "subject": "self",
-                      "domain": "armor",
-                      "operator": "not",
-                      "value": "wolf_armor"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "wolf_armor"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "is_owner",
-                      "subject": "other",
-                      "value": true
-                    },
-                    {
-                      "test": "is_sneak_held",
-                      "subject": "other",
-                      "value": false
-                    }
-                  ]
-                },
-                "target": "self"
-              },
-              "equip_item_slot": "slot.armor.body",
-              "play_sounds": "armor.equip_wolf",
-              "interact_text": "action.interact.equipwolfarmor"
-            },
-            {
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "has_equipment",
-                      "subject": "self",
-                      "domain": "armor",
-                      "value": "wolf_armor"
-                    },
-                    {
-                      "test": "has_equipment",
-                      "subject": "other",
-                      "domain": "hand",
-                      "value": "shears"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "is_owner",
-                      "subject": "other",
-                      "value": true
-                    },
-                    {
-                      "test": "is_sneak_held",
-                      "subject": "other",
-                      "value": false
-                    }
-                  ]
-                },
-                "target": "self"
-              },
-              "hurt_item": 1,
-              "drop_item_slot": "slot.armor.body",
-              "play_sounds": "armor.unequip_wolf",
-              "interact_text": "action.interact.removewolfarmor",
-              "vibration": "shear"
-            },
-            {
-              "on_interact": {
-                "filters": {
-                  "all_of": [
-                    {
-                      "test": "is_sitting",
-                      "subject": "self"
-                    },
-                    {
-                      "test": "has_damaged_equipment",
-                      "subject": "self",
-                      "domain": "armor",
-                      "value": "wolf_armor"
-                    },
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "is_owner",
-                      "subject": "other",
-                      "value": true
-                    },
-                    {
-                      "test": "is_sneak_held",
-                      "subject": "other",
-                      "value": false
-                    },
-                    {
-                      "test": "has_equipment",
-                      "domain": "hand",
-                      "subject": "other",
-                      "value": "armadillo_scute"
-                    }
-                  ]
-                },
-                "target": "self"
-              },
-              "repair_entity_item": {
-                "slot": "slot.armor.body",
-                "amount": 8
-              },
-              "use_item": true,
-              "play_sounds": "armor.repair_wolf",
-              "interact_text": "action.interact.repairwolfarmor"
-            }
-          ]
-        }
+        } */
       },
       "minecraft:wolf_leashable": {
         "minecraft:leashable": {
@@ -571,8 +438,8 @@
         "height": 0.8
       },
       "minecraft:health": {
-        "value": 8,
-        "max": 8
+        "value": 100,
+        "max": 100
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [

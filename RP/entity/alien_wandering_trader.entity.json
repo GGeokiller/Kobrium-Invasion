@@ -7,10 +7,10 @@
         "default": "wandering_trader"
       },
       "textures": {
-        "default": "textures/entity/wandering_trader"
+        "default": "textures/entity/alien_wandering_trader"
       },
       "geometry": {
-        "default": "geometry.villager_v2"
+        "default": "geometry.koprium.alien_wandering_trader"
       },
       "scripts": {
         "scale": "0.9375"
