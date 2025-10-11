@@ -1,11 +1,17 @@
 {
 	"format_version": "1.8.0",
 	"render_controllers": {
-		"controller.render.light_saber": {
+		"controller.render.koprium.light_saber": {
 			"geometry": "Geometry.default",
 			"materials": [
 				{
 					"*": "Material.default"
+				},
+				{
+					"outline": "Material.emissive"
+				},
+				{
+					"base": "Material.glow"
 				}
 			],
 			"textures": [

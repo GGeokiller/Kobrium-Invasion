@@ -2,13 +2,13 @@
 	"format_version": "1.20.80",
 	"minecraft:item": {
 		"description": {
-			"identifier": "koprium:red_light_saber",
+			"identifier": "koprium:green_light_saber",
 			"menu_category": {
 				"category": "items"
 			}
 		},
 		"components": {
-			"minecraft:icon": "koprium_red_light_saber",
+			"minecraft:icon": "koprium_green_light_saber",
 			"minecraft:max_stack_size": 1
 		}
 	}
