@@ -45,7 +45,7 @@ world.afterEvents.itemStartUse.subscribe((data) => {
       }
     }
     if (!hitEntity || hitEntity?.typeId == "minecraft:player") {
-      console.warn("No block or entity");
+      // console.warn("No block or entity");
       return;
     }
     loopImpulse(hitEntity, player, Random.int(0, 10000));

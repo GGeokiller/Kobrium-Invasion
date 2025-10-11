@@ -37,7 +37,7 @@
 				"controller.render.blend_texture"
 			],
 			"spawn_egg": {
-				"texture": "koprium_amplifier_spawn_egg"
+				"texture": "koprium_paracore_spawn_egg"
 			},
 			"enable_attachables": false
 		}

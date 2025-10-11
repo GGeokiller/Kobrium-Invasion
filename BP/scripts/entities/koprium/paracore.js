@@ -28,7 +28,7 @@ system.runInterval(() => {
                 immortalEntity = getNewImmortalEntity(entity, paracoreTag)
                 immortalEntity.addTag(paracoreTag)
             }
-            if (!immortalEntity) {console.warn("< ! > NO ENTITY FOUND < ! > [scripts/entities/koprium/paracore-20]'"); entity.remove(); return;}
+            if (!immortalEntity) {console.warn("§c< ! > NO ENTITY FOUND < ! > [scripts/entities/koprium/paracore-20]'"); entity.remove(); return;}
             immortalEntity.addTag("hasParacore")
             let variableMap = new MolangVariableMap()
             variableMap.setFloat("height", KOPRIUM_ENTITIES_COLLISION_BOX[immortalEntity.typeId].height)
@@ -45,7 +45,7 @@ system.runInterval(() => {
  * @param {[]} paracoreTag 
  */
 function getNewImmortalEntity(entity, paracoreTag, excludedEntityIds = []) {
-    console.warn(`Looking for a candidate for: ${entity?.typeId}, with tag: ${paracoreTag}, and excludedIds: ${JSON.stringify(excludedEntityIds)}`)
+    console.warn(`§gLooking for a candidate for: ${entity?.typeId}, with tag: ${paracoreTag}, and excludedIds: ${JSON.stringify(excludedEntityIds)}`)
     const entities = entity.dimension.getEntities({
         families: ["koprium"],
         excludeTypes: [KOPRIUM_PARACORE_ID],
@@ -55,7 +55,7 @@ function getNewImmortalEntity(entity, paracoreTag, excludedEntityIds = []) {
     });
 
     if (entities.length == 0) {
-        console.warn("No candidate removing...")
+        console.warn("§cNo candidate removing...")
         entity.remove();
     }
 
@@ -68,7 +68,7 @@ function getNewImmortalEntity(entity, paracoreTag, excludedEntityIds = []) {
             if (result) return result;
             continue;
         }
-        console.warn(`Found candidate entity for ${e.typeId}`)
+        console.warn(`§aFound candidate entity for ${e.typeId}`)
         return e;
     }
 
@@ -92,10 +92,26 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     if (entity.typeId != KOPRIUM_PARACORE_ID) return;
     let paracoreTag = entity.getTags().find(tag => tag.startsWith("paracore_"))
     if (!paracoreTag) return;
+    entity.addTag("paracoreDeath")
     world.getDimension("overworld").getEntities({ tags: [paracoreTag], excludeTypes: [KOPRIUM_PARACORE_ID], maxDistance: 128, location: entity.location }).forEach(e => {
         if (!e) return;
         e.removeTag("hasParacore")
     })
+})
+
+world.beforeEvents.entityRemove.subscribe(data => {
+    let {removedEntity} = data
+    if (removedEntity?.typeId != KOPRIUM_PARACORE_ID) return;
+    if (removedEntity.hasTag("paracoreDeath")) return;
+    try {
+        let paracoreTag = removedEntity.getTags().find(tag => tag.startsWith("paracore_"))
+        world.getDimension("overworld").getEntities({tags:[paracoreTag],excludeTypes:[KOPRIUM_PARACORE_ID],maxDistance:128,location:removedEntity.location}).forEach(e=>
+            system.run(() => {
+                e.removeTag(paracoreTag)
+            })
+            
+        );
+    } catch{}
 })
 
 /* world.afterEvents.entityDie.subscribe(data => {
