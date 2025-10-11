@@ -383,6 +383,47 @@
 					2.5
 				],
 				"volume": 1
+			},
+			"koprium:koprium_bomber": {
+				"events": {
+					"ambient": {
+						"sound": "mob.kobrium.say",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"death": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"hurt": {
+						"sound": "mob.kobrium.death",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					},
+					"step": {
+						"sound": "mob.kobrium.step",
+						"volume": 1,
+						"pitch": [
+							1.5,
+							2.5
+						]
+					}
+				},
+				"pitch": [
+					1.5,
+					2.5
+				],
+				"volume": 1
 			}
 		}
 	}

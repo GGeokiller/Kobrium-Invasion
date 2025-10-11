@@ -1,0 +1,210 @@
+{
+	"format_version": "1.21.90",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "koprium:koprium_bomber",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"properties": {
+				"eu:is_lit": {
+					"type": "bool",
+					"client_sync": true,
+					"default": false
+				}
+			}
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:explode": {
+					"fuse_length": 1.5,
+					"fuse_lit": true,
+					"power": 2,
+					"causes_fire": false,
+					"destroy_affected_by_griefing": true
+				}
+			},
+			"koprium:spawn_twin": {
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"spawn_entity": "koprium:koprium_bomber",
+							"single_use": true
+						}
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:behavior.melee_box_attack": {
+				"priority": 2,
+				"attack_once": true,
+				"on_attack": {
+					"event": "minecraft:start_exploding"
+				},
+				"speed_multiplier": 1.4
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 3,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 64
+					}
+				]
+			},
+			"minecraft:attack": {
+				"damage": 2
+			},
+			"minecraft:behavior.random_hover": {
+				"priority": 12,
+				"xz_dist": 8,
+				"y_dist": 8,
+				"y_offset": -1,
+				"interval": 1,
+				"hover_height": [
+					1,
+					4
+				]
+			},
+			"minecraft:leashable": {},
+			"minecraft:balloonable": {
+				"mass": 0.5
+			},
+			"minecraft:behavior.float": {
+				"priority": 19
+			},
+			"minecraft:type_family": {
+				"family": [
+					"monster",
+					"mob",
+					"koprium",
+					"bomber"
+				]
+			},
+			"minecraft:breathable": {
+				"totalSupply": 0,
+				"suffocateTime": -1
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:conditional_bandwidth_optimization": {},
+			"minecraft:follow_range": {
+				"value": 1024
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "koprium"
+								}
+							]
+						},
+						"deals_damage": "no"
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "has_tag",
+								"subject": "self",
+								"operator": "==",
+								"value": "hasParacore"
+							}
+						},
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self"
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:flying_speed": {
+				"value": 0.15
+			},
+			"minecraft:navigation.hover": {
+				"can_path_over_water": true,
+				"can_sink": false,
+				"can_pass_doors": false,
+				"can_path_from_air": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true,
+				"avoid_sun": false
+			},
+			"minecraft:movement.hover": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_fly": {},
+			"minecraft:health": {
+				"value": 30,
+				"max": 30
+			},
+			"minecraft:nameable": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"koprium:spawn_twin"
+					]
+				}
+			},
+			"minecraft:start_exploding": {
+				"sequence": [
+					{
+						"filters": {
+							"test": "has_component",
+							"operator": "!=",
+							"value": "minecraft:explode"
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:exploding"
+							]
+						},
+						"set_property": {
+							"eu:is_lit": true
+						}
+					}
+				]
+			}
+		}
+	}
+}
