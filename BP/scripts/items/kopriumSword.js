@@ -21,11 +21,12 @@ function startSwordLightningChain(target, damagingEntity, excludedEntitiesId = [
     try {
         let [closestTarget, newExcludedIds] = getClosestTarget(target, excludedEntitiesId);
         excludedEntitiesId = newExcludedIds;
-        if (!closestTarget) return;
-        geoParticles.midDirectionalLineBetween("koprium:korpium_sword_lightning", target.dimension.id, geo.getEntityCenter(target), geo.getEntityCenter(closestTarget), Random.number(0.1, 0.5), 0, 1, 0, 2, 1, 1);
         target.dimension.spawnParticle("koprium:koprium_sword_shock", geo.getEntityCenter(target));
+        
         target.applyDamage(damage, {cause: EntityDamageCause.lightning, damagingEntity: damagingEntity});
         target.dimension.playSound("koprium_sword.shock", target.location, {volume: 32, pitch: 1.2 + iteration * 0.1});
+        if (!closestTarget) return;
+        geoParticles.midDirectionalLineBetween("koprium:korpium_sword_lightning", target.dimension.id, geo.getEntityCenter(target), geo.getEntityCenter(closestTarget), Random.number(0.1, 0.5), 0, 1, 0, 1, 1, 1);
         system.runTimeout(() => {
             startSwordLightningChain(closestTarget, damagingEntity, excludedEntitiesId, iteration + 1, damage * 0.8);
         }, 2)

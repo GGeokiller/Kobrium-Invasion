@@ -103,15 +103,15 @@ world.beforeEvents.entityRemove.subscribe(data => {
     let {removedEntity} = data
     if (removedEntity?.typeId != KOPRIUM_PARACORE_ID) return;
     if (removedEntity.hasTag("paracoreDeath")) return;
-    try {
+    
         let paracoreTag = removedEntity.getTags().find(tag => tag.startsWith("paracore_"))
         world.getDimension("overworld").getEntities({tags:[paracoreTag],excludeTypes:[KOPRIUM_PARACORE_ID],maxDistance:128,location:removedEntity.location}).forEach(e=>
             system.run(() => {
+                try {
                 e.removeTag(paracoreTag)
+                } catch{}
             })
-            
         );
-    } catch{}
 })
 
 /* world.afterEvents.entityDie.subscribe(data => {

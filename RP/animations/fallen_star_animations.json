@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.fallen_star_light": {
+			"loop": true,
+			"animation_length": 10,
+			"particle_effects": {
+				"0.0": {
+					"effect": "fallen_star_light",
+					"locator": "starlight"
+				}
+			}
+		},
+		"animation.fallen_star_trail": {
+			"loop": true,
+			"animation_length": 0.002,
+			"particle_effects": {
+				"0.0": {
+					"effect": "fallen_star_trail",
+					"locator": "startrail"
+				}
+			}
+		}
+	}
+}

@@ -6,6 +6,7 @@ import "./utils/item_components"
 import "./utils/particle"
 import "./debug/testing"
 import "./damage/damage"
+import "./events/dayNight"
 
 // system.run(() => {
 //     world.sendMessage("Hello World")

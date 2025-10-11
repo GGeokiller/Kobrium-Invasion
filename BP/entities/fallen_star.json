@@ -1,0 +1,69 @@
+{
+	"format_version": "1.21.40",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "koprium:fallen_star",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+			"animations": {
+				"cannon_ball_fall": "controller.animation.cannon_ball"
+			},
+			"scripts": {
+				"animate": [
+					"cannon_ball_fall"
+				]
+			},
+			"runtime_identifier": "minecraft:arrow"
+		},
+		"component_groups": {
+			"koprium:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": "no"
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 1,
+				"height": 1
+			},
+			"minecraft:projectile": {
+				"gravity": 0,
+				"inertia": 1,
+				"on_hit": {
+					"remove_on_hit": {},
+					"impact_damage": {
+						"damage": 1000
+					},
+					"grant_xp": {
+						"minXP": 5,
+						"maxXP": 20
+					}
+				},
+				"reflect_on_hurt": true,
+				"liquid_inertia": 1
+			},
+			"minecraft:type_family": {
+				"family": [
+					"koprium"
+				]
+			}
+		},
+		"events": {
+			"koprium:despawn": {
+				"add": {
+					"component_groups": [
+						"koprium:despawn"
+					]
+				}
+			}
+		}
+	}
+}

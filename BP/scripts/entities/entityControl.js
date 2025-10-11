@@ -3,7 +3,7 @@ import "./dummyBlock"
 import "./polishCow"
 import "./nyanCat"
 import "./spaceWolf"
-
+import "./fallenStar"
 
 import "./koprium/Amplifier"
 import "./koprium/Meteorite"

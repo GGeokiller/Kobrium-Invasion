@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "koprium:fallen_star",
+			"materials": {
+				"default": "fireball"
+			},
+			"textures": {
+				"default": "textures/ui/bg"
+			},
+			"geometry": {
+				"default": "geometry.fallen_star"
+			},
+			"animations": {
+				"face_player": "animation.actor.billboard",
+				"fallen_star_light": "animation.fallen_star_light",
+				"fallen_star_trail": "animation.fallen_star_trail"
+			},
+			"scripts": {
+				"scale": "2.0",
+				"animate": [
+					"face_player",
+					"fallen_star_light",
+					"fallen_star_trail"
+				],
+				"should_update_bones_and_effects_offscreen": true
+			},
+			"render_controllers": [
+				"controller.render.fallen_star"
+			],
+			"particle_effects": {
+				"fallen_star_trail": "koprium:fallen_star_trail",
+				"fallen_star_light": "koprium:fallen_star_light"
+			}
+		}
+	}
+}

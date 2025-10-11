@@ -225,23 +225,23 @@ function handleExplosion(entity) {
 /// MENTAL ILLNESS STARTING HERE}
 
 
-system.runInterval(() => {
-    let timeOfDay = world.getTimeOfDay()
-    if (timeOfDay > 12000) {
-        if (!world.getDynamicProperty("dayset")) {
-            world.setDynamicProperty("dayset", false)
-        }
-        if (world.getDynamicProperty("dayset") == true) return;
-        let randomX = Random.number(-5000, 5000)
-        let randomZ = Random.number(-5000, 5000)
-        willFall({ x: Math.floor(randomX), y: 200, z: Math.floor(randomZ) }, 30)
-        world.setDynamicProperty("dayset", true)
-    } else {
-        world.setDynamicProperty("dayset", false)
-    }
-})
+// system.runInterval(() => {
+//     let timeOfDay = world.getTimeOfDay()
+//     if (timeOfDay > 12000) {
+//         if (!world.getDynamicProperty("isNight")) {
+//             world.setDynamicProperty("isNight", false)
+//         }
+//         if (world.getDynamicProperty("isNight") == true) return;
+//         let randomX = Random.number(-5000, 5000)
+//         let randomZ = Random.number(-5000, 5000)
+//         willFall({ x: Math.floor(randomX), y: 200, z: Math.floor(randomZ) }, 30)
+//         world.setDynamicProperty("isNight", true)
+//     } else {
+//         world.setDynamicProperty("isNight", false)
+//     }
+// }, 100)
 
-function willFall(location, time = 60 * 5) {
+export function willFall(location, time = 60 * 5) {
     world.sendMessage({ rawtext: [{ text: "§c<< ! >>\n" }, { translate: "meteorite.coordinates" }, { text: `${zxlocationToString(location)} ` }, { translate: "meteorite.time" }, { text: timeToHours(time) }, { text: "\n<< ! >>" }] })
     system.runTimeout(() => {
         falling2(location)

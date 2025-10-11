@@ -1,4 +1,4 @@
-import { world, system, Entity } from "@minecraft/server";
+import { world, system, Entity, GameMode } from "@minecraft/server";
 import { KOPRIUM_MORTAR_ID } from "./data.js";
 import { Random } from "../../utils/random.js";
 import { geo } from "../../utils/geo.js";
@@ -11,7 +11,8 @@ world.afterEvents.dataDrivenEntityTrigger.subscribe(data => {
     let target = entity.target ?? entity.dimension.getEntities({
         type: "minecraft:player",
         location: entity.location,
-        maxDistance: 20
+        maxDistance: 20,
+        gameMode: GameMode.Survival
     })[0];
     if (!target) return;
     spawnCannonBalls(entity, Random.int(2, 4))
