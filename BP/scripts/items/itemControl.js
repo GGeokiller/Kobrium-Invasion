@@ -7,3 +7,5 @@ import "./cometStone";
 import "./kopriumSword";
 import "./kopriumPickaxe";
 import "./blastTest";
+import "./star";
+
