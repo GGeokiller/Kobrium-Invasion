@@ -81,7 +81,7 @@
 			"textures": "textures/items/koprium_spawn_eggs/koprium_paracore_spawn_egg"
 		},
 		"koprium_star": {
-			"textures": "textures/items/star"
+			"textures": "textures/items/fallen_star"
 		}
 	}
 }
