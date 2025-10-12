@@ -136,6 +136,14 @@
 				"sounds/koprium/kopriumDriveActivate"
 			]
 		},
+		"item.star.use": {
+			"category": "player",
+			"max_distance": null,
+			"min_distance": null,
+			"sounds": [
+				"sounds/koprium/star_use"
+			]
+		},
 		"item.koprium_drive.break": {
 			"__use_legacy_max_distance": "true",
 			"category": "neutral",
