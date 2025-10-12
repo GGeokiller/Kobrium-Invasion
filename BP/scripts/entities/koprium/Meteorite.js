@@ -115,6 +115,9 @@ function handleExplosion(entity) {
     entity.dimension.spawnEntity("koprium:alien_cat", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
     entity.dimension.spawnEntity("koprium:moon_cow", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
     entity.dimension.spawnEntity("koprium:moon_cow", { x: entity.location.x, y: entity.location.y + 1, z: entity.location.z })
+    entity.dimension.runCommand(`particle koprium:meteorite_shockwave ${entity.location.x} ${entity.location.y+1} ${entity.location.z}`)
+    entity.dimension.runCommand(`particle koprium:meteorite_smoke ${entity.location.x} ${entity.location.y+1} ${entity.location.z}`)
+    entity.dimension.runCommand(`particle koprium:meteorite_lights ${entity.location.x} ${entity.location.y+1} ${entity.location.z}`)
 }
 
 /// {MENTAL ILLNESS STARTING HERE
