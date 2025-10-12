@@ -16,7 +16,7 @@ system.runInterval(() => {
         if (isNight) {
             if (Math.random() < METEORITE_CHANCE) spawnMeteorite();
             if (Math.random() < STAR_NIGHT_CHANCE) {
-                world.sendMessage("Star Fall Event On")
+                world.sendMessage({ rawtext: [{ text: "§g<< ! >>\n" }, { translate: "starfall.active" },{ text: "\n<< ! >>" }] })
                 world.setDynamicProperty("isStarFall", true);
             } else {
                 world.setDynamicProperty("isStarFall", false);

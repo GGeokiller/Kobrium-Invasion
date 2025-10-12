@@ -8,6 +8,7 @@ koprium:itemGroup.name.koprium_items=Koprium Invasion Items
 koprium:itemGroup.name.koprium_equipment=Koprium Invasion Equipment
 koprium:itemGroup.name.koprium_construction=Koprium Invasion Construction
 item.koprium.koprium_drive.no_armor=You need a Full Koprium Armor set to use this Item
+starfall.active=Stars Are Falling From The Sky
 
 ### KOPRIUM ITEMS
 item.spawn_egg.entity.koprium:digging_robot_projectile.name=Spawn Digging Robot Projectile

@@ -33,7 +33,7 @@ system.runInterval(() => {
  * @param {Entity} entity 
  */
 function spawnStar(entity) {
-    let randomZX = {x: Random.number(-30, 30), y: 0, z: Random.number(-30, 30)}
+    let randomZX = {x: Random.number(-20, 20), y: 0, z: Random.number(-20, 20)}
     let appenedLocs = geo.sumVectors(entity.location, randomZX)
     let finalLocation = {x: appenedLocs.x, y: 230, z: appenedLocs.z}
     entity.dimension.spawnEntity(FALLEN_STAR_ID, finalLocation)
