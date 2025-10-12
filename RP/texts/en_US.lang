@@ -9,6 +9,7 @@ koprium:itemGroup.name.koprium_equipment=Koprium Invasion Equipment
 koprium:itemGroup.name.koprium_construction=Koprium Invasion Construction
 item.koprium.koprium_drive.no_armor=You need a Full Koprium Armor set to use this Item
 
+
 ### KOPRIUM ITEMS
 item.spawn_egg.entity.koprium:digging_robot_projectile.name=Spawn Digging Robot Projectile
 item.spawn_egg.entity.koprium:alien_cat.name=Spawn Alien Cat
@@ -33,6 +34,7 @@ item.koprium:comet_stone=Comet Stone
 item.koprium:koprium_sword=Koprium Sword
 item.koprium:koprium_pickaxe=Koprium Pickaxe
 item.koprium:green_light_saber=Red Light Saber
+item.koprium:star=Star
 
 ### KOPRIUM SPAWN EGGS
     item.spawn_egg.entity.koprium:koprium_amplifier.name=Spawn Koprium Amplifier
@@ -44,7 +46,12 @@ item.koprium:green_light_saber=Red Light Saber
     item.spawn_egg.entity.koprium:alien_wandering_trader.name=Spawn Alien Wandering Trader
     item.spawn_egg.entity.koprium:koprium_paracore.name=Spawn Koprium Paracore
     item.spawn_egg.entity.koprium:koprium_dagger_projectile.name=Spawn Koprium Dagger Projectile
-
+    item.spawn_egg.entity.koprium:dummy_ore_outline_block.name=Spawn Dummy Ore Outline Block
+    item.spawn_egg.entity.koprium:fallen_star.name=Spawn Fallen Star
+    item.spawn_egg.entity.koprium:koprium_bomber.name=Spawn Koprium Bomber
+    item.spawn_egg.entity.koprium:laser_blast_projectile.name=Spawn Laser Blast Projectile
+    item.spawn_egg.entity.koprium:space_wolf.name=Spawn Space Wolf
+    item.spawn_egg.entity.one:damage.name=Spawn Damage
 ### KOPRIUM BLOCKS
 item.spawn_egg.entity.eu:dummy_block.name=Spawn Dummy Block
 tile.koprium:meteorite_stone.name=Meteorite Stone
@@ -66,6 +73,12 @@ entity.koprium:koprium_dummy_spawn.name=Koprium Dummy Spawn
 entity.koprium:alien_wandering_trader.name=Alien Wandering Trader
 entity.koprium:koprium_dagger_projectile.name=Koprium Dagger Projectile
 entity.koprium:koprium_mortar_cannon_ball.name=Koprium Mortar Cannon Ball
+entity.koprium:dummy_ore_outline_block.name=Dummy Ore Outline Block
+entity.koprium:fallen_star.name=Fallen Star
+entity.koprium:koprium_bomber.name=Koprium Bomber
+entity.koprium:laser_blast_projectile.name=Laser Blast Projectile
+entity.koprium:space_wolf.name=Space Wolf
+entity.one:damage.name=Damage
 
 ### KOBRIUM SPECIFICS   
     entity.koprium:koprium_amplifier.name=Koprium Amplifier
@@ -78,5 +91,3 @@ entity.koprium:koprium_mortar_cannon_ball.name=Koprium Mortar Cannon Ball
 
 
 
-
-item.koprium:star=Star
