@@ -36,7 +36,7 @@
         "controller.render.wandering_trader"
       ],
       "spawn_egg": {
-        "texture": "spawn_egg_wandering_trader"
+        "texture": "alien_wandering_trader_spawn_egg"
       }
     }
   }
