@@ -1,0 +1,32 @@
+{
+	"format_version": "1.20.10",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "koprium:koprium_pickaxe"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"pattern": [
+			"XXX",
+			" # ",
+			" # "
+		],
+		"key": {
+			"#": {
+				"item": "minecraft:stick"
+			},
+			"X": {
+				"item": "koprium:koprium_scrap"
+			}
+		},
+		"unlock": [
+			{
+				"item": "minecraft:diamond"
+			}
+		],
+		"result": {
+			"item": "koprium:koprium_pickaxe"
+		}
+	}
+}

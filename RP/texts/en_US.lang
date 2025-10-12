@@ -44,6 +44,7 @@ item.koprium:green_light_saber=Red Light Saber
     item.spawn_egg.entity.koprium:koprium_dummy_spawn.name=Spawn Koprium Dummy Spawn
     item.spawn_egg.entity.koprium:alien_wandering_trader.name=Spawn Alien Wandering Trader
     item.spawn_egg.entity.koprium:koprium_paracore.name=Spawn Koprium Paracore
+    item.spawn_egg.entity.koprium:koprium_bomber.name=Spawn Koprium Bomber
     item.spawn_egg.entity.koprium:koprium_dagger_projectile.name=Spawn Koprium Dagger Projectile
 
 ### KOPRIUM BLOCKS

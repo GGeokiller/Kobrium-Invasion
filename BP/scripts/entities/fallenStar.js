@@ -26,7 +26,7 @@ system.runInterval(() => {
         if (player.dimension.id != 'minecraft:overworld') continue;
         spawnStar(player)
     }
-}, 100)
+}, 400)
 
 /**
  * 
