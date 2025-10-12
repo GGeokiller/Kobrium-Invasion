@@ -1,4 +1,4 @@
-import { world, system, Entity } from "@minecraft/server";
+import { world, system, Entity, ItemStack } from "@minecraft/server";
 import {Random} from ".././utils/random"
 import { geo } from "../utils/geo";
 
@@ -17,8 +17,6 @@ world.afterEvents.entitySpawn.subscribe(data => {
         entity.applyImpulse({x: Random.number(-0.2, 0.2), y: 0, z: Random.number(-0.2, 0.2)})
     }, 2)
 })
-
-
 
 system.runInterval(() => {
     if (Math.random() > SPAWN_CHANCE_PER_ITERATION) return;
@@ -41,16 +39,9 @@ function spawnStar(entity) {
     entity.dimension.spawnEntity(FALLEN_STAR_ID, finalLocation)
 }
 
-/* system.runInterval(() => {
-    let timeOfDay = world.getTimeOfDay()
-    if (timeOfDay > 12000) {
-        if (!world.getDynamicProperty("isNight")) {
-            world.setDynamicProperty("isNight", false)
-        }
-        if (world.getDynamicProperty("isNight") == true) return;
-        
-        world.setDynamicProperty("isNight", true)
-    } else {
-        world.setDynamicProperty("isNight", false)
-    }
-}, 100) */
+world.afterEvents.projectileHitBlock.subscribe(data => {
+    let {projectile } = data
+    if (projectile?.typeId != FALLEN_STAR_ID) return;
+    let block = data.getBlockHit().block
+    block.dimension.spawnItem(new ItemStack("koprium:star", 1), geo.sumVectors(block.center(), {x:0, y:1, z:0}))
+})

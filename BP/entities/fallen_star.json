@@ -41,10 +41,6 @@
 					"remove_on_hit": {},
 					"impact_damage": {
 						"damage": 1000
-					},
-					"grant_xp": {
-						"minXP": 5,
-						"maxXP": 20
 					}
 				},
 				"reflect_on_hurt": true,
