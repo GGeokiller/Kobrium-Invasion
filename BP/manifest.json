@@ -6,7 +6,7 @@
 		]
 	},
 	"header": {
-		"name": "§aKoprium Invasion [v1.1.1]",
+		"name": "§aKoprium Invasion [v1.1.2]",
 		"description": ">> Adds a variety of new robots - from flying machines to stationary units",
 		"min_engine_version": [
 			1,
@@ -16,8 +16,8 @@
 		"uuid": "77f87206-91db-4756-ab5f-269d284dffd4",
 		"version": [
 			1,
-			0,
-			0
+			1,
+			2
 		]
 	},
 	"modules": [
@@ -26,8 +26,8 @@
 			"uuid": "42d0a007-6d6d-4720-bf45-13dd16eca80d",
 			"version": [
 				1,
-				0,
-				0
+				1,
+				2
 			]
 		},
 		{
@@ -37,8 +37,8 @@
 			"entry": "scripts/main.js",
 			"version": [
 				1,
-				0,
-				0
+				1,
+				2
 			]
 		}
 	],
@@ -53,7 +53,7 @@
 		},
 		{
 			"module_name": "@minecraft/server",
-			"version": "2.3.0-beta"
+			"version": "2.4.0-beta"
 		},
 		{
 			"module_name": "@minecraft/server-ui",
