@@ -2,7 +2,10 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "koprium:meteorite_ash"
+			"identifier": "koprium:meteorite_ash",
+			"menu_category": {
+				"category": "construction"
+			}
 		},
 		"components": {
 			"minecraft:geometry": "geometry.meteorite_ash",

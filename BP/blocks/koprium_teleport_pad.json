@@ -2,7 +2,10 @@
 	"format_version": "1.20.80",
 	"minecraft:block": {
 		"description": {
-			"identifier": "koprium:koprium_teleport_pad"
+			"identifier": "koprium:koprium_teleport_pad",
+			"menu_category": {
+				"category": "construction"
+			}
 		},
 		"components": {
 			"minecraft:destructible_by_mining": {
